@@ -34,6 +34,13 @@ const DefaultSettings = {
 		"re": false,
 		"dm": false,
 		"qb": false
+	},
+	"onlineTTS": {
+		"enabled": false,
+		"apiKey": "",
+		"voices": {},
+		"defaultVoice": "",
+		"rate": 1
 	}
 };
 
@@ -88,6 +95,21 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 						settings[option] = oldsettings[option];
 				}
 				return settings;
+				
+			case 1.16:
+				if (!oldsettings.onlineTTS) {
+					settings.onlineTTS = DefaultSettings.onlineTTS;
+				} else {
+					const oldOnlineTTS = oldsettings.onlineTTS;
+					settings.onlineTTS = {
+						"enabled": oldOnlineTTS.enabled || false,
+						"apiKey": oldOnlineTTS.apiKey || "",
+						"voices": oldOnlineTTS.voices || {},
+						"defaultVoice": oldOnlineTTS.defaultVoice || "",
+						"rate": oldOnlineTTS.rate || 1
+					};
+				}
+				break;
 		}
 
 		for (const option in oldsettings) {
