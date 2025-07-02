@@ -25,17 +25,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	dispatch.hook("S_USER_EFFECT", 1, event => {
 		if (event.circle == 3 && event.operation == 1) {
 			if (dispatch._mod.game.me.is(event.target)) {
-				handlers.text({ sub_type: "notification", message: "Snowball on you", message_RU: "Снежок на тебе" });
+				handlers.text({ sub_type: "notification", message: "Snowball on you", message_RU: "Снежок на тебе", message_zh: "雪球点你" });
 			} else {
 				const member = player.playersInParty.get(event.target);
 				if (member) {
 					handlers.text({
 						sub_type: "message",
 						message: `Snowball on ${member.name}`,
-						message_RU: `Снежок на ${member.name}`
+						message_RU: `Снежок на ${member.name}`,
+						message_zh: `雪球点${member.name}`
 					});
 				} else {
-					handlers.text({ sub_type: "message", message: "Snowball", message_RU: "Снежок" });
+					handlers.text({ sub_type: "message", message: "Snowball", message_RU: "Снежок", message_zh: "雪球" });
 				}
 			}
 			handlers.marker({ id: event.target, color: "yellow", sub_delay: 1000000 });
@@ -47,17 +48,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	dispatch.hook("S_ABNORMALITY_BEGIN", dispatch._mod.majorPatchVersion >= 107 ? 5 : 4, event => {
 		if (event.id === 32060024) {
 			if (dispatch._mod.game.me.is(event.target)) {
-				handlers.text({ sub_type: "notification", message: "Eye on you", message_RU: "Глазик на тебе" });
+				handlers.text({ sub_type: "notification", message: "Eye on you", message_RU: "Глазик на тебе", message_zh: "眼睛点你" });
 			} else {
 				const member = player.playersInParty.get(event.target);
 				if (member) {
 					handlers.text({
 						sub_type: "message",
 						message: `Eye on ${member.name}`,
-						message_RU: `Глазик на ${member.name}`
+						message_RU: `Глазик на ${member.name}`,
+						message_zh: `眼睛点${member.name}`
 					});
 				} else {
-					handlers.text({ sub_type: "message", message: "Eye", message_RU: "Глазик" });
+					handlers.text({ sub_type: "message", message: "Eye", message_RU: "Глазик", message_zh: "眼睛" });
 				}
 			}
 		}
@@ -81,74 +83,74 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"ar-3106-1000-32060007": [{ type: "func", func: stack_remove_event }],
 
 		"qb-3106-1000-32061001": [
-			{ type: "text", sub_type: "message", message: "Close - IN", message_RU: "Ближние - к нему", check_func: () => stack === 0 },
-			{ type: "text", sub_type: "message", message: "Close - OUT", message_RU: "Ближние - от него", check_func: () => stack !== 0 },
-			{ type: "text", sub_type: "alert", message: "Soon to give stun...", message_RU: "Скоро давать стан...", delay: 2000 }
+			{ type: "text", sub_type: "message", message: "Close - IN", message_RU: "Ближние - к нему", message_zh: "近的靠近", check_func: () => stack === 0 },
+			{ type: "text", sub_type: "message", message: "Close - OUT", message_RU: "Ближние - от него", message_zh: "近的远离", check_func: () => stack !== 0 },
+			{ type: "text", sub_type: "alert", message: "Soon to give stun...", message_RU: "Скоро давать стан...", message_zh: "准备打断", delay: 2000 }
 		],
 		"qb-3106-1000-32061002": [
-			{ type: "text", sub_type: "message", message: "Furthest - OUT", message_RU: "Дальние - от него", check_func: () => stack === 0 },
-			{ type: "text", sub_type: "message", message: "Furthest - IN", message_RU: "Дальние - к нему", check_func: () => stack !== 0 },
-			{ type: "text", sub_type: "alert", message: "Soon to give stun...", message_RU: "Скоро давать стан...", delay: 2000 }
+			{ type: "text", sub_type: "message", message: "Furthest - OUT", message_RU: "Дальние - от него", message_zh: "远的远离", check_func: () => stack === 0 },
+			{ type: "text", sub_type: "message", message: "Furthest - IN", message_RU: "Дальние - к нему", message_zh: "远的靠近", check_func: () => stack !== 0 },
+			{ type: "text", sub_type: "alert", message: "Soon to give stun...", message_RU: "Скоро давать стан...", message_zh: "准备打断", delay: 2000 }
 		],
 
 		"s-3106-1000-102-0": [
 			{ type: "func", func: () => combo_start = true },
 			{ type: "func", func: () => combo_start = false, delay: 1400 }
 		],
-		"s-3106-1000-105-0": [{ type: "text", sub_type: "message", message: "Knockback Spin (Kaia)", message_RU: "Оборот (Кайа)", check_func: () => combo_start === true }],
+		"s-3106-1000-105-0": [{ type: "text", sub_type: "message", message: "Knockback Spin (Kaia)", message_RU: "Оборот (Кайа)", message_zh: "旋转击退开套盾", check_func: () => combo_start === true }],
 		"s-3106-1000-106-0": [
-			{ type: "text", sub_type: "message", message: "Knockback", message_RU: "Откид" },
+			{ type: "text", sub_type: "message", message: "Knockback", message_RU: "Откид", message_zh: "击退" },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 50, 10, 350, 0, 3000] }
 		],
 
 		"s-3106-1000-109-0": [
-			{ type: "text", sub_type: "message", message: "Jump (Knockdown)", message_RU: "Прыжок (опрокид)" },
+			{ type: "text", sub_type: "message", message: "Jump (Knockdown)", message_RU: "Прыжок (опрокид)", message_zh: "跳跃击倒" },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 150, 10, 300, 0, 2500] }
 		],
-		"s-3106-1000-111-0": [{ type: "text", sub_type: "message", message: "Knockdown (Dodge)", message_RU: "Опрокид (эвейд)", class_position: "tank" }],
-		"s-3106-1000-201-0": [{ type: "text", sub_type: "message", message: "Front (Dodge)", message_RU: "Удар вперед (эвейд)", class_position: "tank" }],
-		"s-3106-1000-202-0": [{ type: "text", sub_type: "message", message: "Front AoE", message_RU: "Переднее АоЕ" }],
-		"s-3106-1000-203-0": [{ type: "text", sub_type: "message", message: "Front AoE + Wave", message_RU: "Переднее АоЕ + волна" }],
-		"s-3106-1000-205-0": [{ type: "text", sub_type: "message", message: "Spin", message_RU: "Крутилка" }],
-		"s-3106-1000-206-0": [{ type: "text", sub_type: "message", message: "Spin (Bleed)", message_RU: "Крутилка (кровоток)" }],
-		"s-3106-1000-207-0": [{ type: "text", sub_type: "message", message: "Spin (Bleed)", message_RU: "Крутилка (кровоток)" }],
+		"s-3106-1000-111-0": [{ type: "text", sub_type: "message", message: "Knockdown (Dodge)", message_RU: "Опрокид (эвейд)", message_zh: "击倒闪避", class_position: "tank" }],
+		"s-3106-1000-201-0": [{ type: "text", sub_type: "message", message: "Front (Dodge)", message_RU: "Удар вперед (эвейд)", message_zh: "前方攻击闪避", class_position: "tank" }],
+		"s-3106-1000-202-0": [{ type: "text", sub_type: "message", message: "Front AoE", message_RU: "Переднее АоЕ", message_zh: "前方范围攻击" }],
+		"s-3106-1000-203-0": [{ type: "text", sub_type: "message", message: "Front AoE + Wave", message_RU: "Переднее АоЕ + волна", message_zh: "前方范围加冲击波" }],
+		"s-3106-1000-205-0": [{ type: "text", sub_type: "message", message: "Spin", message_RU: "Крутилка", message_zh: "翻滚" }],
+		"s-3106-1000-206-0": [{ type: "text", sub_type: "message", message: "Spin (Bleed)", message_RU: "Крутилка (кровоток)", message_zh: "旋转带流血" }],
+		"s-3106-1000-207-0": [{ type: "text", sub_type: "message", message: "Spin (Bleed)", message_RU: "Крутилка (кровоток)", message_zh: "旋转带流血" }],
 		"s-3106-1000-209-0": [
-			{ type: "text", sub_type: "message", message: "Give Stun! (Knockdown)", message_RU: "Дать стан! (опрокид)" },
+			{ type: "text", sub_type: "message", message: "Give Stun! (Knockdown)", message_RU: "Дать стан! (опрокид)", message_zh: "晕王！" },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 50, 10, 400, 0, 1500] }
 		],
 		"s-3106-1000-210-0": [
-			{ type: "text", sub_type: "message", message: "Give Stun! (Knockdown)", message_RU: "Дать стан! (опрокид)" },
+			{ type: "text", sub_type: "message", message: "Give Stun! (Knockdown)", message_RU: "Дать стан! (опрокид)", message_zh: "晕王！" },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 50, 10, 400, 0, 1500] }
 		],
-		"s-3106-1000-211-0": [{ type: "text", sub_type: "message", message: "Push", message_RU: "Откид" }],
-		"s-3106-1000-212-0": [{ type: "text", sub_type: "message", message: "Somersault", message_RU: "Кувырок" }],
-		"s-3106-1000-215-0": [{ type: "text", sub_type: "message", message: "Somersault", message_RU: "Кувырок" }],
-		"s-3106-1000-507-0": [{ type: "text", sub_type: "message", message: "Leash | Jump (Knockdown)", message_RU: "Притяжка | Прыжок (опрокид)" }],
+		"s-3106-1000-211-0": [{ type: "text", sub_type: "message", message: "Push", message_RU: "Откид", message_zh: "击退" }],
+		"s-3106-1000-212-0": [{ type: "text", sub_type: "message", message: "Somersault", message_RU: "Кувырок", message_zh: "翻滚" }],
+		"s-3106-1000-215-0": [{ type: "text", sub_type: "message", message: "Somersault", message_RU: "Кувырок", message_zh: "翻滚" }],
+		"s-3106-1000-507-0": [{ type: "text", sub_type: "message", message: "Leash | Jump (Knockdown)", message_RU: "Притяжка | Прыжок (опрокид)", message_zh: "拉人接跳跃击倒" }],
 		"s-3106-1000-508-0": [
-			{ type: "text", sub_type: "message", message: "Donuts (Out > In)", message_RU: "Бублики (от него > к нему)" },
+			{ type: "text", sub_type: "message", message: "Donuts (Out > In)", message_RU: "Бублики (от него > к нему)", message_zh: "环形攻击出再进" },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 18, 180, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 360, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 10, 550, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 860, 1500, 5000] }
 		],
 		"s-3106-1000-509-0": [
-			{ type: "text", sub_type: "message", message: "Donuts (In > Out)", message_RU: "Бублики (к нему > от него)" },
+			{ type: "text", sub_type: "message", message: "Donuts (In > Out)", message_RU: "Бублики (к нему > от него)", message_zh: "环形攻击进再出" },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 18, 180, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 360, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 10, 550, 1500, 5000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 860, 1500, 5000] }
 		],
-		"s-3106-1000-512-0": [{ type: "text", sub_type: "message", message: "Turn | Spin", message_RU: "Разворот | Крутилка" }],
-		//"s-3106-1000-513-0": [{ type: "text", sub_type: "message", message: "Plague/Regress", message_RU: "Чума/регресс" }],
-		//"s-3106-1000-514-0": [{ type: "text", sub_type: "message", message: "Plague/Regress", message_RU: "Чума/регресс" }],
+		"s-3106-1000-512-0": [{ type: "text", sub_type: "message", message: "Turn | Spin", message_RU: "Разворот | Крутилка", message_zh: "转身接旋转" }],
+		//"s-3106-1000-513-0": [{ type: "text", sub_type: "message", message: "Plague/Regress", message_RU: "Чума/регресс", message_zh: "驱散" }],
+		//"s-3106-1000-514-0": [{ type: "text", sub_type: "message", message: "Plague/Regress", message_RU: "Чума/регресс", message_zh: "驱散" }],
 
-		"s-3106-1000-502-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство" }],
-		"s-3106-1000-518-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство" }],
-		"s-3106-1000-519-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство" }],
-		"s-3106-1000-306-0": [{ type: "text", sub_type: "message", message: "Spin", message_RU: "Крутилка" }],
-		"s-3106-1000-309-0": [{ type: "text", sub_type: "message", message: "Front", message_RU: "Удар вперед" }],
-		"s-3106-1000-311-0": [{ type: "text", sub_type: "message", message: "Evade!", message_RU: "Эвейд!", delay: 150 }],
-		"s-3106-1000-321-0": [{ type: "text", sub_type: "message", message: "AoE", message_RU: "АоЕ" }],
-		"s-3106-1000-324-0": [{ type: "text", sub_type: "message", message: "AoE", message_RU: "АоЕ" }]
+		"s-3106-1000-502-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство", message_zh: "狂暴" }],
+		"s-3106-1000-518-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство", message_zh: "狂暴" }],
+		"s-3106-1000-519-0": [{ type: "text", sub_type: "message", message: "Unleash", message_RU: "Бешенство", message_zh: "狂暴" }],
+		"s-3106-1000-306-0": [{ type: "text", sub_type: "message", message: "Spin", message_RU: "Крутилка", message_zh: "翻滚" }],
+		"s-3106-1000-309-0": [{ type: "text", sub_type: "message", message: "Front", message_RU: "Удар вперед", message_zh: "前方攻击" }],
+		"s-3106-1000-311-0": [{ type: "text", sub_type: "message", message: "Evade!", message_RU: "Эвейд!", message_zh: "闪避！", delay: 150 }],
+		"s-3106-1000-321-0": [{ type: "text", sub_type: "message", message: "AoE", message_RU: "АоЕ", message_zh: "范围攻击" }],
+		"s-3106-1000-324-0": [{ type: "text", sub_type: "message", message: "AoE", message_RU: "АоЕ", message_zh: "范围攻击" }]
 	};
 };
