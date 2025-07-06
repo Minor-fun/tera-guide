@@ -7,6 +7,16 @@ module.exports = {
 		"ru": "Dreadspire VALKYTEQ",
 		"zh": "残酷幻影之塔VALKYTEQ"
 	},
+	2809: {
+		"en": "The Observatory (Arborea Reborn)",
+		"ru": "The Observatory (Arborea Reborn)",
+		"zh": "观星神殿 (Arborea Reborn服)"
+	},
+	2811: {
+		"en": "Sea of Honor (Arborea Reborn)",
+		"ru": "Sea of Honor (Arborea Reborn)",
+		"zh": "金麟號 (Arborea Reborn服)"
+	},
 	3023: {
 		"en": "Akalath Quarantine",
 		"ru": "Секретное подземелье крепости Берарк",

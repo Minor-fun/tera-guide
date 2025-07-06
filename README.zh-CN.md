@@ -146,11 +146,13 @@ Toolbox(/8) | 命令说明
     ![](https://i.imgur.com/PRhCjJU.png)
 ---
 
-## 5. 支持的地下城
+## 5. 支持的副本
 
-id | 地下城名称 (英文) | 地下城名称 (中文)
+id | 副本名称 (英文) | 副本名称 (中文)
 --- | --- | ---
 2800 | Dreadspire VALKYTEQ | 残酷幻影之塔VALKYTEQ
+2809 | The Observatory (Arborea Reborn) | 观星神殿 (Arborea Reborn服)
+2811 | Sea of Honor (Arborea Reborn) | 金麟號 (Arborea Reborn 服)
 3023 | Akalath Quarantine | 贝尔亚克城堡秘密地区
 3026 | Corrupted Skynest | 凯尔赛克隐藏地
 3027 | Forbidden Arena [Hagufna] | 狂气竞技场 [不灭的斗士]
@@ -165,7 +167,7 @@ id | 地下城名称 (英文) | 地下城名称 (中文)
 3104 | Catalepticon | 路克米亚的幻梦
 3106 | Killing Grounds | 杀戮场
 3107 | Corrupted RK-9 Kennel | 腐化的RK-9机库
-3111 | The Veil (Darkan) | 面纱（黑暗）menma顶本
+3111 | The Veil (Darkan) | 面纱（黑暗）menma服
 3123 | Akalath Quarantine (Hard) | 贝尔亚克城堡秘密地区(困难)
 3126 | Corrupted Skynest (Hard) | 不灭凯尔赛克隐藏地(困难)
 3201 | Gossamer Vault (Hard) | 灿烂的费尔奎娜巢穴(困难)
