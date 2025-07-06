@@ -1,7 +1,8 @@
 {
     "files": {
         "LICENSE": "7fbe35da1c4792b039cd14af60048ea6813b743bd6e05ecef7a68023b50f5a43",
-        "README.md": "05b456df0952bd2f666606c72c8f585aecf86d415fc067019205fff99788737e",
+        "README.md": "7afc6a18dc46273b6145d3b5009f3ee848e81062378f2ac6e45f05aa2065bad4",
+        "README.zh-CN.md": "a505b6cf77caf9eef426ea73b2212d82475f06807d37f37348664b8e93109a3e",
         "guides/2800.js": "15d087ba9e4954339dfa9e83d766bff0e7e2e7344ffad3d541005f79d6615181",
         "guides/3023.js": "89d8a7cde8ba94804a142210aef470baaa4161c861e32ef8b1356bc2adef4136",
         "guides/3026.js": "f731d9ebb890b5fafbf07b20eef857bbd4f7cf81561ed16fbdd316e6f671c203",
