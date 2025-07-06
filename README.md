@@ -158,6 +158,8 @@ Toolbox(/8) | Command description | Описание команды
 id | Dungeon name | Название данжа
 --- | --- | ---
 2800 | Dreadspire VALKYTEQ | Dreadspire VALKYTEQ
+2809 | The Observatory (Arborea Reborn) | The Observatory (Arborea Reborn)
+2811 | Sea of Honor (Arborea Reborn) | Sea of Honor (Arborea Reborn)
 3023 | Akalath Quarantine | Секретное подземелье крепости Берарк
 3026 | Corrupted Skynest | Логово Келсаика
 3027 | Forbidden Arena [Hagufna] | [Бессмертный воин] Арена безумия
