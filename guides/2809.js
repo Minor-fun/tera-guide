@@ -29,33 +29,33 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	function side(skillid) {
 		const left_safe = [
 			{ type: "text", sub_type: "message", message: "Left safe!", message_RU: "Сейв слева!", message_zh: "左边安全!" },
-			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 4000] },
-			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 20, 160, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 12, 250, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 10, 340, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 8, 430, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 7, 520, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 6, 610, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 5, 700, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 4, 790, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 3, 880, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 2, 1000, 0, 4000] }
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 2500] },
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 20, 160, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 12, 250, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 10, 340, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 8, 430, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 7, 520, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 6, 610, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 5, 700, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 4, 790, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 3, 880, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 2, 1000, 0, 2500] }
 		];
 		const right_safe = [
 			{ type: "text", sub_type: "message", message: "Right safe!", message_RU: "Сейв справа!", message_zh: "右边安全!" },
-			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 4000] },
-			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 12, 250, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 10, 340, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 430, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 7, 520, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 6, 610, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 5, 700, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 4, 790, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 3, 880, 0, 4000] },
-			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 2, 1000, 0, 4000] }
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 2500] },
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 12, 250, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 10, 340, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 430, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 7, 520, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 6, 610, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 5, 700, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 4, 790, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 3, 880, 0, 2500] },
+			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 2, 1000, 0, 2500] }
 		];
 		if ([112].includes(skillid)) {
 			if (color == "red") {
@@ -74,7 +74,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	}
 	
 	function range_check() {
-		enrage = new Date() - enrage_time >= 30100 ? 0 : 1;
+		enrage = new Date() - enrage_time >= 32100 ? 0 : 1;
 		if (enrage == 1) {
 			handlers.event([
 				{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 300, 200, 5000] },
@@ -180,39 +180,35 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		
 		"s-2809-1001-1102-0": [
 			{ type: "func", check_func: () => num_debuff === 1, func: () => color = "red" },
-			//{ type: "text", sub_type: "message", message: "Orb 1 red", message_RU: "Шар 1 красный", message_zh: "球 1 红色", check_func: () => num_debuff === 1 }
 		],
 		"s-2809-1002-1102-0": [
 			{ type: "func", check_func: () => num_debuff === 2, func: () => color = "red" },
-			//{ type: "text", sub_type: "message", message: "Orb 2 red", message_RU: "Шар 2 красный", message_zh: "球 2 红色", check_func: () => num_debuff === 2 }
 		],
 		"s-2809-1003-1102-0": [
 			{ type: "func", check_func: () => num_debuff === 3, func: () => color = "red" },
-			//{ type: "text", sub_type: "message", message: "Orb 3 red", message_RU: "Шар 3 красный", message_zh: "球 3 红色", check_func: () => num_debuff === 3 }
 		],
 		"s-2809-1004-1102-0": [
 			{ type: "func", check_func: () => num_debuff === 4, func: () => color = "red" },
-			//{ type: "text", sub_type: "message", message: "Orb 4 red", message_RU: "Шар 4 красный", message_zh: "球 4 红色", check_func: () => num_debuff === 4 }
 		],
 		"s-2809-1005-1102-0": [
 			{ type: "func", check_func: () => num_debuff === 5, func: () => color = "red" },
-			//{ type: "text", sub_type: "message", message: "Orb 5 red", message_RU: "Шар 5 красный", message_zh: "球 5 红色", check_func: () => num_debuff === 5 }
 		],
-		// awaiting
-		"qb-2809-1000-2809112": [
-			{ type: "func", func: side, args: [112], delay: 2000 },
+		// awaiting qb-2809-1000-2809112
+		"s-2809-1000-1313-0": [
+			{ type: "func", func: side, args: [112], delay: 3000 },
 			{ type: "func", func: () => color = "blue", delay: 60000 }
 		],
-		// standby
-		"qb-2809-1000-2809111": [
-			{ type: "func", func: side, args: [111], delay: 2000 },
+		// standby qb-2809-1000-2809111
+		"s-2809-1000-1312-0": [
+			{ type: "func", func: side, args: [111], delay: 3000 },
 			{ type: "func", func: () => color = "blue", delay: 60000 }
 		],
 		
 		//Механика очистка
-		"qb-2809-1000-2809105": [
-			{ type: "text", sub_type: "message", message: "Purging! Dodge!", message_RU: "Очистка! Эвейд!", message_zh: "净化! 闪避!" },
-			{ type: "text", sub_type: "message", message: "Make a puddle with Res-byte!", message_RU: "Сделай лужу Рес-байтом!", message_zh: "用复活诱饵制造水坑!", class_position: "heal", delay: 2000 }
+		"qb-2809-1000-2809105": [{ type: "text", sub_type: "message", message: "Purging!", message_RU: "Очистка!", message_zh: "净化!" }],
+		"s-2809-1000-1304-0": [
+			{ type: "text", sub_type: "message", message: "Dodge!", message_RU: "Эвейд!", message_zh: "闪避!", delay: 1200 },
+			{ type: "text", sub_type: "message", message: "Make a puddle with Res-byte!", message_RU: "Сделай лужу Рес-байтом!", message_zh: "用复活诱饵制造水坑!", class_position: "heal", delay: 2500 }
 		],
 		
 		//Проверка дальности
