@@ -151,6 +151,9 @@ Toolbox(/8) | 命令说明
 id | 副本名称 (英文) | 副本名称 (中文)
 --- | --- | ---
 2800 | Dreadspire VALKYTEQ | 残酷幻影之塔VALKYTEQ
+2802 | Aesir's End (Hard) (Arborea Reborn) | Aesir's End (Hard) (Arborea Reborn)
+2803 | Aesir's End (Arborea Reborn) | Aesir's End (Arborea Reborn)
+2804 | Phantom hideout (Arborea Reborn) | Phantom hideout (Arborea Reborn)
 2809 | The Observatory (Arborea Reborn) | 观星神殿 (Arborea Reborn服)
 2811 | Sea of Honor (Arborea Reborn) | 金麟號 (Arborea Reborn 服)
 3023 | Akalath Quarantine | 贝尔亚克城堡秘密地区

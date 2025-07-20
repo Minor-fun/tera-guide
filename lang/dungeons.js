@@ -7,6 +7,21 @@ module.exports = {
 		"ru": "Dreadspire VALKYTEQ",
 		"zh": "残酷幻影之塔VALKYTEQ"
 	},
+	2802: {
+		"en": "Aesir's End (Hard) (Arborea Reborn) ",
+		"ru": "Aesir's End (Hard) (Arborea Reborn) ",
+		"zh": "Aesir's End (Hard) (Arborea Reborn) "
+	},
+	2803: {
+		"en": "Aesir's End (Arborea Reborn)",
+		"ru": "Aesir's End (Arborea Reborn)",
+		"zh": "Aesir's End (Arborea Reborn)"
+	},
+	2804: {
+		"en": "Phantom hideout (Arborea Reborn)",
+		"ru": "Phantom hideout (Arborea Reborn)",
+		"zh": "Phantom hideout (Arborea Reborn)"
+	},
 	2809: {
 		"en": "The Observatory (Arborea Reborn)",
 		"ru": "The Observatory (Arborea Reborn)",
