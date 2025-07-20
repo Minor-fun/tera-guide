@@ -216,9 +216,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		//Механика очистка
 		"qb-2809-1000-2809105": [{ type: "text", sub_type: "message", message: "Purging!", message_RU: "Очистка!", message_zh: "净化!" }],
 		"s-2809-1000-1304-0": [
-
 			{ type: "text", sub_type: "message", message: "Dodge!", message_RU: "Эвейд!", message_zh: "闪避!", delay: 1200 },
-			{ type: "text", sub_type: "message", message: "Make a puddle with Res-byte!", message_RU: "Сделай лужу Рес-байтом!", message_zh: "用复活诱饵制造水坑!", class_position: "heal", delay: 2500 }
+			{ type: "text", sub_type: "message", message: "Make a puddle with Res-byte!", message_RU: "Сделай лужу Рес-байтом!", message_zh: "用复活诱饵制造水坑!", class_position: "heal", delay: 3000 }
 		],
 
 		//Проверка дальности qb-2809-1000-2809108
