@@ -218,6 +218,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 9981 | Velik's Sanctuary (Hard) | 塌陷的贝里克神殿
 9982 | Grotto of Lost Souls (Hard) | 扭曲的里安地下殿堂
 9983 | Dark Reach Citadel (Hard) | 漆黑的泰内布利斯城堡
+9985 | Sanctuary's Ruins (Hard) | 塌陷的贝里克神殿
 9994 | Thaumetal Refinery (Hard) | 阿尔法赛伊洛斯研究基地
 
 ---

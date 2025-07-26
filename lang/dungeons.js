@@ -342,6 +342,11 @@ module.exports = {
 		"ru": "Крепость Темного Тенебриса",
 		"zh": "漆黑的泰内布利斯城堡"
 	},
+	9985: {
+		"en": "Sanctuary's Ruins (Hard)",
+		"ru": "Sanctuary's Ruins (Hard)",
+		"zh": "倒塌的贝里克神殿"
+	},
 	9994: {
 		"en": "Thaumetal Refinery (Hard)",
 		"ru": "Лаборатория Альфа-сайрекса",
