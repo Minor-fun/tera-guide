@@ -319,14 +319,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 						sub_type: "notification",
 						message: "Debuffs > Circles > Bombs",
 						message_RU: "ДКБ",
-						message_zh: "Debuff > 圈 > 炸弹"
+						message_zh: "Debuff > 闪电 > 炸弹"
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
 						message: "Debuffs > Bombs > Circles",
 						message_RU: "ДБК",
-						message_zh: "Debuff > 炸弹 > 圈"
+						message_zh: "Debuff > 炸弹 > 闪电"
 					});
 				}
 				break;
@@ -337,14 +337,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 						sub_type: "notification",
 						message: "Circles > Bombs > Debuffs",
 						message_RU: "КБД",
-						message_zh: "圈 > 炸弹 > Debuff"
+						message_zh: "闪电 > 炸弹 > Debuff"
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
 						message: "Circles > Debuffs > Bombs",
 						message_RU: "КДБ",
-						message_zh: "圈 > Debuff > 炸弹"
+						message_zh: "闪电 > Debuff > 炸弹"
 					});
 				}
 				break;
@@ -355,14 +355,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 						sub_type: "notification",
 						message: "Bombs > Debuffs > Circles",
 						message_RU: "БДК",
-						message_zh: "炸弹 > Debuff > 圈"
+						message_zh: "炸弹 > Debuff > 闪电"
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
 						message: "Bombs > Circles > Debuffs",
 						message_RU: "БКД",
-						message_zh: "炸弹 > 圈 > Debuff"
+						message_zh: "炸弹 > 闪电 > Debuff"
 					});
 				}
 				break;
@@ -858,8 +858,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-985-3000-1405-0": [{ type: "text", sub_type: "message", message: "Debuffs (Farthest)", message_RU: "Дебафф (дальние)", message_zh: "Debuff (最远)" }],
 		"s-985-3000-1301-0": [{ type: "text", sub_type: "message", message: "Bombs (Gather + Cleanse)", message_RU: "Бомбы (вместе + клинс)", message_zh: "炸弹 (集合+解除)" }],
 		"s-985-3000-1302-0": [{ type: "text", sub_type: "message", message: "Bombs (Gather + No cleanse)", message_RU: "Бомбы (вместе + без клинса)", message_zh: "炸弹 (集合+不解除)" }],
-		"s-985-3000-3103-0": [{ type: "text", sub_type: "message", message: "Circles (Spread)", message_RU: "Круги (отдельно)", message_zh: "圈 (分散)" }],
-		"s-985-3000-3105-0": [{ type: "text", sub_type: "message", message: "Circles (Gather)", message_RU: "Круги (вместе)", message_zh: "圈 (集合)" }],
+		"s-985-3000-3103-0": [{ type: "text", sub_type: "message", message: "Circles (Spread)", message_RU: "Круги (отдельно)", message_zh: "闪电 (分散)" }],
+		"s-985-3000-3105-0": [{ type: "text", sub_type: "message", message: "Circles (Gather)", message_RU: "Круги (вместе)", message_zh: "闪电 (集合)" }],
 		"s-985-3000-1136-0": [{ type: "text", sub_type: "message", message: "Claw (Bait)", message_RU: "Когти (байт)", message_zh: "爪击 (点名)" }],
 		"s-985-3000-1144-0": [{ type: "text", sub_type: "message", message: "OUT", message_RU: "От него", message_zh: "外" }],
 		"s-985-3000-1145-0": [{ type: "text", sub_type: "message", message: "IN", message_RU: "К нему", message_zh: "内" }],
