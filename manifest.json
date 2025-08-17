@@ -1,13 +1,14 @@
 {
     "files": {
-        "README.md": "68629d4165f674ada719265f3789f841ff048cf4a376ef96d6f20e01339abbc8",
-        "README.zh-CN.md": "952a443362fe218b91d28364d11a2d909340baceb5d5df71129449da60f6cfba",
+        "README.md": "3d653769d8176a37cc31cba65474a18ca89310400a3faf0398ca4702226c333e",
+        "README.zh-CN.md": "2d85325253b03e35ea7ebd658ceeb70f952fee68bc0685f7259baca16479cdd8",
         "guides/2800.js": "15d087ba9e4954339dfa9e83d766bff0e7e2e7344ffad3d541005f79d6615181",
         "guides/2802.js": "72b61b3c252bd1bda7b7a21f48ccce424723cd55cf2e4c815d166e9e1f81dd1f",
         "guides/2803.js": "f796709a3ae6365f388673221243b996abbe5c5b34f7b4ccacf02d5555587ea0",
         "guides/2804.js": "e09e86bff403162375e5232562594d895d72c0b925bbfe7f69fd73c705d443c5",
-        "guides/2809.js": "496ab27211ca3ea338462670520050234bc457b11ba534534bd8e281db91a4f7",
+        "guides/2809.js": "27b601f6b9cde8e1343d9d9ec90443990bfec8fbc7745075fd104ee1b567b1e5",
         "guides/2811.js": "473e4bce3b2ae9a71173b3817098f9cf110d949fce6ee769c76fcc097372b601",
+        "guides/2813.js": "5c949d7771cb753688a16f5cc2471cebb7c0dea60d103514da9c6babc3b2276a",
         "guides/3023.js": "89d8a7cde8ba94804a142210aef470baaa4161c861e32ef8b1356bc2adef4136",
         "guides/3026.js": "f731d9ebb890b5fafbf07b20eef857bbd4f7cf81561ed16fbdd316e6f671c203",
         "guides/3027.js": "ab6d18205deabe72f908f4c32723790ca956c096117330d48ebb333249e5ffb5",
@@ -75,7 +76,7 @@
         "index.js": "b12aa1aeade450f2f635816cae42d09e2f0a6cc3fba2273d0999853f63bfa094",
         "lang/dungeons.js": "345ac6d1f9e24840f147112d2706bfe8f0d01f8fced2a940b035ab8e95f12ca4",
         "lang/strings.js": "ee80581ea56015824efa9960c400c47cbb55f5707e284b9254e007a2bff4d9e9",
-        "module.json": "5662dcab4cb6b7ef1c905a720489bbff4dd9006e6c720c5283ffbcec7122844b",
+        "module.json": "7ba3acdbb74892c21c3ac6baa49fd8d9a480f9ca44ac597f3e540a3cafa2115b",
         "settings_migrator.js": "f21ed0b4c43132a8806fa12032946a9fe3a58af4e360d230b9f50ddb777c671e"
     }
 }
