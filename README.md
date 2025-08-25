@@ -22,17 +22,6 @@ Translated using Gemini 2.5 Pro
 > **Note**: You must use this specific version of `tera-guide-core`, otherwise the online TTS related functions will not work properly.   
 > **Примечание**: Вы должны использовать именно эту версию `tera-guide-core`, иначе функции, связанные с онлайн TTS, не будут работать должным образом.
 
-### :star: Online TTS Voice Demos / Демонстрация голосов онлайн TTS
-
-#### Barbara (English)
-https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
-
-#### Kamisato Ayaka (English)
-https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
-
-#### Barbara (Chinese)
-https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
-
 ---
 
 ### :information_source: How to Use / Как использовать
@@ -58,30 +47,6 @@ https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
 > **Tip**: The format for the `addvoice` command is `guide onlinetts addvoice <VoiceName> <VoiceID>`. You can customize the `<VoiceName>` for easy memorization and use.   
 > **Совет**: Формат команды `addvoice`: `guide onlinetts addvoice <VoiceName> <VoiceID>`. Вы можете настроить `<VoiceName>` для удобства запоминания и использования.
 
-#### Offline Voice Pack (No internet required) / Оффлайн голосовой пакет (интернет не требуется)
-1.  **Download and Unzip**: Download `Barbara.rar` from Releases and unzip to the root of `tera-guide-core`. The directory structure should be:
-    ```
-    tera-guide-core/
-    ├── tts-cache/
-    │   └── Barbara/
-    └── ... (other files)
-    ```
-2.  **In-game Configuration**:
-    *   Set any API key: `guide onlinetts apikey any-key`
-    *   Add `Barbara` voice with any ID: `guide onlinetts addvoice Barbara any-id`
-    *   After configuration, use `guide gui` to open the interface, select `Barbara` voice, and the module will prioritize local files.
----
-1.  **Скачайте и распакуйте**: Скачайте `Barbara.rar` со страницы релизов и распакуйте в корень `tera-guide-core`. Структура каталогов должна быть такой:
-    ```
-    tera-guide-core/
-    ├── tts-cache/
-    │   └── Barbara/
-    └── ... (другие файлы)
-    ```
-2.  **Настройка в игре**:
-    *   Установите любой API-ключ: `guide onlinetts apikey any-key`
-    *   Добавьте голос `Barbara` с любым ID: `guide onlinetts addvoice Barbara any-id`
-    *   После настройки используйте `guide gui`, чтобы открыть интерфейс, выберите голос `Barbara`, и модуль будет в приоритетном порядке использовать локальные файлы.
 
 ### Module GUI / Графический интерфейс
 
