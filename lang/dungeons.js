@@ -92,6 +92,11 @@ module.exports = {
 		"ru": "Сонный паралич Лукмии",
 		"zh": "路克米亚的幻梦"
 	},
+	3105: {
+		"en": "Fusion Laboratory",
+		"ru": "Лаборатория Слияния",
+		"zh": "核心融合所 (初阶)"
+	},
 	3106: {
 		"en": "Killing Grounds",
 		"ru": "Место казни",
@@ -136,6 +141,11 @@ module.exports = {
 		"en": "Catalepticon (Hard)",
 		"ru": "Сонный паралич Лукмии (сложно)",
 		"zh": "残酷的路克米亚幻梦(困难)"
+	},
+	3205: {
+		"en": "Cursed Fusion Laboratory",
+		"ru": "ЛЗаколдованная лаборатория слияния",
+		"zh": "核心融合所 (高阶)"
 	},
 	3206: {
 		"en": "Crimson Killing Grounds",

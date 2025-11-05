@@ -128,6 +128,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 3102 | Draakon Arena | 司令官修练场
 3103 | Forbidden Arena [Undying Warlord] | 狂气竞技场 [永恒的斗神]
 3104 | Catalepticon | 路克米亚的幻梦
+3105 | Fusion Laboratory | 核心融合所 (初阶)
 3106 | Killing Grounds | 杀戮场
 3107 | Corrupted RK-9 Kennel | 腐化的RK-9机库
 3111 | The Veil (Darkan) | 面纱（黑暗）menma服
@@ -137,6 +138,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 3202 | Draakon Arena (Hard) | 愤怒的司令官修练场(困难)
 3203 | Forbidden Arena [Nightmare Undying Warlord] | 狂气竞技场 [不灭的斗神]
 3204 | Catalepticon (Hard) | 残酷的路克米亚幻梦(困难)
+3205 | Cursed Fusion Laboratory | 核心融合所 (高阶)
 3206 | Crimson Killing Grounds | 深红杀戮场
 7011 | Shadow of the Gutrends (Guardian) | 剥皮者与黑影（守护者）
 7015 | Escape from Balder's Refuge (Guardian) | 解救巴尔德庇护所（守护者）
@@ -190,7 +192,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 *   如英文guide有问题和建议，请在 Discord 中提出: https://discord.gg/sJzRJhtwWX
 
 ### 鸣谢
-- **[Kasea](https://github.com/Kaseaa)** - Tera-Guide 模块的原始开发者
+- **[Kasea](https://github.com/Kasea)** - Tera-Guide 模块的原始开发者
 - **[michengs](https://github.com/michengs)** - 大多数指南和模块核心的基础代码作者
 - **[ZC](https://github.com/tera-mod)** - 提供了渲染攻击区域和机制的坐标
 - **[Kuroine](https://github.com/Kuroine)** - DA 指南基础代码的作者
