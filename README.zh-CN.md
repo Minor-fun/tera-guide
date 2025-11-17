@@ -15,7 +15,20 @@
 
 ---
 
-## 2. 在线TTS使用方法
+## 2. 在线TTS示范音色试听
+
+#### 芭芭拉 (英文)
+https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
+
+#### 神里绫华 (英文)
+https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
+
+#### 芭芭拉 (中文)
+https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
+
+---
+
+## 3. 在线TTS使用方法
 
 ### 在线TTS (需要联网)
 
@@ -51,9 +64,35 @@ guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f8882204
 
 > **提示**: `addvoice` 命令的格式为 `guide onlinetts addvoice <语音名称> <语音ID>`。您可以自定义 `<语音名称>`，方便您记忆和使用。
 
+### 离线语音包 (无需联网)
+
+#### 第一步：下载与解压
+*   从 Releases 页面下载音色离线语音包 `Barbara.rar`。
+*   将其解压到 `tera-guide-core` 模块的根目录。解压后，确保 `tts-cache` 文件夹位于 `tera-guide-core` 内。
+*   目录结构应如下:
+    ```
+    tera-guide-core/
+    ├── tts-cache/
+    │   └── Barbara/
+    └── ... (其他文件)
+    ```
+
+#### 第二步：游戏内配置
+*   在游戏中输入以下命令。**注意：** 声音名称必须为 `Barbara`，而API密钥和声音ID可任意填写。
+*   设置一个任意的API密钥:
+    ```
+    guide onlinetts apikey any-key
+    ```
+*   添加 `Barbara` 语音 (ID可任意填写):
+    ```
+    guide onlinetts addvoice Barbara any-id
+    ```
+
+配置完成后，使用guide gui命令打开guide界面设置选择 `Barbara`音色，模块将优先使用本地缓存的语音文件。
+
 ---
 
-## 3. 命令与配置
+## 4. 命令与配置
 
 ### 命令列表
 Toolbox(/8) | 命令说明
@@ -105,7 +144,7 @@ Toolbox(/8) | 命令说明
     ![](https://i.imgur.com/PRhCjJU.png)
 ---
 
-## 4. 支持的副本
+## 5. 支持的副本
 
 id | 副本名称 (英文) | 副本名称 (中文)
 --- | --- | ---
@@ -185,7 +224,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 
 ---
 
-## 5. 其他信息与鸣谢
+## 6. 其他信息与鸣谢
 
 ### 更多信息
 *   英文guide开发者维基: https://github.com/hsdn/tera-guide-core/wiki
