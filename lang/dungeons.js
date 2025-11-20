@@ -177,6 +177,11 @@ module.exports = {
 		"ru": "Святилище Бахаара",
 		"zh": "巴哈勒神殿"
 	},
+	9048: {
+		"en": "Sanctum of the Fire God (Agaia Online)",
+		"ru": "Sanctum of the Fire God (Agaia Online)",
+		"zh": "火神的圣所 (Agaia Online)"
+	},
 	9050: {
 		"en": "Rift's Edge (Hard) (10-Person)",
 		"ru": "Край Разлома (сложно)",
