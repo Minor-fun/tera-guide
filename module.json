@@ -9,10 +9,10 @@
     },
     "author": "hyacinth/HSDN",
     "description": "The dungeon guide module with TTS notifications. Display hints on screen and drawing zones of bosses attacks and mechanics.",
-    "servers": ["https://github.331663.xyz/https://raw.githubusercontent.com/Minor-fun/tera-guide/master/"],
+    "servers": ["https://raw.githubusercontent.com/Minor-fun/tera-guide/master/"],
     "supportUrl": "https://github.com/Minor-fun/tera-guide/issues",
     "dependencies": {
-        "tera-guide-core": "https://github.331663.xyz/https://raw.githubusercontent.com/Minor-fun/tera-guide-core/master/module.json"
+        "tera-guide-core": "https://raw.githubusercontent.com/Minor-fun/tera-guide-core/master/module.json"
     },
     "disableAutoUpdate": false,
     "version": "11/20/2025"
