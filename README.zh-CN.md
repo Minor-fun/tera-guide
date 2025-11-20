@@ -184,6 +184,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 9027 | Manaya's Core (Hard) | 珊德拉马奈伊亚(高阶)
 9034 | Dreadspire | 残酷幻影之塔
 9044 | Bahaar's Sanctum | 巴哈勒神殿
+9048 | Sanctum of the Fire God (Agaia Online) | 火神的圣所 (Agaia Online)
 9050 | Rift's Edge (Hard) (10-Person) | 贪婪的卡舒帕露峡谷
 9053 | Kezzel's Gorge | 巨人丛林(五人）
 9054 | Bathysmal Rise (Hard) | 邪恶的奥露卡神殿
