@@ -71,41 +71,41 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			} }
 		],
 
-		"s-470-1000-1105-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-		"s-470-1000-1106-0": [{ type: "text", sub_type: "message", message: "Smash", message_RU: "Удар", message_zh: "重砸" }],
-		"s-470-1000-1120-0": [{ type: "text", sub_type: "message", message: "Pull", message_RU: "Притяжка", message_zh: "拉人" }],
-		"s-470-1000-1114-0": [{ type: "text", sub_type: "message", message: "Spray", message_RU: "Спрей", message_zh: "喷射" }],
+		"s-470-1000-1105-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+		"s-470-1000-1106-0": [{ type: "text", sub_type: "message", message: t("Smash") }],
+		"s-470-1000-1120-0": [{ type: "text", sub_type: "message", message: t("Pull") }],
+		"s-470-1000-1114-0": [{ type: "text", sub_type: "message", message: t("Spray") }],
 		"s-470-1000-1201-0": [
-			{ type: "text", sub_type: "message", message: "Stun", message_RU: "Стан", message_zh: "晕" },
+			{ type: "text", sub_type: "message", message: t("Stun") },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 12, 250, 0, 2500] }
 		],
-		"s-470-1000-1307-0": [{ type: "text", sub_type: "message", message: "With a Bomb - Go away. No Bomb - Enter the circle", message_RU: "С бомбой - отойти. Без бомбы - войти в круг", message_zh: "有炸弹远离没炸弹进圈" }],
-		"s-470-1000-2105-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-		"s-470-1000-2106-0": [{ type: "text", sub_type: "message", message: "Smash", message_RU: "Удар", message_zh: "重砸" }],
+		"s-470-1000-1307-0": [{ type: "text", sub_type: "message", message: t("With a Bomb - Go away. No Bomb - Enter the circle") }],
+		"s-470-1000-2105-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+		"s-470-1000-2106-0": [{ type: "text", sub_type: "message", message: t("Smash") }],
 		"s-470-1000-2107-0": [
-			{ type: "text", sub_type: "message", message: "Stun", message_RU: "Стан", message_zh: "晕" },
+			{ type: "text", sub_type: "message", message: t("Stun") },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 100, 12, 250, 0, 2500] }
 		],
-		"s-470-1000-2114-0": [{ type: "text", sub_type: "message", message: "Line", message_RU: "Полоса", message_zh: "直线" }],
-		"s-470-1000-3106-0": [{ type: "text", sub_type: "message", message: "100" }],
+		"s-470-1000-2114-0": [{ type: "text", sub_type: "message", message: t("Line") }],
+		"s-470-1000-3106-0": [{ type: "text", sub_type: "message", message: t("100") }],
 
 		"s-470-1000-3213-0": [ // "My shield will save me!" (shield)
-			{ type: "text", sub_type: "message", message: "Break shield", message_RU: "Сломать щит", message_zh: "破盾", check_func: () => is_telling_truth() },
-			{ type: "text", sub_type: "message", message: "Puddles (run away)", message_RU: "Лужи (убегать)", message_zh: "毒圈快跑", check_func: () => !is_telling_truth() }
+			{ type: "text", sub_type: "message", message: t("Break shield"), check_func: () => is_telling_truth() },
+			{ type: "text", sub_type: "message", message: t("Puddles (run away)"), check_func: () => !is_telling_truth() }
 		],
 		"s-470-1000-3212-0": [ // "I will kill you all!" (aoe around boss)
-			{ type: "text", sub_type: "message", message: "Out", message_RU: "Наружу", message_zh: "远离", check_func: () => is_telling_truth() },
-			{ type: "text", sub_type: "message", message: "In", message_RU: "Внутрь", message_zh: "靠近", check_func: () => !is_telling_truth() }
+			{ type: "text", sub_type: "message", message: t("Out"), check_func: () => is_telling_truth() },
+			{ type: "text", sub_type: "message", message: t("In"), check_func: () => !is_telling_truth() }
 		],
 		"s-470-1000-3218-0": [ // "One of you must die!" (aoe around player)
-			{ type: "text", sub_type: "message", message: "Out", message_RU: "Наружу", message_zh: "远离", check_func: () => is_telling_truth() },
-			{ type: "text", sub_type: "message", message: "In", message_RU: "Внутрь", message_zh: "靠近", check_func: () => !is_telling_truth() }
+			{ type: "text", sub_type: "message", message: t("Out"), check_func: () => is_telling_truth() },
+			{ type: "text", sub_type: "message", message: t("In"), check_func: () => !is_telling_truth() }
 		],
 
 		"qb-470-1000-470019": [
-			{ type: "text", sub_type: "alert", message: "Truth", message_RU: "Правда", message_zh: "真实", check_func: () => is_telling_truth() },
-			{ type: "text", sub_type: "alert", message: "Lie", message_RU: "Ложь", message_zh: "谎言", check_func: () => !is_telling_truth() }
+			{ type: "text", sub_type: "alert", message: t("Truth"), check_func: () => is_telling_truth() },
+			{ type: "text", sub_type: "alert", message: t("Lie"), check_func: () => !is_telling_truth() }
 		],
-		"qb-470-1000-470011": [{ type: "text", sub_type: "message", message: "Stand on stars", message_RU: "Встать на звезду", message_zh: "站星星上" }]
+		"qb-470-1000-470011": [{ type: "text", sub_type: "message", message: t("Stand on stars") }]
 	};
 };

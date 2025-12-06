@@ -9,49 +9,49 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	let msg_num = null;
 
 	const mech_messages = {
-		0: { message: "Don't hit RED",	message_RU: "Не бить КРАСНЫЙ", message_zh: "别打红色" },
-		1: { message: "Don't hit WHITE",message_RU: "Не бить БЕЛЫЙ", message_zh: "别打白色" },
-		2: { message: "Don't hit BLUE",	message_RU: "Не бить СИНИЙ", message_zh: "别打蓝色" },
-		3: { message: "Hit RED",		message_RU: "Бить КРАСНЫЙ", message_zh: "打红色" },
-		4: { message: "Hit WHITE",		message_RU: "Бить БЕЛЫЙ", message_zh: "打白色" },
-		5: { message: "Hit BLUE",		message_RU: "Бить СИНИЙ", message_zh: "打蓝色" },
+		0: { message: t("Don't hit RED") },
+		1: { message: t("Don't hit WHITE") },
+		2: { message: t("Don't hit BLUE") },
+		3: { message: t("Hit RED") },
+		4: { message: t("Hit WHITE") },
+		5: { message: t("Hit BLUE") },
 	};
 
 	function skilld_event(skillid) {
 		if ([1311, 1313, 1315, 1317].includes(skillid)) {
-			handlers.text({ sub_type: "message", message: "OUT", message_RU: "От него", message_zh: "远离" });
+			handlers.text({ sub_type: "message", message: t("OUT") });
 		}
 
 		if ([1312, 1313, 1316, 1318].includes(skillid)) {
-			handlers.text({ sub_type: "message", message: "IN", message_RU: "К нему", message_zh: "靠近" });
+			handlers.text({ sub_type: "message", message: t("IN") });
 		}
 
 		if ([21311, 21314].includes(skillid)) {
 			handlers.event([
-				{ type: "text", sub_type: "message", message: "IN | OUT (Kaia)", message_RU: "К нему | От него (Кайа)", message_zh: "靠近再远离开套盾" },
+				{ type: "text", sub_type: "message", message: t("IN | OUT (Kaia)") },
 				{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 300, 0, 4000] }
 			]);
 		}
 
 		if ([21312, 21313].includes(skillid)) {
 			handlers.event([
-				{ type: "text", sub_type: "message", message: "OUT | IN (Kaia)", message_RU: "От него | К нему (Кайа)", message_zh: "远离再靠近开套盾" },
+				{ type: "text", sub_type: "message", message: t("OUT | IN (Kaia)") },
 				{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 300, 0, 4000] }
 			]);
 		}
 
 		if ([21303].includes(skillid)) {
 			if (print) {
-				handlers.text({ sub_type: "message", message: "Hit ALL", message_RU: "Бить ВСЕ", message_zh: "全都打" });
+				handlers.text({ sub_type: "message", message: t("Hit ALL") });
 			} else {
-				handlers.text({ sub_type: "message", message: mech_messages[msg_num].message, message_RU: mech_messages[msg_num].message_RU, message_zh: mech_messages[msg_num].message_zh });
+				handlers.text({ sub_type: "message", message: mech_messages[msg_num].message});
 			}
 		}
 	}
 
 	function secondboss_message(num) {
 		msg_num = num;
-		handlers.text({ sub_type: "notification", message: mech_messages[num].message, message_RU: mech_messages[num].message_RU, message_zh: mech_messages[num].message_zh });
+		handlers.text({ sub_type: "notification", message: mech_messages[num].message});
 	}
 
 	return {
@@ -66,10 +66,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"qb-466-46622-466055": [{ type: "func", func: secondboss_message, args: [4] }],
 		"qb-466-46622-466056": [{ type: "func", func: secondboss_message, args: [5] }],
 		//
-		"s-466-46601-1105-0": [{ type: "text", sub_type: "message", message: "Stun", message_RU: "Стан", message_zh: "晕" }],
-		"s-466-46601-1106-0": [{ type: "text", sub_type: "message", message: "Exhaust", message_RU: "Выхлоп", message_zh: "排气" }],
-		"s-466-46601-1109-0": [{ type: "text", class_position: "tank", sub_type: "message", message: "Stun (tank)", message_RU: "Стан (танк)", message_zh: "眩晕坦克" }],
-		"s-466-46601-1110-0": [{ type: "text", sub_type: "message", message: "Tail", message_RU: "Хвост", message_zh: "甩尾" }],
+		"s-466-46601-1105-0": [{ type: "text", sub_type: "message", message: t("Stun") }],
+		"s-466-46601-1106-0": [{ type: "text", sub_type: "message", message: t("Exhaust") }],
+		"s-466-46601-1109-0": [{ type: "text", class_position: "tank", sub_type: "message", message: t("Stun (tank)") }],
+		"s-466-46601-1110-0": [{ type: "text", sub_type: "message", message: t("Tail") }],
 		"s-466-46601-2105-0": "s-466-46601-1105-0",
 		"s-466-46601-2106-0": "s-466-46601-1106-0",
 		"s-466-46601-2109-0": "s-466-46601-1109-0",
@@ -84,11 +84,11 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-466-46601-1318-0": [{ type: "func", func: skilld_event.bind(null, 1318) }],
 		// Second boss
 		"s-466-46602-1116-0": [
-			{ type: "text", sub_type: "message", message: "Dodge. Pull", message_RU: "Эвейд. Притяжка", message_zh: "闪避接拉人" },
+			{ type: "text", sub_type: "message", message: t("Dodge. Pull") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 220, 0, 6000] }
 		],
-		"s-466-46602-1223-0": [{ type: "text", sub_type: "message", message: "Double RED", message_RU: "Двойной КРАСНЫЙ", message_zh: "双重红色" }],
-		"s-466-46602-1113-0": [{ type: "text", sub_type: "message", message: "LASER!!!", message_RU: "ЛАЗЕР!!!", message_zh: "激光！" }],
+		"s-466-46602-1223-0": [{ type: "text", sub_type: "message", message: t("Double RED") }],
+		"s-466-46602-1113-0": [{ type: "text", sub_type: "message", message: t("LASER!!!") }],
 		"s-466-46602-1311-0": [{ type: "func", func: skilld_event.bind(null, 21311) }],
 		"s-466-46602-1314-0": [{ type: "func", func: skilld_event.bind(null, 21314) }],
 		"s-466-46602-1312-0": [{ type: "func", func: skilld_event.bind(null, 21312) }],

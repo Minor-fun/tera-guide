@@ -1,0 +1,32 @@
+name: Update Manifest
+
+on:
+  push:
+    branches: [ "master", "main" ]
+    paths-ignore:
+      - 'manifest.json'
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Run Manifest Generator
+      run: node manifest-generator.js
+
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: update manifest.json [skip ci]"
+        file_pattern: manifest.json

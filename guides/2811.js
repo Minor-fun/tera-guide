@@ -40,7 +40,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// к нему (бублик вокруг босса) -> от него (круг перед боссом) -> к нему (бублик перед боссом)
 			if (purple && !boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "In > Out > In", message_RU: "К нему > От него > К нему", message_zh: "靠近 > 远离 > 靠近" },
+					{ type: "text", sub_type: "message", message: t("In > Out > In") },
 					// бублик перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 150, 8, 280, 5000, 3000] }, // 3
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 150, 4, 570, 5000, 3000] } // 3
@@ -53,8 +53,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// к нему (бублик вокруг босса) -> от него (круг перед боссом) -> [волны] -> к нему (бублик перед боссом)
 			} else if (purple && boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "In > Out", message_RU: "К нему > От него > (К нему)", message_zh: "靠近再远离" },
-					{ type: "text", sub_type: "message", delay: 5000, message: "In", message_RU: "К нему", message_zh: "靠近" },
+					{ type: "text", sub_type: "message", message: t("In > Out") },
+					{ type: "text", sub_type: "message", delay: 5000, message: t("In") },
 					// бублик перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 150, 8, 280, 5000, 5000] }, // 3
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 150, 4, 570, 5000, 5000] } // 3
@@ -70,7 +70,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// от него (круг перед боссом) -> к нему (бублик вокруг босса) -> от него (большой круг перед боссом)
 			if (green && !boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "Out > In > Out", message_RU: "От него > К нему > От него", message_zh: "远离 > 靠近 > 远离" },
+					{ type: "text", sub_type: "message", message: t("Out > In > Out") },
 					// большой круг перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 200, 8, 450, 5000, 3000] } // 3
 				]);
@@ -81,7 +81,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// к нему (бублик вокруг босса) -> от него (круг перед боссом) -> от него (большой круг перед боссом)
 			} else if (purple && !boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "In > Out > Out", message_RU: "К нему > От него > От него", message_zh: "靠近 > 远离 > 远离" },
+					{ type: "text", sub_type: "message", message: t("In > Out > Out") },
 					// большой круг перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 200, 8, 450, 5000, 3000] } // 3
 				]);
@@ -93,8 +93,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// от него (круг перед боссом) -> к нему (бублик вокруг босса) -> [волны] -> от него (большой круг перед боссом)
 			} else if (green && boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "Out > In", message_RU: "От него > К нему > (От него)", message_zh: "远离再靠近" },
-					{ type: "text", sub_type: "message", delay: 5000, message: "Out", message_RU: "От него", message_zh: "远离" },
+					{ type: "text", sub_type: "message", message: t("Out > In") },
+					{ type: "text", sub_type: "message", delay: 5000, message: t("Out") },
 					// большой круг перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 200, 8, 450, 5000, 5000] } // 3
 				]);
@@ -106,8 +106,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			// к нему (бублик вокруг босса) -> от него (круг перед боссом) -> [волны] -> от него (большой круг перед боссом)
 			} else if (purple && boss_thirty) {
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "In > Out", message_RU: "К нему > От него > (От него)", message_zh: "靠近再远离" },
-					{ type: "text", sub_type: "message", delay: 5000, message: "Out", message_RU: "От него", message_zh: "远离" },
+					{ type: "text", sub_type: "message", message: t("In > Out") },
+					{ type: "text", sub_type: "message", delay: 5000, message: t("Out") },
 					// большой круг перед боссом
 					{ type: "spawn", func: "circle", args: [true, 912, 0, 200, 8, 450, 5000, 5000] } // 3
 				]);
@@ -119,10 +119,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		// Прыжок
 		if (skillid == 127) {
 			if (boss_thirty)
-				handlers.text({ sub_type: "message", message: "Jump | Get Out", message_RU: "Прыжок | От него", message_zh: "跳跃 | 远离" });
+				handlers.text({ sub_type: "message", message: t("Jump | Get Out") });
 			else
 				handlers.event([
-					{ type: "text", sub_type: "message", message: "Jump | Get In", message_RU: "Прыжок | К нему", message_zh: "跳跃 | 靠近" },
+					{ type: "text", sub_type: "message", message: t("Jump | Get In") },
 					{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 15, 200, 250, 1000] },
 					{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 10, 300, 1000, 4000] }
 				]);
@@ -139,8 +139,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 	let debuff_tracker_started = false;
 	const debuffs_targe = {
-		28119101: { message: "Lightning", message_RU: "Молния (эвейд)", message_zh: "闪电" },
-		28119102: { message: "Witch", message_RU: "Ведьма (эвейд)", message_zh: "女巫" }
+		28119101: { message: t("Lightning") },
+		28119102: { message: t("Witch") }
 	};
 
 	let debuff_call_event = null;
@@ -159,9 +159,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 						debuff_call_event = dispatch.setTimeout(() => {
 							handlers.text({
 								sub_type: "alert",
-								message: debuffs_targe[event.id].message,
-								message_RU: debuffs_targe[event.id].message_RU,
-								message_zh: debuffs_targe[event.id].message_zh
+								message: debuffs_targe[event.id].message
 							});
 
 							debuff_call_event = null;
@@ -185,12 +183,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		// 1 BOSS
 		//"s-2811-1900-104-0": [
-//	{ type: "text", sub_type: "message", message: "Suction (Dodge)", message_RU: "Высасывание (Выйти)", message_zh: "吸收(躲避)" },
+//	{ type: "text", sub_type: "message", message: t("Suction (Dodge)") },
 //	{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 15, 450, 200, 6000] }
 //],
 
 // 2 BOSS
-//"s-2811-1200-103-0": [{ type: "text", sub_type: "message", message: "Suction (Dodge)", message_RU: "Высасывание", message_zh: "吸收(躲避)" }],
+//"s-2811-1200-103-0": [{ type: "text", sub_type: "message", message: t("Suction (Dodge)") }],
 
 		// 3 BOSS
 		"nd-2811-2200": [
@@ -199,7 +197,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 		"h-2811-2200-99": [{ type: "func", func: boss_start_event }],
 		"h-2811-2200-30": [
-			{ type: "text", sub_type: "message", message: "30%", message_RU: "30%", message_zh: "百分之三十" },
+			{ type: "text", sub_type: "message", message: t("30%") },
 			{ type: "func", func: boss_thirty_event }
 		],
 		"h-2811-2200-29": [{ type: "func", func: boss_thirty_event }],
@@ -238,42 +236,42 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-2811-2200-123-0": [{ type: "func", func: boss_mech_event, args: [123] }], // "Ощути силу взрыва"
 
 		"s-2811-2200-108-0": [
-			{ type: "text", sub_type: "message", message: "Front Stun", message_RU: "Стан", message_zh: "前方眩晕" },
+			{ type: "text", sub_type: "message", message: t("Front Stun") },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 170, 20, 120, 200, 2000] }
 		],
-		//"s-2811-9101-122-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃", "message_TW": "强袭" }],
-//"s-2811-9101-124-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃", "message_TW": "前砸" }],
-//"s-2811-9101-125-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃", "message_TW": "转圈" }],
-//"s-2811-9101-126-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃", "message_TW": "大前砸" }],
-		//"s-2811-2201-121-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "2201-121" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
-//"s-2811-2201-125-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "2201-125" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
-//"s-2811-2201-126-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "2201-126" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+		//"s-2811-9101-122-0": [{ type: "text", sub_type: "message", message: t("Jump"), "message_TW": "强袭" }],
+//"s-2811-9101-124-0": [{ type: "text", sub_type: "message", message: t("Jump"), "message_TW": "前砸" }],
+//"s-2811-9101-125-0": [{ type: "text", sub_type: "message", message: t("Jump"), "message_TW": "转圈" }],
+//"s-2811-9101-126-0": [{ type: "text", sub_type: "message", message: t("Jump"), "message_TW": "大前砸" }],
+		//"s-2811-2201-121-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "2201-121" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+//"s-2811-2201-125-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "2201-125" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+//"s-2811-2201-126-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "2201-126" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
 		//"s-2811-2201-201-0": [{ type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
-		//"s-2811-6103-203-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "6103-203" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
-//"s-2811-6103-202-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "6103-202" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
-//"s-2811-6103-201-0": [{ type: "text", sub_type: "message", message: 'Left swipe', message_RU: "Левый мах", message_zh: "左侧挥击", "message_TW": "6103-201" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+		//"s-2811-6103-203-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "6103-203" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+//"s-2811-6103-202-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "6103-202" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
+//"s-2811-6103-201-0": [{ type: "text", sub_type: "message", message: t('Left swipe'), "message_TW": "6103-201" }, { type: "spawn", func: "marker", args: [false, 0, 0, 100, 2000, true, null] }],
 		"s-2811-2200-127-0": [{ type: "func", func: boss_mech_event, args: [127] }],
-		"s-2811-2200-128-0": [{ type: "text", sub_type: "message", message: "Uppercut (Knockup)", message_RU: "Черкаш (подлёт)", message_zh: "上勾拳(击飞)" }],
+		"s-2811-2200-128-0": [{ type: "text", sub_type: "message", message: t("Uppercut (Knockup)") }],
 		"s-2811-2200-129-0": [
-			{ type: "text", sub_type: "message", message: "Hammer Toss ~ Skull", message_RU: "Полоса в цель", message_zh: "锤子投掷 ~ 骷髅" },
+			{ type: "text", sub_type: "message", message: t("Hammer Toss ~ Skull") },
 			{ type: "spawn", func: "vector", args: [553, 90, 100, 0, 500, 200, 2000] },
 			{ type: "spawn", func: "vector", args: [553, 270, 100, 0, 500, 200, 2000] }
 		],
-		//"s-2811-2200-131-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-//"s-2811-2200-204-0": [{ type: "text", sub_type: "message", message: "30% (transformation)", message_RU: "30% (видоизменение)", message_zh: "30% (变形)" }],
+		//"s-2811-2200-131-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+//"s-2811-2200-204-0": [{ type: "text", sub_type: "message", message: t("30% (transformation)") }],
 		"s-2811-2200-133-1": [
-			{ type: "text", sub_type: "message", message: "Donuts", message_RU: "Бублики", message_zh: "环形攻击" },
+			{ type: "text", sub_type: "message", message: t("Donuts") },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 300, 200, 5000] },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 6, 600, 200, 5000] },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 4, 900, 200, 5000] }
 		],
-		"s-2811-2200-135-0": [{ type: "text", sub_type: "message", message: "Puddles Inc (Jump)", message_RU: "Волны х5", message_zh: "水坑即将出现(跳跃)" }],
+		"s-2811-2200-135-0": [{ type: "text", sub_type: "message", message: t("Puddles Inc (Jump)") }],
 
-		"s-2811-2200-137-0": [{ type: "text", sub_type: "message", message: "Outward Pluse", message_RU: "Волна от него", message_zh: "外向脉冲" }],
-		"s-2811-2200-139-0": [{ type: "text", sub_type: "message", message: "Inward Succ", message_RU: "Волна к нему", message_zh: "内向吸引" }],
+		"s-2811-2200-137-0": [{ type: "text", sub_type: "message", message: t("Outward Pluse") }],
+		"s-2811-2200-139-0": [{ type: "text", sub_type: "message", message: t("Inward Succ") }],
 
-		"s-2811-2200-202-0": [{ type: "text", sub_type: "message", message: "Defence 3 seconds", message_RU: "Защита 3 сек.", message_zh: "3秒防御" }],
-		"s-2811-2200-203-0": [{ type: "text", sub_type: "message", message: "Defence 10 seconds", message_RU: "Защита 10 сек.", message_zh: "10秒防御" }]
-		//"s-2811-2200-204-0": [{ type: "text", sub_type: "message", message: "30% (transformation)", message_RU: "30% (видоизменение)", message_zh: "30% (变形)" }]
+		"s-2811-2200-202-0": [{ type: "text", sub_type: "message", message: t("Defence 3 seconds") }],
+		"s-2811-2200-203-0": [{ type: "text", sub_type: "message", message: t("Defence 10 seconds") }]
+		//"s-2811-2200-204-0": [{ type: "text", sub_type: "message", message: t("30% (transformation)") }]
 	};
 };

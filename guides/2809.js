@@ -40,7 +40,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 	function side(skillid) {
 		const left_safe = [
-			{ type: "text", sub_type: "message", message: "Left safe!", message_RU: "Сейв слева!", message_zh: "左边安全!" },
+			{ type: "text", sub_type: "message", message: t("Left safe!") },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 2500] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 2500] },
 			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 20, 160, 0, 2500] },
@@ -55,7 +55,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 2, 1000, 0, 2500] }
 		];
 		const right_safe = [
-			{ type: "text", sub_type: "message", message: "Right safe!", message_RU: "Сейв справа!", message_zh: "右边安全!" },
+			{ type: "text", sub_type: "message", message: t("Right safe!") },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 1000, 0, 2500] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 1000, 0, 2500] },
 			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 2500] },
@@ -90,23 +90,23 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		if (enrage == 1) {
 			handlers.event([
 				{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 300, 200, 5000] },
-				{ type: "text", sub_type: "message", message: "In!", message_RU: "К нему!", message_zh: "靠近!" }
+				{ type: "text", sub_type: "message", message: t("In!") }
 			]);
 		} else {
 			handlers.event([
 				{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 350, 200, 5000] },
-				{ type: "text", sub_type: "message", message: "Out!", message_RU: "От него!", message_zh: "远离!" }
+				{ type: "text", sub_type: "message", message: t("Out!") }
 			]);
 		}
 	}
 
 	return {
 		"ns-2809-1000": [
-			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 23790, y: 160322, z: 12617, w: 2.07 }, ownerName: "11111", message: "11111" },
-			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 24082, y: 161256, z: 12617, w: -3.05 }, ownerName: "22222", message: "22222" },
-			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 23449, y: 162197, z: 12617, w: -1.81 }, ownerName: "33333", message: "33333" },
-			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 22142, y: 161855, z: 12617, w: -0.58 }, ownerName: "44444", message: "44444" },
-			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 22463, y: 160329, z: 12617, w: 0.84 }, ownerName: "55555", message: "55555" },
+			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 23790, y: 160322, z: 12617, w: 2.07 }, ownerName: "11111", message: t("11111") },
+			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 24082, y: 161256, z: 12617, w: -3.05 }, ownerName: "22222", message: t("22222") },
+			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 23449, y: 162197, z: 12617, w: -1.81 }, ownerName: "33333", message: t("33333") },
+			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 22142, y: 161855, z: 12617, w: -0.58 }, ownerName: "44444", message: t("44444") },
+			{ type: "spawn", sub_type: "build_object", id: 1, sub_delay: 99999999, pos: { x: 22463, y: 160329, z: 12617, w: 0.84 }, ownerName: "55555", message: t("55555") },
 			{ type: "func", func: ent => road_from_gameId = ent.gameId },
 			{ type: "func", func: () => crys_off = 0 },
 			{ type: "spawn", sub_type: "item", id: 70052, sub_delay: 99999999, pos: { x: 23196, y: 161015, z: 12618, w: 1.56 } }
@@ -128,31 +128,31 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		"am-2809-1000-428091001": [
 			{ type: "func", func: () => num_debuff = 1 },
-			{ type: "text", sub_type: "message", message: "Debuff 1", message_RU: "Дебаф 1", message_zh: "debuff一" },
+			{ type: "text", sub_type: "message", message: t("Debuff 1") },
 			{ type: "func", func: () => spawn_road(orb1_loc) },
 			{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 99999999, pos: { x: 23790, y: 160322, z: 12617, w: 2.07 }, tag: "light" }
 		],
 		"am-2809-1000-428091002": [
 			{ type: "func", func: () => num_debuff = 2 },
-			{ type: "text", sub_type: "message", message: "Debuff 2", message_RU: "Дебаф 2", message_zh: "debuff二" },
+			{ type: "text", sub_type: "message", message: t("Debuff 2") },
 			{ type: "func", func: () => spawn_road(orb2_loc) },
 			{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 99999999, pos: { x: 24082, y: 161256, z: 12617, w: 1.69 }, tag: "light" }
 		],
 		"am-2809-1000-428091003": [
 			{ type: "func", func: () => num_debuff = 3 },
-			{ type: "text", sub_type: "message", message: "Debuff 3", message_RU: "Дебаф 3", message_zh: "debuff三" },
+			{ type: "text", sub_type: "message", message: t("Debuff 3") },
 			{ type: "func", func: () => spawn_road(orb3_loc) },
 			{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 99999999, pos: { x: 23449, y: 162197, z: 12617, w: 2.83 }, tag: "light" }
 		],
 		"am-2809-1000-428091004": [
 			{ type: "func", func: () => num_debuff = 4 },
-			{ type: "text", sub_type: "message", message: "Debuff 4", message_RU: "Дебаф 4", message_zh: "debuff四" },
+			{ type: "text", sub_type: "message", message: t("Debuff 4") },
 			{ type: "func", func: () => spawn_road(orb4_loc) },
 			{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 99999999, pos: { x: 22142, y: 161855, z: 12617, w: -0.76 }, tag: "light" }
 		],
 		"am-2809-1000-428091005": [
 			{ type: "func", func: () => num_debuff = 5 },
-			{ type: "text", sub_type: "message", message: "Debuff 5", message_RU: "Дебаф 5", message_zh: "debuff五" },
+			{ type: "text", sub_type: "message", message: t("Debuff 5") },
 			{ type: "func", func: () => spawn_road(orb5_loc) },
 			{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 99999999, pos: { x: 22463, y: 160329, z: 12617, w: 1.44 }, tag: "light" }
 		],
@@ -170,25 +170,25 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		//Бежать к шарам
 		"qb-2809-1000-2809103": [
-			{ type: "text", sub_type: "message", message: "Run to orb 1", message_RU: "Беги к шару 1 ", message_zh: "跑向球 1", check_func: () => num_debuff === 1 },
-			{ type: "text", sub_type: "message", message: "Run to orb 2", message_RU: "Беги к шару 2 ", message_zh: "跑向球 2", check_func: () => num_debuff === 2 },
-			{ type: "text", sub_type: "message", message: "Run to orb 3", message_RU: "Беги к шару 3 ", message_zh: "跑向球 3", check_func: () => num_debuff === 3 },
-			{ type: "text", sub_type: "message", message: "Run to orb 4", message_RU: "Беги к шару 4 ", message_zh: "跑向球 4", check_func: () => num_debuff === 4 },
-			{ type: "text", sub_type: "message", message: "Run to orb 5", message_RU: "Беги к шару 5 ", message_zh: "跑向球 5", check_func: () => num_debuff === 5 },
-			{ type: "text", sub_type: "alert", delay: 47000, message: "Orbs or Puddles soon...", message_RU: "Скоро шары или лужи..." }
+			{ type: "text", sub_type: "message", message: t("Run to orb 1"), check_func: () => num_debuff === 1 },
+			{ type: "text", sub_type: "message", message: t("Run to orb 2"), check_func: () => num_debuff === 2 },
+			{ type: "text", sub_type: "message", message: t("Run to orb 3"), check_func: () => num_debuff === 3 },
+			{ type: "text", sub_type: "message", message: t("Run to orb 4"), check_func: () => num_debuff === 4 },
+			{ type: "text", sub_type: "message", message: t("Run to orb 5"), check_func: () => num_debuff === 5 },
+			{ type: "text", sub_type: "alert", delay: 47000, message: t("Orbs or Puddles soon...") }
 		],
 
 		//Рес-байт
-		"qb-2809-1000-2809106": [{ type: "text", sub_type: "message", message: "Res-Bait!", message_RU: "Рес-байт!", message_zh: "复活诱饵!" }],
+		"qb-2809-1000-2809106": [{ type: "text", sub_type: "message", message: t("Res-Bait!") }],
 
 		//Механика с лужами
 		"qb-2809-1000-2809104": [
-			{ type: "text", sub_type: "message", message: "Remove puddles from the boss!", message_RU: "Лужи! Отнести от босса!", message_zh: "将水坑带离BOSS!" },
-			{ type: "text", sub_type: "alert", delay: 47000, message: "Orbs or Puddles soon...", message_RU: "Скоро шары или лужи..." }
+			{ type: "text", sub_type: "message", message: t("Remove puddles from the boss!") },
+			{ type: "text", sub_type: "alert", delay: 47000, message: t("Orbs or Puddles soon...") }
 		],
 		"s-2809-1000-1307-0": [
-			{ type: "text", sub_type: "message", message: "Stand in the puddles!", message_RU: "Встать в лужи!", message_zh: "站在水坑里!" },
-			{ type: "text", sub_type: "alert", delay: 87000, message: "Puddles soon...", message_RU: "Скоро лужи..." }
+			{ type: "text", sub_type: "message", message: t("Stand in the puddles!") },
+			{ type: "text", sub_type: "alert", delay: 87000, message: t("Puddles soon...") }
 		],
 
 		//Механика красный/синий
@@ -210,10 +210,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 
 		//Механика очистка
-		"qb-2809-1000-2809105": [{ type: "text", sub_type: "message", message: "Purging!", message_RU: "Очистка!", message_zh: "净化!" }],
+		"qb-2809-1000-2809105": [{ type: "text", sub_type: "message", message: t("Purging!") }],
 		"s-2809-1000-1304-0": [
-			{ type: "text", sub_type: "message", message: "Dodge!", message_RU: "Эвейд!", message_zh: "闪避!", delay: 1200 },
-			{ type: "text", sub_type: "message", message: "Make a puddle with Res-byte!", message_RU: "Сделай лужу Рес-байтом!", message_zh: "用复活诱饵制造水坑!", class_position: "heal", delay: 3000 }
+			{ type: "text", sub_type: "message", message: t("Dodge!"), delay: 1200 },
+			{ type: "text", sub_type: "message", message: t("Make a puddle with Res-byte!"), class_position: "heal", delay: 3000 }
 		],
 
 		//Проверка дальности qb-2809-1000-2809108
@@ -227,7 +227,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		//Механика бублики
 		"qb-2809-1000-2809110": [
-			{ type: "text", sub_type: "message", message: "Donuts!", message_RU: "Бублики!", message_zh: "甜甜圈!" },
+			{ type: "text", sub_type: "message", message: t("Donuts!") },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 300, 200, 8000] },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 6, 600, 200, 8000] },
 			{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 4, 875, 200, 8000] },
@@ -236,18 +236,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		//Механика кристаллы
 		"qb-2809-1000-2809114": [
-			{ type: "text", sub_type: "message", message: "Destroy crystals!", message_RU: "Разбить кристаллы!", message_zh: "摧毁水晶!" },
-			{ type: "text", sub_type: "message", delay: 79000, message: "Crystals soon...", message_RU: "Скоро кристаллы...", message_zh: "水晶即将出现...", check_func: () => crys_off == 0 }
+			{ type: "text", sub_type: "message", message: t("Destroy crystals!") },
+			{ type: "text", sub_type: "message", delay: 79000, message: t("Crystals soon..."), check_func: () => crys_off == 0 }
 		],
 		"ns-2809-1011": [
 			{ type: "func", func: ent => crys_loc = ent.pos },
 			{ type: "func", func: () => spawn_road_crys(crys_loc) }
 		],
-		"h-2809-1000-39": [{ type: "text", sub_type: "message", message: "Crystals soon...", message_RU: "Скоро кристаллы...", message_zh: "水晶即将出现..." }],
+		"h-2809-1000-39": [{ type: "text", sub_type: "message", message: t("Crystals soon...") }],
 
 		//10% волны
 		"h-2809-1000-9": [
-			{ type: "text", sub_type: "message", message: "10%! Waves!", message_RU: "10%! Волны!", message_zh: "10%! 波浪!" },
+			{ type: "text", sub_type: "message", message: t("10%! Waves!") },
 			{ type: "func", func: () => crys_off = 1 }
 		]
 	};

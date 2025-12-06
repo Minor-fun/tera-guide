@@ -15,7 +15,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		knockbackCounter++;
 
 		if (knockbackCounter === 2) {
-			handlers.text({ type: "text", sub_type: "message", message: "KNOCKBACK", message_RU: "Будет Отбрасывание", message_zh: "击退", speech: true });
+			handlers.text({ type: "text", sub_type: "message", message: t("KNOCKBACK"), speech: true });
 			knockbackCounter = 0;
 		}
 
@@ -119,14 +119,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	// SIXTH FLOOR
 
 	function sixth_regress() {
-		handlers.text({ sub_type: "notification", message: "Plague/Regress", message_RU: "[c=#E904CA]!!!!![/c][c=#E904CA]!!!![/c][c=#39FF33]!!!![/c]!!!!!!![c=#F90531]!!!!!!!!!!![/c] Регресс[c=#39FF33]!![/c][c=#E904CA]!!!!![/c]!!!![c=#0517F9]!!!![/c]!!!!!!![c=#F90531]!!!!!!!!!!![/c]", message_zh: "驱散" });
-		// handlers.text({ sub_type: "alert", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散", delay: 0 });
-		handlers.text({ sub_type: "warning", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
-		handlers.text({ sub_type: "message", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
-		// handlers.text({ sub_type: "alert", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
-		// handlers.text({ sub_type: "warning", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
-		// handlers.text({ sub_type: "message", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
-		// handlers.text({ sub_type: "speech", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" });
+		handlers.text({ sub_type: "notification", message: t("Plague/Regress") });
+		// handlers.text({ sub_type: "alert", message: t("Plague/Regress"), delay: 0 });
+		handlers.text({ sub_type: "warning", message: t("Plague/Regress") });
+		handlers.text({ sub_type: "message", message: t("Plague/Regress") });
+		// handlers.text({ sub_type: "alert", message: t("Plague/Regress") });
+		// handlers.text({ sub_type: "warning", message: t("Plague/Regress") });
+		// handlers.text({ sub_type: "message", message: t("Plague/Regress") });
+		// handlers.text({ sub_type: "speech", message: t("Plague/Regress") });
 	}
 
 
@@ -141,14 +141,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				if (!seventh_fifty) {
 					handlers.text({
 						sub_type: "notification",
-						message: "Debuffs > Circles > Bombs", message_zh: "debuff>闪电>炸弹",
-						message_RU: "ДКБ"
+						message: t("Debuffs > Circles > Bombs")
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
-						message: "Debuffs > Bombs > Circles", message_zh: "debuff>炸弹>闪电",
-						message_RU: "ДБК"
+						message: t("Debuffs > Bombs > Circles")
 					});
 				}
 				break;
@@ -157,14 +155,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				if (!seventh_fifty) {
 					handlers.text({
 						sub_type: "notification",
-						message: "Circles > Bombs > Debuffs", message_zh: "闪电>炸弹>debuff",
-						message_RU: "КБД"
+						message: t("Circles > Bombs > Debuffs")
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
-						message: "Circles > Debuffs > Bombs", message_zh: "闪电>debuff>炸弹",
-						message_RU: "КДБ"
+						message: t("Circles > Debuffs > Bombs")
 					});
 				}
 				break;
@@ -173,14 +169,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				if (!seventh_fifty) {
 					handlers.text({
 						sub_type: "notification",
-						message: "Bombs > Debuffs > Circles", message_zh: "炸弹>debuff>闪电",
-						message_RU: "БДК"
+						message: t("Bombs > Debuffs > Circles")
 					});
 				} else {
 					handlers.text({
 						sub_type: "notification",
-						message: "Bombs > Circles > Debuffs", message_zh: "炸弹>闪电>debuff",
-						message_RU: "БКД"
+						message: t("Bombs > Circles > Debuffs")
 					});
 				}
 				break;
@@ -307,18 +301,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 		// Clone Mechanic
 		// "h-2800-1000-99": [{"type": "text","sub_type": "notification","message": "BlackJacka  is looking after you","message_RU": "БлекДжека присматривает за вами" }],
-		"ab-2800-1000-90340105": [{ type: "text", sub_type: "message", message: "STUN IT", message_RU: "Застанить босса!", message_zh: "晕它！" }],
+		"ab-2800-1000-90340105": [{ type: "text", sub_type: "message", message: t("STUN IT") }],
 		// Backstep + Knockback
-		// "s-2800-1000-212-0": [{type: "text", sub_type: "message", message: "BACKSTEP + KNOCKBACK", message_RU: "Назад + Отбрасывание", message_zh: "后撤步加击退"}],
-		// "s-2800-1000-304-0": [{type: "text", sub_type: "message", message: "STUN", message_RU: "СТАН!", message_zh: "眩晕！"},
+		// "s-2800-1000-212-0": [{type: "text", sub_type: "message", message: t("BACKSTEP + KNOCKBACK")}],
+		// "s-2800-1000-304-0": [{type: "text", sub_type: "message", message: t("STUN")},
 		// { type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 250, 0, 1500] }],
-		"s-2800-1000-1102-0": [{ type: "text", sub_type: "message", message: "Running", message_RU: "Пробежка", message_zh: "跑位" },
+		"s-2800-1000-1102-0": [{ type: "text", sub_type: "message", message: t("Running") },
 			{ type: "func", func: knockback_firstfloor.bind(null) }],
-		"s-2800-1000-1105-0": [{ type: "text", sub_type: "message", message: "KNOCKBACK", message_RU: "Атака вперед", message_zh: "击退" }],
-		"s-2800-1000-1108-0": [{ type: "text", sub_type: "message", message: "KNOCKBACK", message_RU: "Отбрасывание", message_zh: "击退" }],
-		"s-2800-1000-1203-0": [{ type: "text", sub_type: "message", message: "Sleep", message_RU: "Сон!", message_zh: "睡眠！" },
+		"s-2800-1000-1105-0": [{ type: "text", sub_type: "message", message: t("KNOCKBACK") }],
+		"s-2800-1000-1108-0": [{ type: "text", sub_type: "message", message: t("KNOCKBACK") }],
+		"s-2800-1000-1203-0": [{ type: "text", sub_type: "message", message: t("Sleep") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 250, 0, 3500] }],
-		"s-2800-1000-1304-0": [{ type: "text", sub_type: "message", message: "BACKSTEP + KNOCKBACK", message_RU: "Назад + Отбрасывание", message_zh: "后撤步加击退" }],
+		"s-2800-1000-1304-0": [{ type: "text", sub_type: "message", message: t("BACKSTEP + KNOCKBACK") }],
 		"s-2800-1000-2102-0": "s-2800-1000-1102-0",
 		"s-2800-1000-2105-0": "s-2800-1000-1105-0",
 		"s-2800-1000-2108-0": "s-2800-1000-1108-0",
@@ -328,15 +322,15 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		// SECOND FLOOR
 
-		// "s-2800-2000-101-0": [{type: "text", sub_type: "message", message: "SMASH COMING", message_RU: "Скоро разгром", message_zh: "重砸来袭"}],
-		"s-2800-2000-1102-0": [{ type: "text", sub_type: "message", message: "SPIN", message_RU: "Вращение", message_zh: "旋转" }],
-		"s-2800-2000-1107-0": [{ type: "text", sub_type: "message", message: "BACK", message_RU: "Стан назад", message_zh: "背后眩晕" }],
-		"s-2800-2000-1108-0": [{ type: "text", sub_type: "message", message: "FRONT", message_RU: "Атака вперед", message_zh: "前方攻击" }],
-		"s-2800-2000-1109-0": [{ type: "text", sub_type: "message", message: "BACK SPIN", message_RU: "Вращение назад", message_zh: "背后旋转" }],
-		"s-2800-2000-1110-0": [{ type: "text", sub_type: "message", message: "OUT", message_RU: "От босса!", message_zh: "远离" }],
-		"s-2800-2000-1119-0": [{ type: "text", sub_type: "message", message: "PULL", message_RU: "Притяжка + вращение", message_zh: "拉人加旋转" }],
-		"s-2800-2000-1122-0": [{ type: "text", sub_type: "message", message: "IN", message_RU: "К боссу!", message_zh: "靠近" }],
-		"s-2800-2000-1306-0": [{ type: "text", sub_type: "message", message: "Run away", message_RU: "Текайте, глупцы!", message_zh: "快跑！" }],
+		// "s-2800-2000-101-0": [{type: "text", sub_type: "message", message: t("SMASH COMING")}],
+		"s-2800-2000-1102-0": [{ type: "text", sub_type: "message", message: t("SPIN") }],
+		"s-2800-2000-1107-0": [{ type: "text", sub_type: "message", message: t("BACK") }],
+		"s-2800-2000-1108-0": [{ type: "text", sub_type: "message", message: t("FRONT") }],
+		"s-2800-2000-1109-0": [{ type: "text", sub_type: "message", message: t("BACK SPIN") }],
+		"s-2800-2000-1110-0": [{ type: "text", sub_type: "message", message: t("OUT") }],
+		"s-2800-2000-1119-0": [{ type: "text", sub_type: "message", message: t("PULL") }],
+		"s-2800-2000-1122-0": [{ type: "text", sub_type: "message", message: t("IN") }],
+		"s-2800-2000-1306-0": [{ type: "text", sub_type: "message", message: t("Run away") }],
 		"s-2800-2000-2102-0": "s-2800-2000-1102-0",
 		"s-2800-2000-2107-0": "s-2800-2000-1107-0",
 		"s-2800-2000-2108-0": "s-2800-2000-1108-0",
@@ -364,26 +358,26 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"ae-0-0-90340313": [{ "type": "func", "func": cage_set_debuff.bind(3, false) }],
 		"ae-0-0-90340314": [{ "type": "func", "func": cage_set_debuff.bind(4, true) }],
 		"ae-0-0-90340315": [{ "type": "func", "func": cage_set_debuff.bind(4, false) }],
-		"s-2800-3000-1106-0": [{ type: "text", sub_type: "message", message: "Kick back!", message_RU: "Удар назад!", message_zh: "后踢！" }],
-		"s-2800-3000-1108-0": [{ type: "text", sub_type: "message", message: "Kick forward!", message_RU: "Удар вперед!", message_zh: "前踢！" }],
-		"s-2800-3000-1112-0": [{ type: "text", sub_type: "message", message: "To the Boss", message_RU: "К Боссу", message_zh: "靠近王" }], //
+		"s-2800-3000-1106-0": [{ type: "text", sub_type: "message", message: t("Kick back!") }],
+		"s-2800-3000-1108-0": [{ type: "text", sub_type: "message", message: t("Kick forward!") }],
+		"s-2800-3000-1112-0": [{ type: "text", sub_type: "message", message: t("To the Boss") }], //
 		"s-2800-3000-1130-0": [
-			{ type: "text", sub_type: "message", "message": "LEFT SWIPE", message_RU: "Удар вправо" },
+			{ type: "text", sub_type: "message", "message": "LEFT SWIPE"},
 			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 2.3, "ownerName": "SAFE SPOT", "message": "SAFE" },
 			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 1, "ownerName": "SAFE SPOT", "message": "SAFE" },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": 2.3 },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": 1 }
 		],
 		"s-2800-3000-1131-0": [
-			{ type: "text", sub_type: "message", "message": "RIGHT SWIPE", message_RU: "Удар влево" },
+			{ type: "text", sub_type: "message", "message": "RIGHT SWIPE"},
 			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -2.3, "ownerName": "SAFE SPOT", "message": "SAFE" },
 			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -1, "ownerName": "SAFE SPOT", "message": "SAFE" },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": -2.3 },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": -1 }
 		],
-		"s-2800-3000-1134-0": [{ type: "text", sub_type: "message", message: "DEBUFF", message_RU: "ДЕБАФ", message_zh: "debuff" }], //
-		"s-2800-3000-1502-0": [{ type: "text", sub_type: "message", message: "FORCED CAGE", message_RU: "Скоро клетка", message_zh: "即将牢笼" }], //
-		"ns-2800-3004": [{ type: "text", sub_type: "message", message: "Kill mobs", message_RU: "Убить мобов", message_zh: "清理小怪" }],
+		"s-2800-3000-1134-0": [{ type: "text", sub_type: "message", message: t("DEBUFF") }], //
+		"s-2800-3000-1502-0": [{ type: "text", sub_type: "message", message: t("FORCED CAGE") }], //
+		"ns-2800-3004": [{ type: "text", sub_type: "message", message: t("Kill mobs") }],
 		"s-2800-3000-2106-0": "s-2800-3000-1106-0",
 		"s-2800-3000-2108-0": "s-2800-3000-1108-0",
 		"s-2800-3000-2112-0": "s-2800-3000-1112-0",
@@ -395,21 +389,21 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		// FOURTH FLOOR
 
-		"s-2800-4000-1102-0": [{ type: "text", sub_type: "message", message: "From boss - to boss", message_RU: "От босса - к боссу", message_zh: "远离再靠近" }],
-		"s-2800-4000-1103-0": [{ type: "text", sub_type: "message", message: "To the boss", message_RU: "К боссу", message_zh: "靠近王" }],
-		"s-2800-4000-1107-0": [{ type: "text", sub_type: "message", message: "Under the tank, then under the dd", message_RU: "Под танка, затем под мили дд", message_zh: "先坦克后近战" }],
+		"s-2800-4000-1102-0": [{ type: "text", sub_type: "message", message: t("From boss - to boss") }],
+		"s-2800-4000-1103-0": [{ type: "text", sub_type: "message", message: t("To the boss") }],
+		"s-2800-4000-1107-0": [{ type: "text", sub_type: "message", message: t("Under the tank, then under the dd") }],
 		"s-2800-4000-1108-0": [
-			{ type: "text", sub_type: "message", message: "Lines", message_RU: "Линии", message_zh: "直线" },
+			{ type: "text", sub_type: "message", message: t("Lines") },
 			{ type: "spawn", func: "vector", args: [553, 90, 20, 175, 300, 0, 4000] },
 			{ type: "spawn", func: "vector", args: [553, 90, -20, -175, 300, 0, 4000] },
 			{ type: "spawn", func: "vector", args: [553, 90, 20, 5, 300, 0, 4000] },
 			{ type: "spawn", func: "vector", args: [553, 90, -20, -5, 300, 0, 4000] }
 		],
-		"s-2800-4000-1109-1": [{ type: "text", sub_type: "message", message: "Beam", message_RU: "Луч", message_zh: "光线" }],
-		"s-2800-4000-1109-2": [{ type: "text", sub_type: "message", message: "Dodge", message_RU: "Эвейд", message_zh: "闪避" }],
-		"s-2800-4000-1205-0": [{ type: "text", sub_type: "message", message: "Beam in a circle", message_RU: "Луч по кругу", message_zh: "环形光线" }],
-		"s-2800-4000-1206-0": [{ type: "text", sub_type: "message", message: "Beam forward, left, right", message_RU: "Луч вперед, лево, право", message_zh: "前左右光线" }],
-		"ns-2800-4001": [{ type: "text", sub_type: "message", message: "Kill mobs", message_RU: "Убить мобов", message_zh: "清理小怪" }],
+		"s-2800-4000-1109-1": [{ type: "text", sub_type: "message", message: t("Beam") }],
+		"s-2800-4000-1109-2": [{ type: "text", sub_type: "message", message: t("Dodge") }],
+		"s-2800-4000-1205-0": [{ type: "text", sub_type: "message", message: t("Beam in a circle") }],
+		"s-2800-4000-1206-0": [{ type: "text", sub_type: "message", message: t("Beam forward, left, right") }],
+		"ns-2800-4001": [{ type: "text", sub_type: "message", message: t("Kill mobs") }],
 		"s-2800-4000-2102-0": "s-2800-4000-1102-0",
 		"s-2800-4000-2103-0": "s-2800-4000-1103-0",
 		"s-2800-4000-2107-0": "s-2800-4000-1107-0",
@@ -427,17 +421,17 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"h-2800-5000-25": [{ "type": "text", "sub_type": "notification", "message": "25%... Big Jump + mob ", "message_RU": "25% Скоро Большой прыжок + мобы" }],
 		"h-2800-5000-10": [{ "type": "text", "sub_type": "notification", "message": "10%... Big Jump + mob ", "message_RU": "10% Скоро Большой прыжок + мобы" }],
 		"s-2800-5000-1103-0": [
-			{ type: "text", sub_type: "message", message: "Tail", message_RU: "Хвост", message_zh: "甩尾" },
+			{ type: "text", sub_type: "message", message: t("Tail") },
 			{ type: "spawn", func: "semicircle", args: [140, 260, 553, 0, 0, 10, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 135, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 260, 500, 0, 2000] }
 		],
 		"s-2800-5000-1104-0": [
-			{ type: "text", sub_type: "message", message: "Ice Storm DOTs", message_RU: "Ледяные лужи", message_zh: "冰圈" },
+			{ type: "text", sub_type: "message", message: t("Ice Storm DOTs") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 500, 0, 5000] }
 		],
 		"s-2800-5000-1105-0":	[
-			{ type: "text", sub_type: "message", message: "Fire Bombs", message_RU: "Огненные бомбы", message_zh: "火焰炸弹" },
+			{ type: "text", sub_type: "message", message: t("Fire Bombs") },
 			{ type: "spawn", func: "circle", args: [false, 553, 135, 500, 10, 125, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 315, 500, 10, 125, 0, 3250] },
 			{ type: "spawn", func: "circle", args: [false, 553, 45, 500, 10, 125, 0, 3500] },
@@ -449,23 +443,23 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "circle", args: [false, 493, 0, 0, 0, 250, 0, 4750] }
 		],
 		"s-2800-5000-1107-0": [
-			{ type: "text", sub_type: "message", message: "Change", message_RU: "Смена", message_zh: "交换" },
+			{ type: "text", sub_type: "message", message: t("Change") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 50, 0, 250, 0, 3000] }
 		],
-		"s-2800-5000-1118-0": [{ type: "text", sub_type: "message", message: "Big Jump + mobs", message_RU: "Большой прыжок + мобы", message_zh: "大跳加小怪" }],
-		"s-2800-5000-1118-2": [{ type: "text", sub_type: "message", message: "Dodge", message_RU: "Эвейд", message_zh: "闪避" }],
+		"s-2800-5000-1118-0": [{ type: "text", sub_type: "message", message: t("Big Jump + mobs") }],
+		"s-2800-5000-1118-2": [{ type: "text", sub_type: "message", message: t("Dodge") }],
 		"s-2800-5000-1120-0": [
-			{ type: "text", sub_type: "message", message: "Stun + reclining", message_RU: "Стан + откид", message_zh: "眩晕加击退" },
+			{ type: "text", sub_type: "message", message: t("Stun + reclining") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 150, 0, 680, 0, 7000] }
 		],
-		"s-2800-5000-1124-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-		"s-2800-5000-1127-0": [{ type: "text", sub_type: "message", message: "DEBUFF", message_RU: "ДЕБАФ", message_zh: "debuff" }],
+		"s-2800-5000-1124-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+		"s-2800-5000-1127-0": [{ type: "text", sub_type: "message", message: t("DEBUFF") }],
 		"ns-2800-5002": [
-			{ type: "text", sub_type: "message", message: "Kill your mob(fire)", message_RU: "Убить своего моба(огонь)", message_zh: "打掉你的火怪", check_func: () => fifth_debuff === "blue" },
+			{ type: "text", sub_type: "message", message: t("Kill your mob(fire)"), check_func: () => fifth_debuff === "blue" },
 			{ type: "spawn", func: "marker", args: [false, 0, 0, 0, 30000, true, null], tag: "mob1", check_func: () => fifth_debuff === "blue" }
 		],
 		"ns-2800-5003": [
-			{ type: "text", sub_type: "message", message: "Kill your mob(ice)", message_RU: "Убить своего моба(лед)", message_zh: "打掉你的冰怪", check_func: () => fifth_debuff === "red" },
+			{ type: "text", sub_type: "message", message: t("Kill your mob(ice)"), check_func: () => fifth_debuff === "red" },
 			{ type: "spawn", func: "marker", args: [false, 0, 0, 0, 30000, true, null], tag: "mob2", check_func: () => fifth_debuff === "red" }
 		],
 		"nd-2800-5002": [{ type: "despawn_all", tag: "mob1" }],
@@ -481,11 +475,11 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-2800-5000-2127-0": "s-2800-5000-1127-0",
 		// Debuff tracker
 		"am-2800-5000-90340501": [
-			{ type: "text", sub_type: "message", message: "Ice is taken", message_RU: "Взят лед", message_zh: "已获得冰" },
+			{ type: "text", sub_type: "message", message: t("Ice is taken") },
 			{ type: "func", "func": () => fifth_debuff = "red" }
 		],
 		"am-2800-5000-90340502": [
-			{ type: "text", sub_type: "message", message: "Fire is taken", message_RU: "Взят огонь", message_zh: "已获得火" },
+			{ type: "text", sub_type: "message", message: t("Fire is taken") },
 			{ type: "func", "func": () => fifth_debuff = "blue" }
 		],
 		"am-2800-5000-90340503": [{ type: "func", "func": () => fifth_debuff = null }],
@@ -501,24 +495,24 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		"qb-2800-6000-434601": [{ type: "func", func: sixth_regress.bind(null) }],
 		"s-2800-6000-1101-0": [
-			{ type: "text", sub_type: "message", message: "Blow from the ground", message_RU: "Удар из под земли", message_zh: "地底攻击" },
-			{ type: "text", sub_type: "message", message: "Dodge", message_RU: "Эвейд", message_zh: "闪避", delay: 1000 }
+			{ type: "text", sub_type: "message", message: t("Blow from the ground") },
+			{ type: "text", sub_type: "message", message: t("Dodge"), delay: 1000 }
 		],
 		"s-2800-6000-1103-0": [
-			{ type: "text", sub_type: "message", message: "Impact", message_RU: "Удар", message_zh: "冲击" },
+			{ type: "text", sub_type: "message", message: t("Impact") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 225, 0, 425, 0, 3000] }
 		],
 		"s-2800-6000-1104-0": [
-			{ type: "text", sub_type: "message", message: "Impact", message_RU: "Удар + взмах", message_zh: "冲击" },
+			{ type: "text", sub_type: "message", message: t("Impact") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 225, 0, 375, 0, 3000] }
 		],
 		"s-2800-6000-1106-0": [
-			{ type: "text", sub_type: "message", message: "Series + Impact", message_RU: "Серия + Удар", message_zh: "连击加冲击" },
+			{ type: "text", sub_type: "message", message: t("Series + Impact") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 225, 0, 375, 3000, 2000] }
 		],
-		"s-2800-6000-1107-0": [{ type: "text", sub_type: "message", message: "Boms", message_RU: "Бомба", message_zh: "炸弹" }],
+		"s-2800-6000-1107-0": [{ type: "text", sub_type: "message", message: t("Boms") }],
 		"s-2800-6000-1109-0": [
-			{ type: "text", sub_type: "message", message: "1 strike", message_RU: "1 удар", message_zh: "一击" },
+			{ type: "text", sub_type: "message", message: t("1 strike") },
 			{ type: "spawn", func: "semicircle", args: [-160, 105, 553, 0, 0, null, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, -160, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 105, 550, 0, 3000] },
@@ -526,23 +520,23 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 3000, "distance": 350, "offset": 2.6 }
 		],
 		"s-2800-6000-1110-0": [
-			{ type: "text", sub_type: "message", message: "2 strikes", message_RU: "2 удара", message_zh: "两连击" },
+			{ type: "text", sub_type: "message", message: t("2 strikes") },
 			{ type: "spawn", func: "semicircle", args: [-160, 105, 553, 0, 0, null, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, -160, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 105, 550, 0, 3000] },
 			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 3000, "distance": 350, "offset": 2.6, "ownerName": "SAFE SPOT", "message": "SAFE" },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 3000, "distance": 350, "offset": 2.6 }
 		],
-		"s-2800-6000-1111-0": [{ type: "text", sub_type: "message", message: "Left kick", message_RU: "Удар левой", message_zh: "左踢" }],
-		"s-2800-6000-1112-0": [{ type: "text", sub_type: "message", message: "Right kick", message_RU: "Удар правой", message_zh: "右踢" }],
-		"s-2800-6000-1113-0": [{ type: "text", sub_type: "message", message: "Laser", message_RU: "Лазер", message_zh: "激光" }],
-		"s-2800-6000-1113-1": [{ type: "text", sub_type: "message", message: "Dodge", message_RU: "Эвейд", message_zh: "闪避" }],
+		"s-2800-6000-1111-0": [{ type: "text", sub_type: "message", message: t("Left kick") }],
+		"s-2800-6000-1112-0": [{ type: "text", sub_type: "message", message: t("Right kick") }],
+		"s-2800-6000-1113-0": [{ type: "text", sub_type: "message", message: t("Laser") }],
+		"s-2800-6000-1113-1": [{ type: "text", sub_type: "message", message: t("Dodge") }],
 		"s-2800-6000-1133-0": [
-			{ type: "text", sub_type: "message", message: "Strike", message_RU: "Удар", message_zh: "打击" },
+			{ type: "text", sub_type: "message", message: t("Strike") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 225, 0, 475, 0, 3000] }
 		],
 		"s-2800-6000-1134-0": [
-			{ type: "text", sub_type: "message", message: "Impact", message_RU: "Удар + взмах", message_zh: "冲击" },
+			{ type: "text", sub_type: "message", message: t("Impact") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 225, 0, 475, 0, 3000] }
 		],
 		"s-2800-6000-2101-0": "s-2800-6000-1101-0",
@@ -579,62 +573,62 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"dm-0-0-90340704": [{ type: "func", func: seventh_message_event, args: [1044] }], // Lakan is trying to take you on one at a time.
 		"dm-0-0-90340705": [{ type: "func", func: seventh_message_event, args: [1045] }], // Lakan intends to kill all of you at once.
 		"s-2800-7000-1105-0": [
-			{ type: "text", sub_type: "message", message: "Discarding", message_RU: "Откид пятка", message_zh: "三重击退" },
+			{ type: "text", sub_type: "message", message: t("Discarding") },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, -95, 850, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 95, 850, 0, 3000] }
 		],
-		"s-2800-7000-1136-0": [{ type: "text", sub_type: "message", message: "Claw", message_RU: "Когти", message_zh: "爪击" }],
-		"s-2800-7000-1110-0": [{ type: "text", sub_type: "message", message: "Claw", message_RU: "Когти", message_zh: "爪击" }],
-		"s-2800-7000-1129-0": [{ type: "text", sub_type: "message", message: "IN", message_RU: "К Боссу!", message_zh: "靠近" }],
+		"s-2800-7000-1136-0": [{ type: "text", sub_type: "message", message: t("Claw") }],
+		"s-2800-7000-1110-0": [{ type: "text", sub_type: "message", message: t("Claw") }],
+		"s-2800-7000-1129-0": [{ type: "text", sub_type: "message", message: t("IN") }],
 		"s-2800-7000-1130-0": [
-			{ type: "text", sub_type: "message", message: "Shield Strike", message_RU: "Удар щитом", message_zh: "盾击" },
+			{ type: "text", sub_type: "message", message: t("Shield Strike") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 130, 0, 270, 0, 2500] }
 		],
 		"s-2800-7000-1132-0": [
-			{ type: "text", sub_type: "message", message: "AOE Shield", message_RU: "АОЕ щитом!", message_zh: "盾牌范围攻击！" },
+			{ type: "text", sub_type: "message", message: t("AOE Shield") },
 			{ type: "spawn", func: "semicircle", args: [-65, 65, 553, 0, 0, null, 600, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 40, -65, 600, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 40, 65, 600, 0, 3000] }
 		],
 		"s-2800-7000-1133-0": [
-			{ type: "text", sub_type: "message", message: "AOE Shield", message_RU: "АОЕ щитом!", message_zh: "盾牌范围攻击！" },
+			{ type: "text", sub_type: "message", message: t("AOE Shield") },
 			{ type: "spawn", func: "semicircle", args: [-65, 65, 553, 0, 0, null, 600, 0, 6000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 40, -65, 600, 0, 6000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 40, 65, 600, 0, 6000] }
 		],
-		"s-2800-7000-1135-0": [{ type: "text", sub_type: "message", message: "IN", message_RU: "К Боссу!", message_zh: "靠近" }],
+		"s-2800-7000-1135-0": [{ type: "text", sub_type: "message", message: t("IN") }],
 		"s-2800-7000-1240-0": [
-			{ type: "text", sub_type: "message", message: "Donuts", message_RU: "Бублики!", message_zh: "环形攻击" },
+			{ type: "text", sub_type: "message", message: t("Donuts") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 200, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 380, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 520, 0, 6000] }
 		],
-		"s-2800-7000-1401-0": [{ type: "text", sub_type: "message", message: "Plague/Regress", message_RU: "Регресс!!", message_zh: "驱散" }],
-		"s-2800-7000-1402-0": [{ type: "text", sub_type: "message", message: "Sleep", message_RU: "Слип!!", message_zh: "睡眠！" }],
-		"s-2800-7000-1701-0": [{ type: "text", sub_type: "message", message: "Back + front", message_RU: "Назад + Вперед", message_zh: "背后加前方" }],
+		"s-2800-7000-1401-0": [{ type: "text", sub_type: "message", message: t("Plague/Regress") }],
+		"s-2800-7000-1402-0": [{ type: "text", sub_type: "message", message: t("Sleep") }],
+		"s-2800-7000-1701-0": [{ type: "text", sub_type: "message", message: t("Back + front") }],
 		//
-		"s-2800-7000-1113-0": [{ type: "text", sub_type: "message", message: "Bait", message_RU: "Байт", message_zh: "诱导" }],
-		"s-2800-7000-1151-0": [{ type: "text", sub_type: "message", message: "Attention stun", message_RU: "Стан", message_zh: "注意击晕" }],
+		"s-2800-7000-1113-0": [{ type: "text", sub_type: "message", message: t("Bait") }],
+		"s-2800-7000-1151-0": [{ type: "text", sub_type: "message", message: t("Attention stun") }],
 		"s-2800-7000-1152-0": [
-			{ type: "text", sub_type: "message", message: "Stun + Back", message_RU: "Стан + Откид назад", message_zh: "眩晕加背后击退" },
+			{ type: "text", sub_type: "message", message: t("Stun + Back") },
 			{ type: "spawn", func: "semicircle", args: [110, 250, 553, 0, 0, null, 1000, 0, 6000] },
 			{ type: "spawn", func: "vector", args: [553, 70, -1000, 70, 1000, 0, 6000] },
 			{ type: "spawn", func: "vector", args: [553, 290, -1000, -70, 1000, 0, 6000] }
 		],
 		"s-2800-7000-1138-0": [{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }],
 		"s-2800-7000-1140-0": [
-			{ type: "text", sub_type: "message", message: "Donuts", message_RU: "Бублики!", message_zh: "环形攻击" },
+			{ type: "text", sub_type: "message", message: t("Donuts") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 200, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 380, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 520, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 700, 0, 6000] }
 		],
 		"s-2800-7000-1154-0": [
-			{ "type": "text", "sub_type": "message", "message": "OUT + IN", message_RU: "От него => К нему" },
+			{ "type": "text", "sub_type": "message", "message": "OUT + IN"},
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1155-0": [
-			{ "type": "text", "sub_type": "message", "message": "IN + OUT", message_RU: "К нему => От него" },
+			{ "type": "text", "sub_type": "message", "message": "IN + OUT"},
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1142-0": [
@@ -652,35 +646,35 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-2800-7000-1143-0": "s-2800-7000-1142-0",
 		"s-2800-7000-1910-0": [{ type: "func", func: seventh_spawn_tables.bind(null) }],
 		"s-2800-7000-1901-0": [
-			{ type: "text", sub_type: "message", message: "(Debuffs) Closest", message_RU: "Дебафф (ближние)", message_zh: "debuff点最近的" },
+			{ type: "text", sub_type: "message", message: t("(Debuffs) Closest") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1902-0": [
-			{ type: "text", sub_type: "message", message: "(Debuffs) Farthest", message_RU: "Дебафф (дальние)", message_zh: "debuff点最远的" },
+			{ type: "text", sub_type: "message", message: t("(Debuffs) Farthest") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1903-0": [
-			{ type: "text", sub_type: "message", message: "(Bombs) Gather + Cleanse", message_RU: "Бомбы (вместе!) + клинс", message_zh: "炸弹集合加净化" },
+			{ type: "text", sub_type: "message", message: t("(Bombs) Gather + Cleanse") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1904-0": [
-			{ type: "text", sub_type: "message", message: "(Bombs) Gather + No cleanse", message_RU: "Бомбы (вместе!) + БЕЗ клинса", message_zh: "炸弹集合不净化" },
+			{ type: "text", sub_type: "message", message: t("(Bombs) Gather + No cleanse") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1905-0": [
-			{ type: "text", sub_type: "message", message: "(Circles) Spread", message_RU: "Круги (отдельно!)", message_zh: "圈散开" },
+			{ type: "text", sub_type: "message", message: t("(Circles) Spread") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1906-0": [
-			{ type: "text", sub_type: "message", message: "(Circles) Gather", message_RU: "Круги (вместе!)", message_zh: "圈集合" },
+			{ type: "text", sub_type: "message", message: t("(Circles) Gather") },
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1144-0": [
-			{ "type": "text", "sub_type": "message", "message": "OUT", message_RU: "От него" },
+			{ "type": "text", "sub_type": "message", "message": "OUT"},
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1145-0": [
-			{ "type": "text", "sub_type": "message", "message": "IN", message_RU: "К нему" },
+			{ "type": "text", "sub_type": "message", "message": "IN"},
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-2105-0": "s-2800-7000-1105-0",
@@ -716,30 +710,30 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		// EIGHTH FLOOR
 
 		"s-2800-8000-1102-0": [
-			{ type: "text", sub_type: "message", message: "Pull in 5 sec", message_RU: "Скоро стяжка", message_zh: "五秒后拉人" },
-			{ type: "text", sub_type: "message", message: "Pull", message_RU: "Стяжка", message_zh: "拉人", delay: 4500 }
+			{ type: "text", sub_type: "message", message: t("Pull in 5 sec") },
+			{ type: "text", sub_type: "message", message: t("Pull"), delay: 4500 }
 		],
 		"s-2800-8000-2102-0": [
-			{ type: "text", sub_type: "message", message: "Pull in 5 sec", message_RU: "Скоро стяжка", message_zh: "五秒后拉人" },
-			{ type: "text", sub_type: "message", message: "Pull", message_RU: "Стяжка", message_zh: "拉人", delay: 3500 }
+			{ type: "text", sub_type: "message", message: t("Pull in 5 sec") },
+			{ type: "text", sub_type: "message", message: t("Pull"), delay: 3500 }
 		],
 		"s-2800-8000-1101-0": [
-			{ type: "text", sub_type: "message", message: "Soon AOE", message_RU: "Скоро АОЕ", message_zh: "准备范围攻击" },
-			{ type: "text", sub_type: "message", message: "AOE", message_RU: "AOE", message_zh: "范围攻击", delay: 4500 }
+			{ type: "text", sub_type: "message", message: t("Soon AOE") },
+			{ type: "text", sub_type: "message", message: t("AOE"), delay: 4500 }
 		],
 		"s-759-1003-2101-0": [
-			{ type: "text", sub_type: "message", message: "Soon AOE", message_RU: "Скоро АОЕ", message_zh: "准备范围攻击" },
-			{ type: "text", sub_type: "message", message: "AOE", message_RU: "AOE", message_zh: "范围攻击", delay: 3500 }
+			{ type: "text", sub_type: "message", message: t("Soon AOE") },
+			{ type: "text", sub_type: "message", message: t("AOE"), delay: 3500 }
 		],
 		"s-2800-8000-2110-0": [
-			{ type: "text", sub_type: "message", message: "Clover", message_RU: "Клевер", message_zh: "三叶草" },
+			{ type: "text", sub_type: "message", message: t("Clover") },
 			{ type: "spawn", func: "circle", args: [false, 553, 45, 180, 12, 230, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 135, 180, 12, 230, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 225, 180, 12, 230, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 315, 180, 12, 230, 0, 3000] }
 		],
 		"s-2800-8000-1110-0": [
-			{ type: "text", sub_type: "message", message: "Clover", message_RU: "Клевер", message_zh: "三叶草" },
+			{ type: "text", sub_type: "message", message: t("Clover") },
 			{ type: "spawn", func: "circle", args: [false, 553, 45, 180, 12, 230, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 135, 180, 12, 230, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 225, 180, 12, 230, 0, 3000] },
