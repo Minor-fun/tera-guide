@@ -2,87 +2,12 @@
 
 # tera-guide
 
-## Online TTS / Онлайн TTS
+[![翻译状态](https://hosted.weblate.org/widget/tera-guide/multi-auto.svg)](https://hosted.weblate.org/engage/tera-guide/)
 
-Translated using Gemini 2.5 Pro
-
-### :star: Online TTS Function Introduction / Внедрение функции онлайн TTS
-* To experience the full **Online TTS** and **Offline Voice Pack** features, you must use a specific version of the core module from `Minor-fun`.
-* Чтобы воспользоваться всеми возможностями **онлайн TTS** и **оффлайн голосовых пакетов**, вы должны использовать специальную версию основного модуля от `Minor-fun`.
-
-### :information_source: Installation / Установка
-1. **Delete Old Version**: If you have `tera-guide-core` in your `mods` folder, please delete it first.
-2. **Download New Version**: Download the latest core module from **[here](https://github.com/Minor-fun/tera-guide-core/archive/refs/heads/master.zip)**.
-3. **Unzip and Install**: Unzip the downloaded package, rename the folder to `tera-guide-core`, and place it in your `mods` folder, not "tera-guide-core-master".
----
-1. **Удалите старую версию**: Если в вашей папке `mods` есть `tera-guide-core`, сначала удалите его.
-2. **Загрузите новую версию**: Загрузите последнюю версию основного модуля **[отсюда](https://github.com/Minor-fun/tera-guide-core/archive/refs/heads/master.zip)**.
-3. **Распакуйте и установите**: Распакуйте загруженный архив, переименуйте папку в `tera-guide-core` и поместите ее в вашу папку `mods`, а не "tera-guide-core-master".
-
-> **Note**: You must use this specific version of `tera-guide-core`, otherwise the online TTS related functions will not work properly.   
-> **Примечание**: Вы должны использовать именно эту версию `tera-guide-core`, иначе функции, связанные с онлайн TTS, не будут работать должным образом.
-
-### :star: Online TTS Voice Demos / Демонстрация голосов онлайн TTS
-
-#### Barbara (English)
-https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
-
-#### Kamisato Ayaka (English)
-https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
-
-#### Barbara (Chinese)
-https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
+**🌍 [Help us translate / 协助我们翻译](https://hosted.weblate.org/engage/tera-guide/)**  
+(Add new languages or improve existing ones here / 在这里添加新语言或改进翻译)
 
 ---
-
-### :information_source: How to Use / Как использовать
-
-#### Online TTS (Internet connection required) / Онлайн TTS (требуется подключение к интернету)
-1.  **Register and get an API Key**: Visit [https://dev.espai.fun](https://dev.espai.fun?invite_code=4c5bf7b78649494689dbc446e43db7f1), complete registration, and copy your API Key.
-2.  **Configure the API Key**: In the in-game proxy command window, type: `guide onlinetts apikey YOUR_API_KEY`
-3.  **Add and Set Voice Timbre**: Examples:
-    *   **Kamisato (English)**: `guide onlinetts addvoice Kamisato cosyvoice-v2-espai-353f83ac94d8461a954b86cbd67fc6d8`
-    *   **Barbara (English)**: `guide onlinetts addvoice Barbara cosyvoice-v2-espai-2e9378e1d85144a295d9c6998a4bb28a`
-    *   **芭芭拉 (Chinese)**: `guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f88822049e86d6`
----
-1.  **Зарегистрируйтесь и получите API-ключ**: Посетите [https://dev.espai.fun](https://dev.espai.fun?invite_code=4c5bf7b78649494689dbc446e43db7f1), завершите регистрацию и скопируйте ваш API-ключ.
-2.  **Настройте API-ключ**: В окне команд прокси в игре введите: `guide onlinetts apikey ВАШ_API_КЛЮЧ`
-3.  **Добавьте и установите голос**: Примеры:
-    *   **Kamisato (Английский)**: `guide onlinetts addvoice Kamisato cosyvoice-v2-espai-353f83ac94d8461a954b86cbd67fc6d8`
-    *   **Barbara (Английский)**: `guide onlinetts addvoice Barbara cosyvoice-v2-espai-2e9378e1d85144a295d9c6998a4bb28a`
-    *   **芭芭拉 (Китайский)**: `guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f88822049e86d6`
-
-> **Warning**: When adding an English voice, the custom `<VoiceName>` must be in English only, otherwise it will cause incorrect pronunciation of numbers.   
-> **Предупреждение**: При добавлении английского голоса, пользовательское `<VoiceName>` должно быть только на английском языке, иначе это вызовет неправильное произношение цифр.
->
-> **Tip**: The format for the `addvoice` command is `guide onlinetts addvoice <VoiceName> <VoiceID>`. You can customize the `<VoiceName>` for easy memorization and use.   
-> **Совет**: Формат команды `addvoice`: `guide onlinetts addvoice <VoiceName> <VoiceID>`. Вы можете настроить `<VoiceName>` для удобства запоминания и использования.
-
-#### Offline Voice Pack (No internet required) / Оффлайн голосовой пакет (интернет не требуется)
-1.  **Download and Unzip**: Download `Barbara.rar` from Releases and unzip to the root of `tera-guide-core`. The directory structure should be:
-    ```
-    tera-guide-core/
-    ├── tts-cache/
-    │   └── Barbara/
-    └── ... (other files)
-    ```
-2.  **In-game Configuration**:
-    *   Set any API key: `guide onlinetts apikey any-key`
-    *   Add `Barbara` voice with any ID: `guide onlinetts addvoice Barbara any-id`
-    *   After configuration, use `guide gui` to open the interface, select `Barbara` voice, and the module will prioritize local files.
----
-1.  **Скачайте и распакуйте**: Скачайте `Barbara.rar` со страницы релизов и распакуйте в корень `tera-guide-core`. Структура каталогов должна быть такой:
-    ```
-    tera-guide-core/
-    ├── tts-cache/
-    │   └── Barbara/
-    └── ... (другие файлы)
-    ```
-2.  **Настройка в игре**:
-    *   Установите любой API-ключ: `guide onlinetts apikey any-key`
-    *   Добавьте голос `Barbara` с любым ID: `guide onlinetts addvoice Barbara any-id`
-    *   После настройки используйте `guide gui`, чтобы открыть интерфейс, выберите голос `Barbara`, и модуль будет в приоритетном порядке использовать локальные файлы.
-
 
 ### Module GUI / Графический интерфейс
 
