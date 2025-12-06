@@ -2,6 +2,13 @@
 
 # tera-guide
 
+[![翻译状态](https://hosted.weblate.org/widget/tera-guide/multi-auto.svg)](https://hosted.weblate.org/engage/tera-guide/)
+
+**🌍 [Help us translate / 协助我们翻译](https://hosted.weblate.org/engage/tera-guide/)**  
+(Add new languages or improve existing ones here / 在这里添加新语言或改进翻译)
+
+---
+
 ## Online TTS / Онлайн TTS
 
 Translated using Gemini 2.5 Pro
