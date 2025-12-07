@@ -10,17 +10,12 @@ const removeOldDefs = true // remove undetected defs (default: true)
 
 const onlyHighestDefVer = false // only greatest def version added to manifest (default: false)
 
-const addAutoUpdateDisableBool = true // add ("disableAutoUpdate": false) to module.json if missing (default: true)
-
-const addFolderNameAsName = true // add ("name": <folder name>) to module.json if missing (default: true)
-
-const addAuthorName = "" // add ("author": <addAuthorName>) to module.json if missing (default: "")
-
-const addDescription = "Description goes here." // add ("description": <addDescription>) to module.json if missing (default: "Description goes here.")
-
-const addServers = [""] // add ("servers": <addServers>) to module.json if missing (default: [""])
-
-const addSupportUrl = "" // add ("supportURL": <addSupportURL>) to module.json if missing (default: "")
+const addAutoUpdateDisableBool = true 
+const addFolderNameAsName = true 
+const addAuthorName = "" 
+const addDescription = "Description goes here." 
+const addServers = [""] 
+const addSupportUrl = "" 
 
 ////////////////////
 //  LISTS         //
@@ -84,6 +79,11 @@ if (process.argv[2]) {
     }
 }
 
+// -------------------------------------------------------------
+// [修改说明] 注释掉了以下通过脚本自动修改 module.json 的逻辑
+// 这样脚本就变成了只读模式，不会覆盖或清空你的 module.json
+// -------------------------------------------------------------
+/*
 // read existing module.json
 let modulejson
 try {
@@ -111,6 +111,10 @@ if (addSupportUrl && modulejson.supportUrl === undefined) {
     modulejson.supportUrl = addSupportUrl
 }
 fs.writeFileSync(path.join(directory, 'module.json'), jsonify(modulejson), 'utf8')
+*/
+// -------------------------------------------------------------
+// [修改结束]
+// -------------------------------------------------------------
 
 // read existing manifest.json
 let manifest
