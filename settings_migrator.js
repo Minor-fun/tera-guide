@@ -110,6 +110,21 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 					};
 				}
 				break;
+
+			case 1.17:
+				if (oldsettings.onlineTTS && oldsettings.onlineTTS.voices) {
+					for (const voice in oldsettings.onlineTTS.voices) {
+						const val = oldsettings.onlineTTS.voices[voice];
+						if (typeof val === 'string') {
+							const isEnglish = /^[a-zA-Z\s0-9]+$/.test(voice);
+							oldsettings.onlineTTS.voices[voice] = {
+								id: val,
+								lang: isEnglish ? "en" : "zh_hans"
+							};
+						}
+					}
+				}
+				break;
 		}
 
 		for (const option in oldsettings) {
