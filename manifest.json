@@ -295,13 +295,7 @@
         "lang/strings.js": "ee80581ea56015824efa9960c400c47cbb55f5707e284b9254e007a2bff4d9e9",
         "lib/i18n-manager.js": "1bb77ef9f03e98da7d10743dd69c9f92c35f094ba5ac5f879479c5c0797f12d1",
         "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
-        "module.json": "94e0a79e381b8fbab6ff1e6236eab20fcb3862305cd8d6a11393f29d8b11fa0c",
-        "scripts/README-i18n.md": "f3ac8149ef0898dcc47ae15f7cbe4a98fd08c27ec5bca74b26dedf3d85629cf0",
-        "scripts/TRANSLATION_REPORT.md": "8c07618b6ba4a6b0f1da9d1fe4c06ff8e2c1e0159eab382839bae8264e2ec7e5",
-        "scripts/debug_regex.js": "64700ce45d8b9a17a13ec70369170aac9b6d499854c10d22631513c5c12305c5",
-        "scripts/i18n-guide.md": "4e3e523e93b2e65162df530f90e8688fdb9d9c004eea0c0d80d8278809d51352",
-        "scripts/migrate-to-i18n.js": "3c1997946c09e1a69be26ebd95e71a3b9b38d95f92b608c900e7f762c54a64cc",
-        "scripts/validate-translations.js": "fa375772ca46110dcc4a7599e0d4e0e638a922895e653a40ac1f7dddf5325217",
+        "module.json": "b58bad8931252559213681f3d631658e555ce77b742b48bd79e185674142013d",
         "settings_migrator.js": "f21ed0b4c43132a8806fa12032946a9fe3a58af4e360d230b9f50ddb777c671e"
     }
 }
