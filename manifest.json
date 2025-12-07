@@ -295,7 +295,7 @@
         "lang/strings.js": "ee80581ea56015824efa9960c400c47cbb55f5707e284b9254e007a2bff4d9e9",
         "lib/i18n-manager.js": "1bb77ef9f03e98da7d10743dd69c9f92c35f094ba5ac5f879479c5c0797f12d1",
         "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
-        "module.json": "94e0a79e381b8fbab6ff1e6236eab20fcb3862305cd8d6a11393f29d8b11fa0c",
+        "module.json": "b58bad8931252559213681f3d631658e555ce77b742b48bd79e185674142013d",
         "settings_migrator.js": "f21ed0b4c43132a8806fa12032946a9fe3a58af4e360d230b9f50ddb777c671e"
     }
 }
