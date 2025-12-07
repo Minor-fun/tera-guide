@@ -294,12 +294,12 @@
         "i18n/general/ru.json": "c959240a5850eb698c7569baf9df1b45b9d45cdfa907cf751a29af6849aa4782",
         "i18n/general/zh_Hans.json": "78b81d6d2f0ecc7a6acf4e6235bd3577c2e702560b51a0c3fd225989205647ad",
         "i18n/general/zh_Hant.json": "51f0c402b83c9370ca18c3303f4ad02805d50e1968d5fc62b913998649fcae8a",
-        "index.js": "2397f9cbe82aac362e94b31a4460ccb330851763767b230c542f2413240a72a4",
+        "index.js": "e7e8c89addefbd24b443cf5129fba7e0d697869dceb20ee6e32146536f0c3867",
         "lang/dungeons.js": "bca89cd8fd26ca807f03046d650de6126ffee97da143d18cbd4fa95afbdf9fb9",
         "lang/strings.js": "ee80581ea56015824efa9960c400c47cbb55f5707e284b9254e007a2bff4d9e9",
-        "lib/i18n-manager.js": "1bb77ef9f03e98da7d10743dd69c9f92c35f094ba5ac5f879479c5c0797f12d1",
+        "lib/i18n-manager.js": "bba17158e0c6fee256bca93a6b395246a610c6fb1e275dc0b143ec25e6af387e",
         "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
         "module.json": "884f66a3e68cff452723e00752a98459897f358c5b21614effee4f3322f9697a",
-        "settings_migrator.js": "f21ed0b4c43132a8806fa12032946a9fe3a58af4e360d230b9f50ddb777c671e"
+        "settings_migrator.js": "c23b1effd2cb1cacd742870b913c6b8c165dead112d7f0fe140fe160cb9d722d"
     }
 }
