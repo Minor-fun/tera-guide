@@ -2,68 +2,101 @@
 
 # tera-guide
 
-[![翻译状态](https://hosted.weblate.org/widget/tera-guide/multi-auto.svg)](https://hosted.weblate.org/engage/tera-guide/)
+<div align="center">
 
-**🌍 [Help us translate / 协助我们翻译](https://hosted.weblate.org/engage/tera-guide/)**  
-(Add new languages or improve existing ones here / 在这里添加新语言或改进翻译)
+<table>
+  <tr>
+    <td align="center" width="999">
+      <h3> 想要有更多语言的支持？ / Help us translate</h3>
+      <p>本项目集成了 i18n 支持，我们需要您的帮助来完善各语言版本！</p>
+      <a href="https://crowdin.com/project/tera-guide">
+        <img src="https://badges.awesome-crowdin.com/translation-17437738-853034.png" alt="Translation status" />
+      </a>
+      <br/><br/>
+      <a href="https://crowdin.com/project/tera-guide">
+        <b>点击此处，前往翻译成你的语言</b>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
-## 命令与配置
+## 国际化 (i18n) 与社区翻译支持
 
-### 命令列表
-Toolbox(/8) | 命令说明
+本项目现已引入了自动化的翻译流程，支持按副本 ID 加载多语言配置文件。
+
+这意味着您可以直接参与到指南的翻译工作中！
+*   **无需编程知识**：您不需要修改代码或 JSON 文件，只需在网页上输入翻译即可。
+*   **自动同步**：您在 Crowdin 上提交的翻译会自动同步并推送到仓库中。
+*   **实时更新**：帮助我们将副本攻略翻译成更多语言，造福全球玩家。
+
+点击上方的徽章或链接即可开始贡献翻译！
+
+---
+
+## 在线 TTS (Online TTS)
+
+### 在线 TTS 语音演示
+
+#### Barbara (英语)
+https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
+
+#### Kamisato Ayaka (英语)
+https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
+
+#### 芭芭拉 (中文)
+https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
+
+### 如何使用在线 TTS
+
+#### 1. 在线 TTS
+1.  **注册并获取 API Key**：访问 [https://dev.espai.fun](https://dev.espai.fun?invite_code=4c5bf7b78649494689dbc446e43db7f1)，完成注册并复制您的 API Key。
+2.  **配置 API Key**：在游戏内的代理（Proxy/Toolbox）命令窗口中输入：`guide onlinetts apikey 您的API_KEY`
+3.  **添加并设置音色**：示例：
+    *   **Kamisato (英语)**: `guide onlinetts addvoice Kamisato cosyvoice-v2-espai-353f83ac94d8461a954b86cbd67fc6d8`
+    *   **Barbara (英语)**: `guide onlinetts addvoice Barbara cosyvoice-v2-espai-2e9378e1d85144a295d9c6998a4bb28a`
+    *   **芭芭拉 (中文)**: `guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f88822049e86d6`
+
+> **警告**：添加英语语音时，自定义的 `<VoiceName>` (语音名称) 必须仅包含英文字符，否则会导致数字发音错误。
+>
+> **提示**：`addvoice` 命令的格式为 `guide onlinetts addvoice <语音名称> <语音ID>`。您可以自定义 `<语音名称>` 以便记忆和使用。
+
+---
+
+## 依赖项
+
+本模块依赖于特定版本的核心库。
+
+*   **tera-guide-core** - **[https://github.com/Minor-fun/tera-guide-core](https://github.com/Minor-fun/tera-guide-core)**
+
+*   **library** - https://github.com/tera-private-toolbox/library
+
+---
+---
+
+## 命令 / Commands
+Toolbox(/8) | 命令描述
 --- | ---
 **guide** | 开启/关闭模块
-**guide&nbsp;gui** | 显示模块图形用户界面
-**guide&nbsp;voice**<br>(默认: 关闭) | 开启/关闭语音（TTS）通知，语速通过 **guide `1`~`10`** 命令设置
-**guide&nbsp;lNotice**<br>(默认: 关闭) | 将通知发送到"通知"聊天频道（替代屏幕消息）
-**guide&nbsp;gNotice**<br>(默认: 关闭) | 将通知发送到队伍聊天频道
-**guide&nbsp;`auto`/`en`/`ru`/`zh`**<br>(默认: auto) | 设置指南语言
-**guide&nbsp;`1`~`10`**<br>(默认: 2) | 设置语音（TTS）语速
-**guide&nbsp;spawnObject**<br>(默认: 开启) | 开启/关闭标记物生成
-**guide&nbsp;stream**<br>(默认: 关闭) | 开启/关闭主播模式（隐藏所有通知和对象，但会播放语音通知）
-**guide&nbsp;dungeons** | 列出所有支持的地下城及其ID
-**guide&nbsp;verbose&nbsp;`id`**<br>(默认: 全部开启) | 开启/关闭指定ID地下城的所有通知
-**guide&nbsp;spawnObject&nbsp;`id`**<br>(默认: 全部开启) | 开启/关闭指定ID地下城的标记物生成
+**guide&nbsp;gui** | 显示模块图形界面 (GUI)
+**guide&nbsp;voice**<br>(默认: 关闭) | 开启/关闭文字转语音 (TTS) 通知，语速可通过 **guide `1`~`10`** 设置
+**guide&nbsp;lNotice**<br>(默认: 关闭) | 开启/关闭发送通知到聊天频道 "Notice"（代替屏幕中央显示）
+**guide&nbsp;gNotice**<br>(默认: 关闭) | 开启/关闭发送通知到队伍聊天频道
+**guide&nbsp;`auto`/`en`/`ru`**<br>(默认: auto) | 设置指南语言
+**guide&nbsp;`1`~`10`**<br>(默认: 2) | 设置 TTS 朗读语速
+**guide&nbsp;spawnObject**<br>(默认: 开启) | 开启/关闭生成标记物体（光柱/花朵等）
+**guide&nbsp;stream**<br>(默认: 关闭) | 开启/关闭主播模式（隐藏所有屏幕通知和标记物体，但 TTS 语音仍会播放）
+**guide&nbsp;dungeons** | 列出所有支持的副本及其 ID
+**guide&nbsp;verbose&nbsp;`id`**<br>(默认: 全部开启) | 开启/关闭指定 `id` 副本的通知
+**guide&nbsp;spawnObject&nbsp;`id`**<br>(默认: 全部开启) | 开启/关闭指定 `id` 副本的标记物体生成
 **guide&nbsp;help** | 列出支持的命令
-**guide&nbsp;onlinetts** | 启用/禁用在线TTS功能
-**guide&nbsp;onlinetts&nbsp;apikey&nbsp;`<密钥>`** | 设置API密钥
-**guide&nbsp;onlinetts&nbsp;voice** | 显示当前默认语音和所有可用语音及其ID
-**guide&nbsp;onlinetts&nbsp;voice&nbsp;`<语音名称>`** | 设置默认语音
-**guide&nbsp;onlinetts&nbsp;addvoice&nbsp;`<语音名称>`&nbsp;`<语音ID>`** | 添加/修改语音
-**guide&nbsp;onlinetts&nbsp;deletevoice&nbsp;`<语音名称>`** | 删除语音
-**guide&nbsp;onlinetts&nbsp;rate&nbsp;`<速率值>`** | 设置语音速率（范围：0.5-5，默认：1）
-**guide&nbsp;onlinetts&nbsp;test&nbsp;`[文本]`&nbsp;`[语音名称]`** | 测试在线TTS功能
 
-### 通知设置
+## 支持的副本 / Supported dungeons
 
-*   屏幕下方和聊天通知，如果 **lNotice** 参数为 *开启*。
-
-    ![](https://i.imgur.com/BPlK58M.png)
-
-*   当 **gNotice** 参数为 *开启* 时，通知也将发送到队伍聊天频道。
-
-*   屏幕上方的消息，如果 **lNotice** 参数为 *关闭* (默认)。
-
-    ![](https://i.imgur.com/r2bb8Wc.png)
-    
-    您可以使用命令或图形用户界面为此类通知设置颜色（也会更改Toolbox聊天中的颜色）。
-
-*   当主播模式为 *开启* (**stream** 参数)时，所有文本通知仅发送到Toolbox(/8)聊天频道，但会播放语音通知。
-
-*   要禁用或启用语音通知，请使用 **guide voice** 命令。
-
-### 图形用户界面
-
-*   当您输入 **guide gui** 命令时，会显示模块的图形用户界面，允许您更改基本设置。
-    ![](https://i.imgur.com/IwtZvuY.png)
-    ![](https://i.imgur.com/PRhCjJU.png)
----
-
-## 支持的副本
-
-id | 副本名称 (英文) | 副本名称 (中文)
+ID | Dungeon name (English) | 副本名称 (中文)
 --- | --- | ---
 2800 | Dreadspire VALKYTEQ | 残酷幻影之塔VALKYTEQ
 2802 | Aesir's End (Hard) (Arborea Reborn) | Aesir's End (Hard) (Arborea Reborn)
@@ -102,7 +135,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 9034 | Dreadspire | 残酷幻影之塔
 9044 | Bahaar's Sanctum | 巴哈勒神殿
 9048 | Sanctum of the Fire God (Agaia Online) | 火神的圣所 (Agaia Online)
-9050 | Rift's Edge (Hard) (10-Person) | 贪婪的卡舒帕露峡谷
+9050 | Rift's Edge (Hard) | 贪婪的卡舒帕露峡谷
 9053 | Kezzel's Gorge | 巨人丛林(五人）
 9054 | Bathysmal Rise (Hard) | 邪恶的奥露卡神殿
 9056 | Timescape (Hard) | 扭曲的法罗纳时空
@@ -116,7 +149,7 @@ id | 副本名称 (英文) | 副本名称 (中文)
 9720 | Antaroth's Abyss | 安塔洛斯深渊
 9735 | RK-9 Kennel | RK-9 机库
 9739 | Red Refuge | 革命团总部
-9750 | Rift's Edge (10-Person) | 卡舒帕露峡谷
+9750 | Rift's Edge | 卡舒帕露峡谷
 9754 | Bathysmal Rise | 奥露卡神殿
 9756 | Timescape | 法罗纳时空
 9757 | Akeron's Inferno | 阿凯伦炎狱
@@ -140,21 +173,36 @@ id | 副本名称 (英文) | 副本名称 (中文)
 9985 | Sanctuary's Ruins (Hard) | 塌陷的贝里克神殿
 9994 | Thaumetal Refinery (Hard) | 阿尔法赛伊洛斯研究基地
 
----
+## 通知设置 / Notices settings
 
-## 其他信息与鸣谢
+* **屏幕显示**（底部）和 **聊天框通知**：如果 **lNotice** 参数为 *on (开启)*。
+  ![](https://i.imgur.com/BPlK58M.png)
 
-### 更多信息
-*   英文guide开发者维基: https://github.com/hsdn/tera-guide-core/wiki
-*   如英文guide有问题和建议，请在 Discord 中提出: https://discord.gg/sJzRJhtwWX
+* 当 **gNotice** 参数为 *on (开启)* 时，通知也会发送到 **队伍聊天频道**。
 
-### 鸣谢
+* **屏幕顶部消息**：如果 **lNotice** 参数为 *off (关闭)*（默认设置）。
+  ![](https://i.imgur.com/r2bb8Wc.png)
+  您可以使用命令或 GUI 设置此类通知的颜色（也会更改 Toolbox 聊天中的颜色）。
+
+* 当 **主播模式 (Streamer Mode)** 开启时（**stream** 参数），所有文本通知仅发送到 Toolbox(/8) 聊天频道，屏幕上不会显示，但 TTS 语音仍会播放。
+
+* 要禁用或启用 TTS 语音通知，请使用 **guide voice** 命令。
+
+## 模块 GUI 界面
+
+*   输入 **guide gui** 命令时，会显示模块的图形设置界面，允许您更改基本设置。
+    ![](https://i.imgur.com/nUKjQHn.png)
+    ![](https://i.imgur.com/7dHs1g0.png)
+
+
+## 鸣谢 / Credits
 - **[Kasea](https://github.com/Kasea)** - Tera-Guide 模块的原始开发者
-- **[michengs](https://github.com/michengs)** - 大多数指南和模块核心的基础代码作者
-- **[ZC](https://github.com/tera-mod)** - 提供了渲染攻击区域和机制的坐标
-- **[Kuroine](https://github.com/Kuroine)** - DA 指南基础代码的作者
-- **[Multarix](https://github.com/Multarix)** - RR 指南的作者，并对英文翻译进行了修改
-- **[Owyn](https://github.com/Owyn)** - RK-9, AA, 和 GV 的优秀指南开发者，其代码被使用
+- **[michengs](https://github.com/michengs)** - 大多数指南和模块核心代码的作者
+- **[hsdn](https://github.com/hsdn)** - 长期维护guide更新的作者
+- **[ZC](https://github.com/tera-mod)** - 提供了用于绘制攻击区域和机制的坐标
+- **[Kuroine](https://github.com/Kuroine)** - DA 指南的基础代码作者
+- **[Multarix](https://github.com/Multarix)** - RR 指南作者，并对英语翻译进行了修改
+- **[Owyn](https://github.com/Owyn)** - RK-9, AA 和 GV 的优秀指南开发者，使用了其代码
 - **[Emilia](https://github.com/emilia-s2)** - 葡萄牙语翻译和守护者指南的作者
-- **[Loliconera](https://github.com/Loliconera)** - 西班牙语翻译的作者
-- **[ITunk](https://github.com/GrafNikola)** - 俄语初始翻译的作者
+- **[Loliconera](https://github.com/Loliconera)** - 西班牙语翻译作者
+- **[ITunk](https://github.com/GrafNikola)** - 初始俄语翻译作者
