@@ -3,6 +3,11 @@
   "2": "2",
   "3": "3",
   "360": "360",
+  "@dungeon": "Sanctuary's Ruins (Hard) Agaia",
+  "last: IN": "last: IN",
+  "last: OUT": "last: OUT",
+  "Soon: IN": "Soon: IN",
+  "Soon: OUT": "Soon: OUT",
   "2x360": "2x360",
   "Triples Soon!": "Triples Soon!",
   "Donuts": "Donuts",
@@ -74,8 +79,6 @@
   "Circles (Spread)": "Circles (Spread)",
   "Circles (Gather)": "Circles (Gather)",
   "Claw (Bait)": "Claw (Bait)",
-  "OUT": "OUT",
-  "IN": "IN",
   "Wave (Dodge) | Plague/Regress": "Wave (Dodge) | Plague/Regress",
   "Puddles! (Spread)": "Puddles! (Spread)",
   "Donuts (OUT > IN)": "Donuts (OUT > IN)",
@@ -86,5 +89,11 @@
   "IN > OUT": "IN > OUT",
   "OUT > IN": "OUT > IN",
   "Right {double}": "Right {double}",
-  "Left {double}": "Left {double}"
+  "Left {double}": "Left {double}",
+  "": "",
+  "(Double)": "(Double)",
+  "Soon: OUT > IN": "Soon: OUT > IN",
+  "Soon: IN > OUT": "Soon: IN > OUT",
+  "Soon: OUT | Donuts (IN > OUT)": "Soon: OUT | Donuts (IN > OUT)",
+  "Soon: IN | Donuts (OUT > IN)": "Soon: IN | Donuts (OUT > IN)"
 }

@@ -99,7 +99,6 @@
   "Back Attack!": "Откид назад!",
   "Phantom": "Фантом",
   "Team Up": "Камни (вместе)!!!",
-  "AOE": "АоЕ",
   "Out Safe": "От него",
   "In Safe": "К нему",
   "Counter Attack (Bait)": "Конус вперед (байт)",
@@ -177,5 +176,9 @@
   "Debuff (Reverse)": "Дебаф (реверс)",
   "Plague/Regress - Stack 1": "Регресс - стак 1",
   "Plague/Regress - Stack 2": "Регресс - стак 2",
-  "Laser on {name}": "Лазер на {name}"
+  "Laser on {name}": "Лазер на {name}",
+  "(Debuffs) Closest": "(Дебаффы) Ближайший",
+  "(Debuffs) Farthest": "(Дебаффы) Дальний",
+  "(Circles) Spread": "(Круги) Разойтись",
+  "(Circles) Gather": "(Круги) Собраться"
 }

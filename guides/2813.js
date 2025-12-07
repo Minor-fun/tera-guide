@@ -3,7 +3,7 @@
 // made by Boguslaw, False
 //feel free to improve :)
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	const { player } = dispatch.require.library;
 	

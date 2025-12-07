@@ -2,7 +2,7 @@
 //
 // made by HSDN / Yuyuko / Owyn
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let secondboss_mech_counter = 0;

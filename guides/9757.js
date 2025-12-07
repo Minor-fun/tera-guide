@@ -2,7 +2,7 @@
 //
 // made by Emilia-s2
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	return {

@@ -1,4 +1,6 @@
 {
+  "Soon: IN": "Скоро: К нему",
+  "Soon: OUT": "Скоро: От него",
   "Triples Soon!": "Тройки Скоро!",
   "Donuts": "Бублики",
   "Pizza + Enraged": "Пицца + В раге",
@@ -68,8 +70,6 @@
   "Circles (Spread)": "Круги (отдельно)",
   "Circles (Gather)": "Круги (вместе)",
   "Claw (Bait)": "Когти (байт)",
-  "OUT": "От него",
-  "IN": "К нему",
   "Wave (Dodge) | Plague/Regress": "Волна (эвейд) | Регресс",
   "Puddles! (Spread)": "Лужи! (отдельно)",
   "Donuts (OUT > IN)": "Бублики (от него > к нему)",
@@ -80,5 +80,7 @@
   "IN > OUT": "К нему > От него",
   "OUT > IN": "От него > К нему",
   "Right {double}": "Правый ${double_ru}",
-  "Left {double}": "Левый ${double_ru} "
+  "Left {double}": "Левый ${double_ru} ",
+  "": "",
+  "(Double)": "(Двойной)"
 }

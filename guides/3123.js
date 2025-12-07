@@ -2,7 +2,7 @@
 //
 // made by michengs
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = ES;
 
 	let debuff = null; // default debuff

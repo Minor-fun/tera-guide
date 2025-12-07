@@ -2,7 +2,7 @@
 //
 // Made by Multarix
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		"nd-453-999": [
 			{ type: "stop_timers" },

@@ -99,7 +99,6 @@
   "Back Attack!": "后方攻击！",
   "Phantom": "幻影",
   "Team Up": "集合",
-  "AOE": "全屏AOE",
   "Out Safe": "外安全",
   "In Safe": "内安全",
   "Counter Attack (Bait)": "反击 (假动作)",
@@ -179,5 +178,9 @@
   "Debuff (Reverse)": "Debuff (反转)",
   "Plague/Regress - Stack 1": "瘟疫/回归 - 1层",
   "Plague/Regress - Stack 2": "瘟疫/回归 - 2层",
-  "Laser on {name}": "激光点名 {name}"
+  "Laser on {name}": "激光点名 {name}",
+  "(Debuffs) Closest": "(Debuff) 最近",
+  "(Debuffs) Farthest": "(Debuff) 最远",
+  "(Circles) Spread": "(圈) 分散",
+  "(Circles) Gather": "(圈) 集合"
 }

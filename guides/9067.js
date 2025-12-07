@@ -2,7 +2,7 @@
 //
 // made by michengs
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		"s-467-46703-213-0": [{ type: "text", sub_type: "message", message: t("Back attack") }],
 		"s-467-46704-205-0": [{ type: "text", sub_type: "message", delay: 2500, message: t("Pushback") }],

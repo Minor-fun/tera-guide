@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	let orb_notice = true;
 	let msg_a = 3;
 	let msg_b = 3;
@@ -86,32 +86,32 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		}
 	}
 	function print_mech(next, code) {
-		let message = "",
-			message_RU = "",
-			message_zh = "",
+		let message = t(""),
+			
+			
 			sub_type = "message";
 
 		if (next) {
-			message += "Next: ";
-			message_RU += "Далее: ";
-			message_zh += "下一个: ";
+			message += t("Next: ");
+			
+			
 			sub_type = "notification";
 		}
 
 		if (mech_reverse) {
-			message += `${mech_messages[msg_b].message} + ${mech_messages[msg_a].message}`;
-			message_RU += `${mech_messages[msg_b].message_RU} + ${mech_messages[msg_a].message_RU}`;
-			message_zh += `${mech_messages[msg_b].message_zh} + ${mech_messages[msg_a].message_zh}`;
+			message += t("{message} + {arg0}", { message: mech_messages[msg_b].message, arg0: mech_messages[msg_a].message });
+			
+			
 		} else {
-			message += `${mech_messages[msg_a].message} + ${mech_messages[msg_b].message}`;
-			message_RU += `${mech_messages[msg_a].message_RU} + ${mech_messages[msg_b].message_RU}`;
-			message_zh += `${mech_messages[msg_a].message_zh} + ${mech_messages[msg_b].message_zh}`;
+			message += t("{message} + {arg0}", { message: mech_messages[msg_a].message, arg0: mech_messages[msg_b].message });
+			
+			
 		}
 
 		if (code) {
-			message += `, Code: ${mech_reverse ? "0" : "1"}`;
-			message_RU += `, Код: ${mech_reverse ? "0" : "1"}`;
-			message_zh += `, 代码: ${mech_reverse ? "0" : "1"}`;
+			message += t(", Code: {mech_reverse01}", { mech_reverse01: mech_reverse ? "0" : "1" });
+			
+			
 		}
 
 		handlers.text({
@@ -388,7 +388,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		// Radar
 		"qb-935-3000-935312": [{ type: "text", sub_type: "message", message: t("!!! Radar !!!") }],
 		"s-935-3000-324-0": [
-			{ type: "text", sub_type: "message", message: t("OUT") },
+			{ type: "text", sub_type: "message", message: t("Out") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 10, 250, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 12, 200, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 14, 150, 0, 3000] },
@@ -396,7 +396,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 50, 50, 0, 3000] }
 		],
 		"s-935-3000-325-0": [
-			{ type: "text", sub_type: "message", message: t("IN") },
+			{ type: "text", sub_type: "message", message: t("In") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 300, 0, 3000] }
 		]
 	};

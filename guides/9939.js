@@ -2,7 +2,7 @@
 //
 // made by multarix
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	let first_boss_debuff = false;
 
 	return {

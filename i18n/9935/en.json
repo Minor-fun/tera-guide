@@ -5,6 +5,7 @@
   "4": "4",
   "5": "5",
   "360": "360",
+  "@dungeon": "RK-9 Kennel (Hard)",
   "Out": "Out",
   "In": "In",
   "Wave": "Wave",
@@ -44,6 +45,8 @@
   "Shield in 10 seconds!": "Shield in 10 seconds!",
   "Bait!": "Bait!",
   "!!! Radar !!!": "!!! Radar !!!",
-  "OUT": "OUT",
-  "IN": "IN"
+  "": "",
+  "Next: ": "Next: ",
+  "{message} + {arg0}": "{message} + {arg0}",
+  ", Code: {mech_reverse01}": ", Code: {mech_reverse01}"
 }

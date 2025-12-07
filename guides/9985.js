@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / vathsq / Calvary / ITunk / Vampic
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let boss_enraged = false;
@@ -78,13 +78,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	let triple_swipe_remaining = 0;
 
 	function first_swipe_event(skillid, ent) {
-		let double = "";
-		let double_ru = "";
-		let double_zh = "";
+		let double = t("");
+
 		if ((first_fifty || attack_360) && triple_swipe_remaining === 0) {
-			double = "(Double)";
-			double_ru = "(Двойной)";
-			double_zh = "(双)";
+			double = t("(Double)");
+			
+			
 			if (attack_360) {
 				attack_360 = false;
 			}
@@ -191,9 +190,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			}
 
 			if ((skillid === 1308 || skillid === 1309) && last_donut_msg == null) {
-				last_donut_msg = skillid === 1308 ? "last: IN" : "last: OUT";
-				last_donut_msg_ru = skillid === 1308 ? "последний: К нему" : "последний: От него";
-				last_donut_msg_zh = skillid === 1308 ? "最后: 内" : "最后: 外";
+				last_donut_msg = skillid === 1308  ? t("last: IN") : t("last: OUT");
 				handlers.event([{ type: "text", sub_type: "notification", message: last_donut_msg, delay: 1000 }]);
 				dispatch.setTimeout(() => last_donut_msg = null, 7500);
 			}
@@ -365,9 +362,9 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		if (skillid === 1105) {
 			run_mech_push_back = true;
 		} else if (run_mech_push_back) {
-			const msg = skillid === 1102 ? "Soon: IN" : "Soon: OUT";
-			const msg_ru = skillid === 1102 ? "Скоро: К нему" : "Скоро: От него";
-			const msg_zh = skillid === 1102 ? "即将: 内" : "即将: 外";
+			const msg = skillid === 1102  ? t("Soon: IN") : t("Soon: OUT");
+			
+			
 
 			handlers.event([{ type: "text", sub_type: "notification", message: msg}]);
 
@@ -381,14 +378,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	function are_you_afraid_of_me(skillid) {
 		if (!afriad_mech_active) return;
 
-		let msg = "";
-		let msg_ru = "";
-		let msg_zh = "";
 		const id = thirdboss_soul_world ? 1132 : 1131;
-
-		msg = skillid === id ? "Soon: OUT > IN" : "Soon: IN > OUT";
-		msg_ru = skillid === id ? "Скоро: От него > К нему" : "Скоро: К нему > От него";
-		msg_zh = skillid === id ? "即将: 外 > 内" : "即将: 内 > 外";
+		const msg = skillid === id ? t("Soon: OUT > IN") : t("Soon: IN > OUT");
 
 		handlers.event([
 			{ type: "text", sub_type: "notification", message: msg}
@@ -408,14 +399,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		}
 
 		if (skillid === 1131 || skillid === 1132) {
-			let msg = "";
-			let msg_ru = "";
-			let msg_zh = "";
 			const id = thirdboss_soul_world ? 1132 : 1131;
-
-			msg = skillid === id ? "Soon: OUT | Donuts (IN > OUT)" : "Soon: IN | Donuts (OUT > IN)";
-			msg_ru = skillid === id ? "Скоро: От него | Бублики (К нему > От него)" : "Скоро: К нему | Бублики (От него > К нему)";
-			msg_zh = skillid === id ? "即将: 外 | 甜甜圈 (内 > 外)" : "即将: 内 | 甜甜圈 (外 > 内)";
+			const msg = skillid === id ? t("Soon: OUT | Donuts (IN > OUT)") : t("Soon: IN | Donuts (OUT > IN)");
 
 			handlers.event([{ type: "text", sub_type: "notification", message: msg}]);
 
@@ -844,8 +829,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-985-3000-3103-0": [{ type: "text", sub_type: "message", message: t("Circles (Spread)") }],
 		"s-985-3000-3105-0": [{ type: "text", sub_type: "message", message: t("Circles (Gather)") }],
 		"s-985-3000-1136-0": [{ type: "text", sub_type: "message", message: t("Claw (Bait)") }],
-		"s-985-3000-1144-0": [{ type: "text", sub_type: "message", message: t("OUT") }],
-		"s-985-3000-1145-0": [{ type: "text", sub_type: "message", message: t("IN") }],
+		"s-985-3000-1144-0": [{ type: "text", sub_type: "message", message: t("Out") }],
+		"s-985-3000-1145-0": [{ type: "text", sub_type: "message", message: t("In") }],
 		"s-985-3000-1240-0": [
 			{ type: "text", sub_type: "message", message: t("Donuts") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 350, 0, 6000] }
@@ -880,21 +865,21 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 		"s-985-3000-1701-0": [{ type: "text", sub_type: "message", message: t("Back | Front") }],
 		//
-		"s-985-3000-1129-0": [{ type: "text", sub_type: "message", message: t("IN") }],
+		"s-985-3000-1129-0": [{ type: "text", sub_type: "message", message: t("In") }],
 		"s-985-3000-1113-0": [{ type: "text", sub_type: "message", message: t("Bait") }],
 		"s-985-3000-1151-0": [{ type: "text", sub_type: "message", message: t("Stun") }],
 		"s-985-3000-1152-0": [{ type: "text", sub_type: "message", message: t("Stun | Push Back") }],
 		"s-985-3000-1152-1": [{ type: "text", sub_type: "message", message: t("Dodge"), delay: 1900 }],
 		"s-985-3000-1138-0": [{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 250, 0, 6000] }], // begone
 		"s-985-3000-2145-0": [
-			{ type: "text", sub_type: "message", message: t("IN"), check_func: () => !are_you_afraid_of_me_continue },
+			{ type: "text", sub_type: "message", message: t("In"), check_func: () => !are_you_afraid_of_me_continue },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 10, 250, 0, 1500] },
 			{ type: "text", sub_type: "message", message: t("IN > OUT"), check_func: () => are_you_afraid_of_me_continue },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 10, 285, 2000, 2000], check_func: () => are_you_afraid_of_me_continue },
 			{ type: "func", func: () => are_you_afraid_of_me_continue = false, check_func: () => are_you_afraid_of_me_continue, delay: 1000 }
 		],
 		"s-985-3000-2144-0": [
-			{ type: "text", sub_type: "message", message: t("OUT"), check_func: () => !are_you_afraid_of_me_continue },
+			{ type: "text", sub_type: "message", message: t("Out"), check_func: () => !are_you_afraid_of_me_continue },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 10, 250, 0, 1500] },
 			{ type: "text", sub_type: "message", message: t("OUT > IN"), check_func: () => are_you_afraid_of_me_continue },
 			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 10, 285, 2000, 2000], check_func: () => are_you_afraid_of_me_continue },

@@ -2,7 +2,7 @@
 //
 // made by Emilia-s2 / HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let firstboss_debuff = null;
@@ -20,17 +20,17 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"am-770-1000-97000057": [{ type: "func", func: () => firstboss_debuff = 1 }], // Red
 		"am-770-1000-97000058": [{ type: "func", func: () => firstboss_debuff = 2 }], // Blue
 		"s-770-1000-1306-0": [ // red inside
-			{ type: "text", sub_type: "message", message: t("OUT"), check_func: () => firstboss_debuff === 1 },
-			{ type: "text", sub_type: "message", message: t("IN"), check_func: () => firstboss_debuff === 2 },
-			{ type: "text", sub_type: "alert", message: t("OUT"), check_func: () => firstboss_debuff === 1 },
-			{ type: "text", sub_type: "alert", message: t("IN"), check_func: () => firstboss_debuff === 2 },
+			{ type: "text", sub_type: "message", message: t("Out"), check_func: () => firstboss_debuff === 1 },
+			{ type: "text", sub_type: "message", message: t("In"), check_func: () => firstboss_debuff === 2 },
+			{ type: "text", sub_type: "alert", message: t("Out"), check_func: () => firstboss_debuff === 1 },
+			{ type: "text", sub_type: "alert", message: t("In"), check_func: () => firstboss_debuff === 2 },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 400, 0, 4000] }
 		],
 		"s-770-1000-1307-0": [ // blue inside
-			{ type: "text", sub_type: "message", message: t("IN"), check_func: () => firstboss_debuff === 1 },
-			{ type: "text", sub_type: "message", message: t("OUT"), check_func: () => firstboss_debuff === 2 },
-			{ type: "text", sub_type: "alert", message: t("IN"), check_func: () => firstboss_debuff === 1 },
-			{ type: "text", sub_type: "alert", message: t("OUT"), check_func: () => firstboss_debuff === 2 },
+			{ type: "text", sub_type: "message", message: t("In"), check_func: () => firstboss_debuff === 1 },
+			{ type: "text", sub_type: "message", message: t("Out"), check_func: () => firstboss_debuff === 2 },
+			{ type: "text", sub_type: "alert", message: t("In"), check_func: () => firstboss_debuff === 1 },
+			{ type: "text", sub_type: "alert", message: t("Out"), check_func: () => firstboss_debuff === 2 },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 400, 0, 4000] }
 		],
 		"s-770-1000-1206-0": [{ type: "text", sub_type: "message", message: t("Jump Back") }],

@@ -2,7 +2,7 @@
 //
 // made by michengs / Emilia-s2 / HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let print_loading = true;
@@ -71,7 +71,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "vector", args: [553, 270, 250, 186, 800, 0, 3500] }
 		],
 		"s-3037-1000-1137-0": [
-			{ type: "text", sub_type: "message", message: t("Hammer Back") },
+			{ type: "text", sub_type: "message", message: t("Hammer back") },
 			{ type: "spawn", func: "circle", args: [false, 553, 185, 500, 8, 490, 100, 2000] }
 		],
 		"s-3037-1000-1138-0": [{ type: "text", sub_type: "message", delay: 1100, message: t("Dodge") }], // Knockup (Bait)

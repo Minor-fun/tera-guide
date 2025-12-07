@@ -2,7 +2,7 @@
 //
 // made by False
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 	const { entity } = dispatch.require.library;
 

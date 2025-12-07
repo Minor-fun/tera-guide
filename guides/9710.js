@@ -2,7 +2,7 @@
 //
 // made by ITunk
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		// 1 BOSS
 		"s-710-1000-102-0": [{ type: "text", sub_type: "message", message: t("Pushback (Kaia)") }],

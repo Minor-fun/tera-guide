@@ -2,7 +2,7 @@
 //
 // made by HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = ES;
 
 	const third_boss_sun_w = -2;
@@ -198,6 +198,6 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-456-1003-3104-0": [{ type: "text", sub_type: "message", message: t("Cage") }], // 456016
 		"s-456-1003-3108-0": [{ type: "text", sub_type: "message", message: t("Waves") }],
 		"qb-456-1003-456015": [{ type: "text", sub_type: "message", message: t("AOE") }], // 3103
-		"qb-456-1003-456017": [{ type: "text", sub_type: "message", message: t("Give Stun") }] // 3102
+		"qb-456-1003-456017": [{ type: "text", sub_type: "message", message: t("Give stun") }] // 3102
 	};
 };

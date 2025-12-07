@@ -2,7 +2,7 @@
 //
 // made by HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	let thirdboss_print_combo = true;
 	let thirdboss_print_bait = true;

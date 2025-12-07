@@ -2,7 +2,7 @@
 //
 // made by TristanPW
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	// FIRST FLOOR
@@ -183,16 +183,16 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 	function seventh_spawn_tables() {
 		handlers.event([
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 2.8, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 3.46, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.12, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.75, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.38, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.97, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 6.58, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.2, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.8, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 8.44, "ownerName": "SAFE SPOT", "message": "SAFE" }
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 2.8, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 3.46, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.12, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.75, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.38, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.97, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 6.58, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.2, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.8, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 8.44, "ownerName": "SAFE SPOT", message: t("SAFE") }
 		]);
 	}
 
@@ -209,7 +209,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			"sub_delay": 4000,
 			"distance": 450,
 			"ownerName": "SAFE SPOT",
-			"message": "SAFE",
+			message: t("SAFE"),
 			"offset": offset
 		};
 
@@ -300,7 +300,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "despawn_all" }
 		],
 		// Clone Mechanic
-		// "h-2800-1000-99": [{"type": "text","sub_type": "notification","message": "BlackJacka  is looking after you","message_RU": "БлекДжека присматривает за вами" }],
+		// "h-2800-1000-99": [{"type": "text","sub_type": "notification",message: t("BlackJacka  is looking after you") }],
 		"ab-2800-1000-90340105": [{ type: "text", sub_type: "message", message: t("STUN IT") }],
 		// Backstep + Knockback
 		// "s-2800-1000-212-0": [{type: "text", sub_type: "message", message: t("BACKSTEP + KNOCKBACK")}],
@@ -328,7 +328,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-2800-2000-1108-0": [{ type: "text", sub_type: "message", message: t("FRONT") }],
 		"s-2800-2000-1109-0": [{ type: "text", sub_type: "message", message: t("BACK SPIN") }],
 		"s-2800-2000-1110-0": [{ type: "text", sub_type: "message", message: t("OUT") }],
-		"s-2800-2000-1119-0": [{ type: "text", sub_type: "message", message: t("PULL") }],
+		"s-2800-2000-1119-0": [{ type: "text", sub_type: "message", message: t("Pull") }],
 		"s-2800-2000-1122-0": [{ type: "text", sub_type: "message", message: t("IN") }],
 		"s-2800-2000-1306-0": [{ type: "text", sub_type: "message", message: t("Run away") }],
 		"s-2800-2000-2102-0": "s-2800-2000-1102-0",
@@ -360,18 +360,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"ae-0-0-90340315": [{ "type": "func", "func": cage_set_debuff.bind(4, false) }],
 		"s-2800-3000-1106-0": [{ type: "text", sub_type: "message", message: t("Kick back!") }],
 		"s-2800-3000-1108-0": [{ type: "text", sub_type: "message", message: t("Kick forward!") }],
-		"s-2800-3000-1112-0": [{ type: "text", sub_type: "message", message: t("To the Boss") }], //
+		"s-2800-3000-1112-0": [{ type: "text", sub_type: "message", message: t("To the boss") }], //
 		"s-2800-3000-1130-0": [
-			{ type: "text", sub_type: "message", "message": "LEFT SWIPE"},
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 2.3, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 1, "ownerName": "SAFE SPOT", "message": "SAFE" },
+			{ type: "text", sub_type: "message", message: t("LEFT SWIPE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 2.3, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": 1, "ownerName": "SAFE SPOT", message: t("SAFE") },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": 2.3 },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": 1 }
 		],
 		"s-2800-3000-1131-0": [
-			{ type: "text", sub_type: "message", "message": "RIGHT SWIPE"},
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -2.3, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -1, "ownerName": "SAFE SPOT", "message": "SAFE" },
+			{ type: "text", sub_type: "message", message: t("RIGHT SWIPE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -2.3, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 2000, "distance": 200, "offset": -1, "ownerName": "SAFE SPOT", message: t("SAFE") },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": -2.3 },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 2000, "distance": 200, "offset": -1 }
 		],
@@ -416,10 +416,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		// FIFTH FLOOR
 
-		"h-2800-5000-85": [{ "type": "text", "sub_type": "notification", "message": "85%... Big Jump + mob ", "message_RU": "85% Скоро Большой прыжок + мобы" }],
-		"h-2800-5000-55": [{ "type": "text", "sub_type": "notification", "message": "55%... Big Jump + mob ", "message_RU": "55% Скоро Большой прыжок + мобы" }],
-		"h-2800-5000-25": [{ "type": "text", "sub_type": "notification", "message": "25%... Big Jump + mob ", "message_RU": "25% Скоро Большой прыжок + мобы" }],
-		"h-2800-5000-10": [{ "type": "text", "sub_type": "notification", "message": "10%... Big Jump + mob ", "message_RU": "10% Скоро Большой прыжок + мобы" }],
+		"h-2800-5000-85": [{ "type": "text", "sub_type": "notification", message: t("85%... Big Jump + mob ") }],
+		"h-2800-5000-55": [{ "type": "text", "sub_type": "notification", message: t("55%... Big Jump + mob ") }],
+		"h-2800-5000-25": [{ "type": "text", "sub_type": "notification", message: t("25%... Big Jump + mob ") }],
+		"h-2800-5000-10": [{ "type": "text", "sub_type": "notification", message: t("10%... Big Jump + mob ") }],
 		"s-2800-5000-1103-0": [
 			{ type: "text", sub_type: "message", message: t("Tail") },
 			{ type: "spawn", func: "semicircle", args: [140, 260, 553, 0, 0, 10, 500, 0, 2000] },
@@ -516,7 +516,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "semicircle", args: [-160, 105, 553, 0, 0, null, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, -160, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 105, 550, 0, 3000] },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 3000, "distance": 350, "offset": 2.6, "ownerName": "SAFE SPOT", "message": "SAFE" },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 3000, "distance": 350, "offset": 2.6, "ownerName": "SAFE SPOT", message: t("SAFE") },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 3000, "distance": 350, "offset": 2.6 }
 		],
 		"s-2800-6000-1110-0": [
@@ -524,7 +524,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "semicircle", args: [-160, 105, 553, 0, 0, null, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, -160, 550, 0, 3000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 105, 550, 0, 3000] },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 3000, "distance": 350, "offset": 2.6, "ownerName": "SAFE SPOT", "message": "SAFE" },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 3000, "distance": 350, "offset": 2.6, "ownerName": "SAFE SPOT", message: t("SAFE") },
 			{ "type": "spawn", "sub_type": "item", "id": 98260, "sub_delay": 3000, "distance": 350, "offset": 2.6 }
 		],
 		"s-2800-6000-1111-0": [{ type: "text", sub_type: "message", message: t("Left kick") }],
@@ -557,12 +557,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		// SEVENTH FLOOR
 
 		// Lasers + Mechanic
-		// "s-2800-7000-901-0": [{"type": "text","sub_type": "notification","message": "DEBUFF (CLOSEST)"}].concat(lasers_markers_seventhfloor),
-		// "s-2800-7000-902-0": [{"type": "text","sub_type": "notification","message": "DEBUFF (FURTHEST)"}].concat(inverted_lasers_markers_seventhfloor),
-		// "s-2800-7000-903-0": [{"type": "text","sub_type": "notification","message": "GATHER + CLEANSE"}].concat(lasers_markers_seventhfloor),
-		// "s-2800-7000-904-0": [{"type": "text","sub_type": "notification","message": "GATHER + NO CLEANSE"}].concat(inverted_lasers_markers_seventhfloor),
-		// "s-2800-7000-905-0": [{"type": "text","sub_type": "notification","message": "SPREAD"}].concat(lasers_markers_seventhfloor),
-		// "s-2800-7000-906-0": [{"type": "text","sub_type": "notification","message": "GATHER"}].concat(inverted_lasers_markers_seventhfloor),
+		// "s-2800-7000-901-0": [{"type": "text","sub_type": "notification",message: t("DEBUFF (CLOSEST)")}].concat(lasers_markers_seventhfloor),
+		// "s-2800-7000-902-0": [{"type": "text","sub_type": "notification",message: t("DEBUFF (FURTHEST)")}].concat(inverted_lasers_markers_seventhfloor),
+		// "s-2800-7000-903-0": [{"type": "text","sub_type": "notification",message: t("GATHER + CLEANSE")}].concat(lasers_markers_seventhfloor),
+		// "s-2800-7000-904-0": [{"type": "text","sub_type": "notification",message: t("GATHER + NO CLEANSE")}].concat(inverted_lasers_markers_seventhfloor),
+		// "s-2800-7000-905-0": [{"type": "text","sub_type": "notification",message: t("SPREAD")}].concat(lasers_markers_seventhfloor),
+		// "s-2800-7000-906-0": [{"type": "text","sub_type": "notification",message: t("GATHER")}].concat(inverted_lasers_markers_seventhfloor),
 		"nd-2800-7000": [
 			{ type: "stop_timers" },
 			{ type: "despawn_all" }
@@ -624,24 +624,24 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 0, 700, 0, 6000] }
 		],
 		"s-2800-7000-1154-0": [
-			{ "type": "text", "sub_type": "message", "message": "OUT + IN"},
+			{ "type": "text", "sub_type": "message", message: t("OUT + IN") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1155-0": [
-			{ "type": "text", "sub_type": "message", "message": "IN + OUT"},
+			{ "type": "text", "sub_type": "message", message: t("IN + OUT") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1142-0": [
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 2.8, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 3.46, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.12, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.75, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.38, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.97, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 6.58, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.2, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.8, "ownerName": "SAFE SPOT", "message": "SAFE" },
-			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 8.44, "ownerName": "SAFE SPOT", "message": "SAFE" }
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 2.8, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 3.46, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.12, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 4.75, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.38, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 5.97, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 6.58, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.2, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 7.8, "ownerName": "SAFE SPOT", message: t("SAFE") },
+			{ "type": "spawn", "sub_type": "build_object", "id": 1, "sub_delay": 4000, "distance": 525, "offset": 8.44, "ownerName": "SAFE SPOT", message: t("SAFE") }
 		],
 		"s-2800-7000-1143-0": "s-2800-7000-1142-0",
 		"s-2800-7000-1910-0": [{ type: "func", func: seventh_spawn_tables.bind(null) }],
@@ -670,11 +670,11 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "func", func: seventh_spawn_tables.bind(null) }
 		],
 		"s-2800-7000-1144-0": [
-			{ "type": "text", "sub_type": "message", "message": "OUT"},
+			{ "type": "text", "sub_type": "message", message: t("OUT") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-1145-0": [
-			{ "type": "text", "sub_type": "message", "message": "IN"},
+			{ "type": "text", "sub_type": "message", message: t("IN") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }
 		],
 		"s-2800-7000-2105-0": "s-2800-7000-1105-0",

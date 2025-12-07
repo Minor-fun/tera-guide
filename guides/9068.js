@@ -2,7 +2,7 @@
 //
 // made by HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	let thirdboss_stacks_count = 0;
 	let thirdboss_stacks_timer = null;

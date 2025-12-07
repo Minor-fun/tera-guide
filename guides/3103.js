@@ -2,7 +2,7 @@
 //
 // made by HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	let timer1 = null;
 	let print_target = true;
 	let in_bait = false;

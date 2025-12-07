@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / Calvary
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	let color = 0;
 	let debuff = 0;
@@ -97,7 +97,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 		"s-982-1000-312-0": [
 			{ type: "text", sub_type: "message", message: t("Break Golden Flower") },
-			{ type: "text", sub_type: "alert", message: t("Dodge the Flower!"), check_func: () => color === debuff, delay: 1500 }
+			{ type: "text", sub_type: "alert", message: t("Dodge the flower!"), check_func: () => color === debuff, delay: 1500 }
 		],
 		"s-982-1000-308-0": [
 			{ type: "func", func: () => color = 0 },

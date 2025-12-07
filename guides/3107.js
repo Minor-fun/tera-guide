@@ -20,7 +20,7 @@ function addOpcodeAndDefinition(mod, name, version = null, definition = null) {
 	}
 }
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	addOpcodeAndDefinition(dispatch._mod, "S_DUNGEON_EVENT_GAGE", 2, [
@@ -111,32 +111,32 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	}
 
 	function print_mech(next, code) {
-		let message = "",
-			message_RU = "",
-			message_zh = "",
+		let message = t(""),
+			
+			
 			sub_type = "message";
 
 		if (next) {
-			message += "Next: ";
-			message_RU += "Далее: ";
-			message_zh += "下一个: ";
+			message += t("Next: ");
+			
+			
 			sub_type = "notification";
 		}
 
 		if (mech_reverse) {
-			message += `${mech_messages[msg_b].message} + ${mech_messages[msg_a].message}`;
-			message_RU += `${mech_messages[msg_b].message_RU} + ${mech_messages[msg_a].message_RU}`;
-			message_zh += `${mech_messages[msg_b].message_zh} + ${mech_messages[msg_a].message_zh}`;
+			message += t("{message} + {arg0}", { message: mech_messages[msg_b].message, arg0: mech_messages[msg_a].message });
+			
+			
 		} else {
-			message += `${mech_messages[msg_a].message} + ${mech_messages[msg_b].message}`;
-			message_RU += `${mech_messages[msg_a].message_RU} + ${mech_messages[msg_b].message_RU}`;
-			message_zh += `${mech_messages[msg_a].message_zh} + ${mech_messages[msg_b].message_zh}`;
+			message += t("{message} + {arg0}", { message: mech_messages[msg_a].message, arg0: mech_messages[msg_b].message });
+			
+			
 		}
 
 		if (code) {
-			message += `, Code: ${mech_reverse ? "0" : "1"}`;
-			message_RU += `, Код: ${mech_reverse ? "0" : "1"}`;
-			message_zh += `, 代码: ${mech_reverse ? "0" : "1"}`;
+			message += t(", Code: {mech_reverse01}", { mech_reverse01: mech_reverse ? "0" : "1" });
+			
+			
 		}
 
 		handlers.text({
@@ -411,7 +411,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		// Radar mech
 		"qb-3107-3000-31075430": [{ type: "text", sub_type: "message", message: t("!!! Radar !!!") }],
 		"s-3107-3000-1118-0": [
-			{ type: "text", sub_type: "message", message: t("OUT") },
+			{ type: "text", sub_type: "message", message: t("Out") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 10, 250, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 12, 200, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 14, 150, 0, 3000] },
@@ -419,7 +419,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 50, 50, 0, 3000] }
 		],
 		"s-3107-3000-2107-0": [
-			{ type: "text", sub_type: "message", message: t("IN") },
+			{ type: "text", sub_type: "message", message: t("In") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 300, 0, 3000] }
 		],
 		"s-3107-3000-1222-0": [
@@ -435,7 +435,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{
 				type: "func", func: () => {
 					pizza_active_guide = !pizza_active_guide;
-					const msg_state = pizza_active_guide ? "enabled" : "disabled";
+					const msg_state = pizza_active_guide  ? t("enabled") : t("disabled");
 					dispatch._mod.command.message(`lasers markers have been ${msg_state}`);
 				}
 			}

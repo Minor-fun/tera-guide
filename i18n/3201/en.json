@@ -1,4 +1,5 @@
 {
+  "@dungeon": "Gossamer Vault (Hard)",
   "Dodge": "Dodge",
   "Stun attack": "Stun attack",
   "Back": "Back",
@@ -17,7 +18,6 @@
   "Right > Left": "Right > Left",
   "Right Hand (Flying)": "Right Hand (Flying)",
   "Left Hand (Flying)": "Left Hand (Flying)",
-  "Stun Attack": "Stun Attack",
   "Pizza": "Pizza",
   "Slow": "Slow",
   "Fast": "Fast",

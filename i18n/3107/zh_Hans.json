@@ -18,7 +18,8 @@
   "Bait!": "诱导！",
   "Lasers Soon": "准备激光",
   "!!! Radar !!!": "雷达！！！",
-  "OUT": "远离",
-  "IN": "靠近",
-  "LASERS": "激光"
+  "LASERS": "激光",
+  "": "",
+  "Next: ": "下一个: ",
+  ", Code: {mech_reverse01}": ", 代码: {mech_reverse01}"
 }

@@ -2,7 +2,7 @@
 //
 // made by star, hyacinth for Arborea Reborn
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = ES;
 
 	const { HIGHLIGHT_ITEM } = module.parent.exports.spawn;
@@ -364,15 +364,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	//For Lakan funcs
 	// eslint-disable-next-line no-shadow
 	function boss7_star_event(str, type) {
-		const [message_en, message_ru] = str.split("|");
-		const zh_map = {
-			"(Debuffs) Closest": "(Debuff) 最近",
-			"(Debuffs) Farthest": "(Debuff) 最远",
-			"(Bombs) Gather + Cleanse": "(炸弹) 集合 + 解毒",
-			"(Bombs) Gather + No cleanse": "(炸弹) 集合 + 不解毒",
-			"(Circles) Spread": "(圈) 分散",
-			"(Circles) Gather": "(圈) 集合"
-		};
+		const message_en = str;
+		
 		handlers.event([
 			{ type: "text", sub_type: "message", message: message_en},
 			{ type: "spawn", func: "vector", args: [912, 18, 300, 7, 750, 0, 4000] },
@@ -449,8 +442,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	}
 
 	function enhanced_text(sub_type, message, delay, ent) {
-		const messages_RU = { "Dodge": "Эвейд" };
-		const messages_ZH = { "Dodge": "闪避" };
+		
+		
 		handlers.text({
 			sub_type,
 			message,
@@ -720,7 +713,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "text", sub_type: "message", message: t("Team Up") },
 			{ type: "text", sub_type: "message", delay: 3500, message: t("Dodge") }
 		],
-		"s-2804-6000-230-0": [{ type: "text", sub_type: "message", message: t("AOE") }],
+		"s-2804-6000-230-0": [{ type: "text", sub_type: "message", message: t("AoE") }],
 		"s-2804-6000-231-0": [
 			{ type: "text", sub_type: "message", message: t("Out Safe") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 10, 300, 0, 3000] }
@@ -750,11 +743,11 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"h-2804-7000-49": [{ type: "func", func: () => boss7_hp_49 = true }],
 		"s-2804-7000-103-0": [{ type: "text", sub_type: "message", message: t("Back + Front") }],
 		"s-2804-7000-110-0": [{ type: "text", sub_type: "message", message: t("Claw") }],
-		"s-2804-7000-110-1": [{ type: "func", func: enhanced_text, args: ["alert", "Dodge", 1100] }],
+		"s-2804-7000-110-1": [{ type: "func", func: enhanced_text, args: ["alert", t("Dodge"), 1100] }],
 		"s-2804-7000-113-0": [{ type: "text", sub_type: "message", message: t("Bait") }],
 		"s-2804-7000-135-0": [{ type: "text", sub_type: "message", message: t("In") }],
 		"s-2804-7000-136-0": [{ type: "text", sub_type: "message", message: t("Claw") }],
-		"s-2804-7000-136-1": [{ type: "func", func: enhanced_text, args: ["alert", "Dodge", 1100] }],
+		"s-2804-7000-136-1": [{ type: "func", func: enhanced_text, args: ["alert", t("Dodge"), 1100] }],
 		"s-2804-7000-138-0": [{ type: "spawn", func: "circle", args: [false, 912, 0, 15, 10, 250, 0, 6000] }],
 		"s-2804-7000-144-0": [{ type: "text", sub_type: "message", message: t("Out") }],
 		"s-2804-7000-145-0": [{ type: "text", sub_type: "message", message: t("In") }],
@@ -787,12 +780,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "text", sub_type: "message", message: t("Sleep Boss"), class_position: "heal", delay: 1000 },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 16, 175, 2000, 5000] }
 		],
-		"s-2804-7000-901-0": [{ type: "func", func: boss7_star_event, args: ["(Debuffs) Closest|(Дебаффы) Ближайший", 0] }],
-		"s-2804-7000-902-0": [{ type: "func", func: boss7_star_event, args: ["(Debuffs) Farthest|(Дебаффы) Дальний", 1] }],
-		"s-2804-7000-903-0": [{ type: "func", func: boss7_star_event, args: ["(Bombs) Gather + Cleanse|(Бомбы) Собраться + Очистка", 0] }],
-		"s-2804-7000-904-0": [{ type: "func", func: boss7_star_event, args: ["(Bombs) Gather + No cleanse|(Бомбы) Собраться + Без очистки", 1] }],
-		"s-2804-7000-905-0": [{ type: "func", func: boss7_star_event, args: ["(Circles) Spread|(Круги) Разойтись", 0] }],
-		"s-2804-7000-906-0": [{ type: "func", func: boss7_star_event, args: ["(Circles) Gather|(Круги) Собраться", 1] }],
+		"s-2804-7000-901-0": [{ type: "func", func: boss7_star_event, args: [t("(Debuffs) Closest"), 0] }],
+		"s-2804-7000-902-0": [{ type: "func", func: boss7_star_event, args: [t("(Debuffs) Farthest"), 1] }],
+		"s-2804-7000-903-0": [{ type: "func", func: boss7_star_event, args: [t("(Bombs) Gather + Cleanse"), 0] }],
+		"s-2804-7000-904-0": [{ type: "func", func: boss7_star_event, args: [t("(Bombs) Gather + No cleanse"), 1] }],
+		"s-2804-7000-905-0": [{ type: "func", func: boss7_star_event, args: [t("(Circles) Spread"), 0] }],
+		"s-2804-7000-906-0": [{ type: "func", func: boss7_star_event, args: [t("(Circles) Gather"), 1] }],
 		"dm-0-0-90340703": [{ type: "func", func: boss7_message_event, args: [703] }],
 		"dm-0-0-90340704": [{ type: "func", func: boss7_message_event, args: [704] }],
 		"dm-0-0-90340705": [{ type: "func", func: boss7_message_event, args: [705] }],
@@ -843,7 +836,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		],
 		"s-2804-8000-117-0": [{ type: "text", sub_type: "message", message: t("Front") }],
 		"s-2804-8000-302-0": [
-			{ type: "text", sub_type: "message", message: t("AOE") },
+			{ type: "text", sub_type: "message", message: t("AoE") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 500, 100, 6000] }
 		],
 		"s-2804-8000-407-0": [{ type: "func", func: ninth_new_swipe_event, args: [1407] }],

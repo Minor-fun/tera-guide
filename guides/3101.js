@@ -2,7 +2,7 @@
 //
 // made by michengs / Emilia-s2
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		// 1 BOSS
 		"nd-3101-1000": [

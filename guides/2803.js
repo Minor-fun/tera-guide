@@ -2,7 +2,7 @@
 //
 // made by Mate
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	// let print_stun = true;
 

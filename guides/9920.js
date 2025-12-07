@@ -2,7 +2,7 @@
 //
 // made by HSDN / Yuyuko / Owyn
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let secondboss_mech_counter = 0;
@@ -69,7 +69,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-920-1000-1109-0": [{ type: "text", sub_type: "message", message: t("Back Attack") }],
 		"s-920-1000-1130-0": [{ type: "text", sub_type: "message", message: t("Full > Outer > Inner") }],
 		"s-920-1000-1220-0": [
-			{ type: "text", sub_type: "message", message: t("AOE") },
+			{ type: "text", sub_type: "message", message: t("AoE") },
 			{ type: "text", sub_type: "message", delay: 2900, message: t("Dodge!") }
 		],
 		"s-920-1000-1300-0": [{ type: "text", sub_type: "message", delay: 600, message: t("Dodge!") }],

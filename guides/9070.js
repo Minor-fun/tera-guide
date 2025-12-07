@@ -21,7 +21,7 @@ function addOpcodeAndDefinition(mod, name, version = null, definition = null) {
 	}
 }
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	addOpcodeAndDefinition(dispatch._mod, "S_DUNGEON_EVENT_GAGE", 2, [

@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / icebrog / Enndy
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let triple_attack = false;

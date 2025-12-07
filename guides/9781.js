@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let thirdboss_fifty = false;
@@ -97,7 +97,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 360, 0, 1500] }
 		],
 		"s-781-1000-1301-0": [
-			{ type: "text", sub_type: "message", message: t("AOE") },
+			{ type: "text", sub_type: "message", message: t("AoE") },
 			{ type: "text", sub_type: "message", message: t("Dodge! (Go to the safe)"), delay: 1000 }
 		],
 		"s-781-1000-1303-0": [{ type: "text", sub_type: "message", message: t("Spin") }],

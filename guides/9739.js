@@ -2,7 +2,7 @@
 //
 // made by multarix
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		// 1 BOSS
 		"nd-739-1000": [

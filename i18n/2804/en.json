@@ -3,6 +3,7 @@
   "2": "2",
   "3": "3",
   "360": "360",
+  "@dungeon": "Phantom hideout",
   "Shield in 5 seconds!": "Shield in 5 seconds!",
   "Shield in 15 seconds!": "Shield in 15 seconds!",
   "Ready for Shield": "Ready for Shield",
@@ -99,7 +100,6 @@
   "Back Attack!": "Back Attack!",
   "Phantom": "Phantom",
   "Team Up": "Team Up",
-  "AOE": "AOE",
   "Out Safe": "Out Safe",
   "In Safe": "In Safe",
   "Counter Attack (Bait)": "Counter Attack (Bait)",
@@ -179,5 +179,9 @@
   "Debuff (Reverse)": "Debuff (Reverse)",
   "Plague/Regress - Stack 1": "Plague/Regress - Stack 1",
   "Plague/Regress - Stack 2": "Plague/Regress - Stack 2",
-  "Laser on {name}": "Laser on {name}"
+  "Laser on {name}": "Laser on {name}",
+  "(Debuffs) Closest": "(Debuffs) Closest",
+  "(Debuffs) Farthest": "(Debuffs) Farthest",
+  "(Circles) Spread": "(Circles) Spread",
+  "(Circles) Gather": "(Circles) Gather"
 }

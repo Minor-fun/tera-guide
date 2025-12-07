@@ -3,7 +3,7 @@
 //
 // made by MissMeowMeow (Amy)
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	return {
 		"nd-2802-1000": [
 			{ type: "stop_timers" },

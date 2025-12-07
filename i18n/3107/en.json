@@ -1,4 +1,7 @@
 {
+  "@dungeon": "Corrupted RK-9 Kennel",
+  "enabled": "enabled",
+  "disabled": "disabled",
   "Out": "Out",
   "In": "In",
   "Wave": "Wave",
@@ -18,7 +21,9 @@
   "Bait!": "Bait!",
   "Lasers Soon": "Lasers Soon",
   "!!! Radar !!!": "!!! Radar !!!",
-  "OUT": "OUT",
-  "IN": "IN",
-  "LASERS": "LASERS"
+  "LASERS": "LASERS",
+  "": "",
+  "Next: ": "Next: ",
+  "{message} + {arg0}": "{message} + {arg0}",
+  ", Code: {mech_reverse01}": ", Code: {mech_reverse01}"
 }

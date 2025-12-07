@@ -2,7 +2,7 @@
 //
 // made by HSDN
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	const { player } = dispatch.require.library;
 	let print_lasers = true;

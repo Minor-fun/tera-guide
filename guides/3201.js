@@ -2,7 +2,7 @@
 //
 // made by michengs / ITunk
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	let boss = null;
 
 	return {
@@ -92,7 +92,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "text", sub_type: "message", message: t("Left Hand (Flying)") },
 			{ type: "spawn", func: "circle", args: [false, 553, 340, 150, 10, 320, 0, 4000] }
 		],
-		"s-3201-1000-151-0": [{ type: "text", sub_type: "message", message: t("Stun Attack") }],
+		"s-3201-1000-151-0": [{ type: "text", sub_type: "message", message: t("Stun attack") }],
 		"s-3201-1000-305-0": [{ type: "text", sub_type: "message", message: t("Pizza") }],
 		"s-3201-1000-311-0": [
 			{ type: "text", sub_type: "message", message: t("Slow") },

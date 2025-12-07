@@ -1,4 +1,5 @@
 {
+  "@dungeon": "Timescape",
   "Set": "Set",
   "Wall Change (Sun)": "Wall Change (Sun)",
   "Wall Change (Demon)": "Wall Change (Demon)",
@@ -39,6 +40,5 @@
   "Leash (target)": "Leash (target)",
   "Cage": "Cage",
   "Waves": "Waves",
-  "Give Stun": "Give Stun",
   "Small: {small}, Middle: {middle}, Large: {large}": "Small: {small}, Middle: {middle}, Large: {large}"
 }

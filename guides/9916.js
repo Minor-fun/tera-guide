@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / Emilia-s2
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let back_print = false;

@@ -44,6 +44,7 @@
   "Shield in 10 seconds!": "十秒后护盾！",
   "Bait!": "诱导！",
   "!!! Radar !!!": "雷达！！！",
-  "OUT": "远离",
-  "IN": "靠近"
+  "": "",
+  "Next: ": "下一个: ",
+  ", Code: {mech_reverse01}": ", 代码: {mech_reverse01}"
 }

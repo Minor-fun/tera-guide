@@ -2,7 +2,7 @@
 //
 //
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	let boss_id = 0n;

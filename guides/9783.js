@@ -2,7 +2,7 @@
 //
 // made by ITunk / HSDN / FrostSigil
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	let firstboss_prepare_stun = false;
 	let secondboss_show_book_notify = true;
 	let secondboss_game_id_for_book = null;

@@ -3,6 +3,8 @@
   "2": "2",
   "3": "3",
   "360": "360度攻击",
+  "Soon: IN": "即将: 内",
+  "Soon: OUT": "即将: 外",
   "2x360": "双360",
   "Triples Soon!": "即将三连击！",
   "Donuts": "甜甜圈",
@@ -74,8 +76,6 @@
   "Circles (Spread)": "闪电 (分散)",
   "Circles (Gather)": "闪电 (集合)",
   "Claw (Bait)": "爪击 (点名)",
-  "OUT": "外",
-  "IN": "内",
   "Wave (Dodge) | Plague/Regress": "波浪 (闪避) | 瘟疫/回归",
   "Puddles! (Spread)": "水塘！(分散)",
   "Donuts (OUT > IN)": "甜甜圈 (外 > 内)",
@@ -86,5 +86,7 @@
   "IN > OUT": "内 > 外",
   "OUT > IN": "外 > 内",
   "Right {double}": "右 ${double_zh}",
-  "Left {double}": "左 ${double_zh}"
+  "Left {double}": "左 ${double_zh}",
+  "": "",
+  "(Double)": "(双)"
 }

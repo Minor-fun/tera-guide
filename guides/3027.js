@@ -4,7 +4,7 @@
 
 /* eslint-disable no-multi-spaces */
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	const { HIGHLIGHT_ITEM } = module.parent.exports.spawn;
 
 	let shield_timer1 = null;

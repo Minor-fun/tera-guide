@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / redacted by False for Arborea Reborn
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	const { player } = dispatch.require.library;
 
 	let green = false;

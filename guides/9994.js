@@ -2,7 +2,7 @@
 //
 // made by ITunk / Vampic
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	const { entity } = dispatch.require.library;
 
 	let blue_vaccine_loc = null;
