@@ -1,12 +1,13 @@
 {
-  "Jump Back": "Прыжок назад",
-  "Jump Forward": "Прыжок вперед",
-  "Right Hand": "Правая рука",
-  "Left Hand": "Левая рука",
-  "Stun Frontal": "Передний стан",
-  "Circles (Horizontal)": "Круги (горизонтально)",
-  "Circles (Vertical)": "Круги (вертикально)",
-  "Kicks": "Удары",
-  "Circles (Target)": "Круги (таргет)",
-  "Explosive Waves": "Волны"
+  "@dungeon": "Shadow of the Gutrends",
+  "Jump Back": "Jump Back",
+  "Jump Forward": "Jump Forward",
+  "Right Hand": "Right Hand",
+  "Left Hand": "Left Hand",
+  "Stun Frontal": "Stun Frontal",
+  "Circles (Horizontal)": "Circles (Horizontal)",
+  "Circles (Vertical)": "Circles (Vertical)",
+  "Kicks": "Kicks",
+  "Circles (Target)": "Circles (Target)",
+  "Explosive Waves": "Explosive Waves"
 }
