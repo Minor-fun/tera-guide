@@ -1,11 +1,12 @@
 {
-  "Back attack": "背后攻击",
-  "Pushback": "击退",
-  "Laser": "激光",
-  "Attack to tank": "攻击坦克",
-  "Outward Wave": "向外波",
-  "Dodge": "闪避",
-  "Inward Wave": "向内波",
-  "Circles": "圆圈",
-  "Two waves": "二连波"
+  "@dungeon": "Demokron Factory (Hard)",
+  "Back attack": "Back attack",
+  "Pushback": "Pushback",
+  "Laser": "Laser",
+  "Attack to tank": "Attack to tank",
+  "Outward Wave": "Outward Wave",
+  "Dodge": "Dodge",
+  "Inward Wave": "Inward Wave",
+  "Circles": "Circles",
+  "Two waves": "Two waves"
 }
