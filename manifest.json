@@ -2,6 +2,7 @@
     "files": {
         "README.md": "95861bea5728bc5f9337c92f0e6f73c3b80ddf1abe5d9c7040dadd9f6ece784d",
         "README.zh-CN.md": "5415fc785cd0bd8966c3c530fe6e11133f436f85e355308b6a28e3737985048c",
+        "crowdin.yml": "c20e94d6c1eafa1b8c9add9f9f72d3af59ea10ec76bad26f98db1e55e8ac2ce2",
         "guides/2800.js": "f356c165624df3c20fce5e2c501a74821fdf2d113e2fe684792599cd89b398b0",
         "guides/2802.js": "728382fa888afbb295a4b8b2cf98518747dd131be79d2df441614b3cdf017f67",
         "guides/2803.js": "98fc78191cd03d4472050e43dc698cdbfc16423353e34107caea4456566a0d95",
