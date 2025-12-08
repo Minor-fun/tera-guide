@@ -1,12 +1,13 @@
 {
-  "Attack (Back)": "Атака (задняя)",
-  "Fireballs": "Шары",
-  "Jump Back": "Прыжок назад",
-  "Fire Wave": "Волна",
-  "Repel (Dodge)": "Откид (эвейд)",
-  "Explosion | In": "Взрыв | К нему",
-  "Stun Frontal": "Передний стан",
-  "Back to Middle + Fireballs": "Возарат + Шары",
-  "AOE": "АОЕ",
-  "Random Jump": "Случайный прыжок"
+  "@dungeon": "Escape from Balder's Refuge",
+  "Attack (Back)": "Attack (Back)",
+  "Fireballs": "Fireballs",
+  "Jump Back": "Jump Back",
+  "Fire Wave": "Fire Wave",
+  "Repel (Dodge)": "Repel (Dodge)",
+  "Explosion | In": "Explosion | In",
+  "Stun Frontal": "Stun Frontal",
+  "Back to Middle + Fireballs": "Back to Middle + Fireballs",
+  "AOE": "AOE",
+  "Random Jump": "Random Jump"
 }
