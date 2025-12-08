@@ -1,7 +1,5 @@
 {
     "files": {
-        "README.md": "95861bea5728bc5f9337c92f0e6f73c3b80ddf1abe5d9c7040dadd9f6ece784d",
-        "README.zh-CN.md": "5415fc785cd0bd8966c3c530fe6e11133f436f85e355308b6a28e3737985048c",
         "crowdin.yml": "c6ec291fbc93d9008139651d16f55167a15044b245dad7274cbfc95b818288bc",
         "guides/2800.js": "f356c165624df3c20fce5e2c501a74821fdf2d113e2fe684792599cd89b398b0",
         "guides/2802.js": "728382fa888afbb295a4b8b2cf98518747dd131be79d2df441614b3cdf017f67",
