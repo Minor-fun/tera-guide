@@ -2,7 +2,7 @@
 //
 // made by michengs / HSDN / ZC
 
-module.exports = (dispatch, handlers, guide, lang) => {
+module.exports = (dispatch, handlers, guide, lang, t) => {
 	guide.type = SP;
 
 	const { player } = dispatch.require.library;
@@ -20,20 +20,20 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	let debuff_tracker_started = false;
 
 	const mech_messages = {
-		0: { message: "IN", message_RU: "К НЕМУ", message_zh: "靠近" },
-		1: { message: "OUT", message_RU: "ОТ НЕГО", message_zh: "远离" },
-		2: { message: "Left", message_RU: "Лево", message_zh: "向左击退" },
-		3: { message: "Right", message_RU: "Право", message_zh: "向右击退" }
+		0: { message: t("IN") },
+		1: { message: t("OUT") },
+		2: { message: t("Left") },
+		3: { message: t("Right") }
 	};
 
 	const qbacting_messages = {
-		0: { message: "different", message_RU: "разные", message_zh: "不同颜色" },
-		1: { message: "same", message_RU: "одинаковые", message_zh: "相同颜色" }
+		0: { message: t("different") },
+		1: { message: t("same") }
 	};
 
 	const debuff_messages = {
-		0: { message: "Ready to get Fire debuff", message_RU: "Готовность к переключению на Огонь", message_zh: "准备吃火" },
-		1: { message: "Ready to get Ice debuff", message_RU: "Готовность к переключению на Лед", message_zh: "准备吃冰" }
+		0: { message: t("Ready to get Fire debuff") },
+		1: { message: t("Ready to get Ice debuff") }
 	};
 
 	// NULL % 2 = 0
@@ -69,15 +69,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				dispatch.setTimeout(() => {
 					handlers.text({
 						sub_type: "alert",
-						message: (`${debuff_messages[debuff % 2].message}`),
-						message_RU: (`${debuff_messages[debuff % 2].message_RU}`),
-						message_zh: (`${debuff_messages[debuff % 2].message_zh}`)
+						message: (`${debuff_messages[debuff % 2].message}`)
 					});
 				}, 2000);
 				handlers.text({
 					sub_type: "message",
-					message: "Warning! Debuff 15 seconds", message_zh: "警告！debuff十五秒",
-					message_RU: "Дебафф 15 сек."
+					message: t("Warning! Debuff 15 seconds")
 				});
 			}
 		}, dispatch._mod.majorPatchVersion >= 99 ? 40000 : 55000);
@@ -86,8 +83,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			if (debuff != null) {
 				handlers.text({
 					sub_type: "message",
-					message: "Warning! Debuff 10 seconds", message_zh: "警告！debuff十秒",
-					message_RU: "Дебафф 10 сек."
+					message: t("Warning! Debuff 10 seconds")
 				});
 			}
 		}, dispatch._mod.majorPatchVersion >= 99 ? 45000 : 60000);
@@ -96,8 +92,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			if (debuff != null) {
 				handlers.text({
 					sub_type: "message",
-					message: "Warning! Debuff 5 seconds", message_zh: "警告！debuff五秒",
-					message_RU: "Дебафф 5 сек."
+					message: t("Warning! Debuff 5 seconds")
 				});
 			}
 		}, dispatch._mod.majorPatchVersion >= 99 ? 50000 : 65000);
@@ -105,18 +100,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		if (blue) {
 			handlers.text({
 				sub_type: "message",
-				message: (`${mech_messages[(qbacting + debuff + 1) % 2].message}`),
-				message_RU: (`${mech_messages[(qbacting + debuff + 1) % 2].message_RU}`),
-				message_zh: (`${mech_messages[(qbacting + debuff + 1) % 2].message_zh}`)
+				message: (`${mech_messages[(qbacting + debuff + 1) % 2].message}`)
 			});
 
 			spawn_marker((qbacting + debuff + 1) % 2);
 		} else if (red) {
 			handlers.text({
 				sub_type: "message",
-				message: (`${mech_messages[(qbacting + debuff) % 2].message}`),
-				message_RU: (`${mech_messages[(qbacting + debuff) % 2].message_RU}`),
-				message_zh: (`${mech_messages[(qbacting + debuff) % 2].message_zh}`)
+				message: (`${mech_messages[(qbacting + debuff) % 2].message}`)
 			});
 
 			spawn_marker((qbacting + debuff) % 2);
@@ -201,18 +192,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				if (debuff != null) {
 					handlers.text({
 						sub_type: "message",
-						message: (`Ice inside (${qbacting_messages[qbacting].message}) | ${mech_messages[debuff % 2 + 2].message} | ${mech_messages[(qbacting + debuff + 1) % 2].message}`),
-						message_RU: (`Внутри лед (${qbacting_messages[qbacting].message_RU}) | ${mech_messages[debuff % 2 + 2].message_RU} | ${mech_messages[(qbacting + debuff + 1) % 2].message_RU}`),
-						message_zh: (`内冰 (${qbacting_messages[qbacting].message_zh}) | ${mech_messages[debuff % 2 + 2].message_zh} | ${mech_messages[(qbacting + debuff + 1) % 2].message_zh}`)
+						message: (`Ice inside (${qbacting_messages[qbacting].message}) | ${mech_messages[debuff % 2 + 2].message} | ${mech_messages[(qbacting + debuff + 1) % 2].message}`)
 					});
 
 					spawn_marker((qbacting + debuff + 1) % 2);
 				} else {
 					handlers.text({
 						sub_type: "message",
-						message: (`Ice inside (${qbacting_messages[qbacting].message})`),
-						message_RU: (`Внутри лед (${qbacting_messages[qbacting].message_RU})`),
-						message_zh: (`内冰 (${qbacting_messages[qbacting].message_zh})`)
+						message: (`Ice inside (${qbacting_messages[qbacting].message})`)
 					});
 				}
 			}, 500);
@@ -233,18 +220,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 				if (debuff != null) {
 					handlers.text({
 						sub_type: "message",
-						message: (`Fire inside (${qbacting_messages[qbacting].message}) | ${mech_messages[debuff % 2 + 2].message} | ${mech_messages[(qbacting + debuff) % 2].message}`),
-						message_RU: (`Внутри огонь (${qbacting_messages[qbacting].message_RU}) | ${mech_messages[debuff % 2 + 2].message_RU} | ${mech_messages[(qbacting + debuff) % 2].message_RU}`),
-						message_zh: (`内火 (${qbacting_messages[qbacting].message_zh}) | ${mech_messages[debuff % 2 + 2].message_zh} | ${mech_messages[(qbacting + debuff) % 2].message_zh}`)
+						message: (`Fire inside (${qbacting_messages[qbacting].message}) | ${mech_messages[debuff % 2 + 2].message} | ${mech_messages[(qbacting + debuff) % 2].message}`)
 					});
 
 					spawn_marker((qbacting + debuff) % 2);
 				} else {
 					handlers.text({
 						sub_type: "message",
-						message: (`Fire inside (${qbacting_messages[qbacting].message})`),
-						message_RU: (`Внутри огонь (${qbacting_messages[qbacting].message_RU})`),
-						message_zh: (`内火 (${qbacting_messages[qbacting].message_zh})`)
+						message: (`Fire inside (${qbacting_messages[qbacting].message})`)
 					});
 				}
 			}, 500);
@@ -269,50 +252,50 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	}
 
 	const skills = {
-		"112-0": [{ type: "text", sub_type: "message", message: "Ice DOT", message_RU: "Лед (полоса)", message_zh: "冰直线" }],
-		"110-0": [{ type: "text", sub_type: "message", message: "Fire DOT", message_RU: "Огонь (лужа)", message_zh: "火圈" }],
+		"112-0": [{ type: "text", sub_type: "message", message: t("Ice DOT") }],
+		"110-0": [{ type: "text", sub_type: "message", message: t("Fire DOT") }],
 		"108-0": [
-			{ type: "text", sub_type: "message", message: "Turn Right (Repel)", message_RU: "Поворот вправо (откид)", message_zh: "向右转带击退" },
+			{ type: "text", sub_type: "message", message: t("Turn Right (Repel)") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 8, 440, 0, 2000] }
 		],
 		"158-0": [
-			{ type: "text", sub_type: "message", message: "Turn Right (Repel)", message_RU: "Поворот вправо (откид)", message_zh: "向右转带击退" },
+			{ type: "text", sub_type: "message", message: t("Turn Right (Repel)") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 8, 440, 0, 2000] }
 		],
 		"109-0": [
-			{ type: "text", sub_type: "message", message: "Turn Left (Repel)", message_RU: "Поворот влево (откид)", message_zh: "向左转带击退" },
+			{ type: "text", sub_type: "message", message: t("Turn Left (Repel)") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 8, 440, 0, 2000] }
 		],
 		"159-0": [
-			{ type: "text", sub_type: "message", message: "Turn Left (Repel)", message_RU: "Поворот влево (откид)", message_zh: "向左转带击退" },
+			{ type: "text", sub_type: "message", message: t("Turn Left (Repel)") },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 8, 440, 0, 2000] }
 		],
-		"120-0": [{ type: "text", sub_type: "message", message: "Together", message_RU: "Яростный рев", message_zh: "集合" }],
-		"145-0": [{ type: "text", sub_type: "message", message: "Stun", message_RU: "Стан", message_zh: "晕" }],
-		"157-0": [{ type: "text", sub_type: "message", message: "Change", message_RU: "Смена", message_zh: "交换" }],
+		"120-0": [{ type: "text", sub_type: "message", message: t("Together") }],
+		"145-0": [{ type: "text", sub_type: "message", message: t("Stun") }],
+		"157-0": [{ type: "text", sub_type: "message", message: t("Change") }],
 		"103-0": [
-			{ type: "text", sub_type: "message", message: "Tail (Flying)", message_RU: "Хвост (полет)", message_zh: "飞天甩尾" },
-			{ type: "text", sub_type: "message", message: "Arise!", message_RU: "Удочка!", message_zh: "上升", delay: 1500, class_position: "priest" },
+			{ type: "text", sub_type: "message", message: t("Tail (Flying)") },
+			{ type: "text", sub_type: "message", message: t("Arise!"), delay: 1500, class_position: "priest" },
 			{ type: "spawn", func: "semicircle", args: [140, 260, 912, 0, 0, 10, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [912, 0, 0, 135, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [912, 0, 0, 260, 500, 0, 2000] }
 		],
 		"153-0": [
-			{ type: "text", sub_type: "message", message: "Tail (Flying)", message_RU: "Хвост (полет)", message_zh: "飞天甩尾" },
-			{ type: "text", sub_type: "message", message: "Arise!", message_RU: "Удочка!", message_zh: "上升", delay: 1500, class_position: "priest" },
+			{ type: "text", sub_type: "message", message: t("Tail (Flying)") },
+			{ type: "text", sub_type: "message", message: t("Arise!"), delay: 1500, class_position: "priest" },
 			{ type: "spawn", func: "semicircle", args: [140, 260, 912, 0, 0, 10, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [912, 0, 0, 135, 500, 0, 2000] },
 			{ type: "spawn", func: "vector", args: [912, 0, 0, 260, 500, 0, 2000] }
 		],
-		"114-0": [{ type: "text", sub_type: "message", message: "Front Fire", message_RU: "Огонь впереди", message_zh: "前方火焰" }],
+		"114-0": [{ type: "text", sub_type: "message", message: t("Front Fire") }],
 
 		// AOE лед (большой)
 		"104-0": [
-			{ type: "text", sub_type: "message", message: "Ice Storm DOTs", message_RU: "Ледяные лужи", message_zh: "冰圈" },
+			{ type: "text", sub_type: "message", message: t("Ice Storm DOTs") },
 			{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 500, 0, 5000] }
 		],
 		// AOE огонь (большой)
-		"105-0": [{ type: "text", sub_type: "message", message: "Fire Bombs", message_RU: "Огненные бомбы", message_zh: "火焰炸弹" },
+		"105-0": [{ type: "text", sub_type: "message", message: t("Fire Bombs") },
 			{ type: "spawn", func: "circle", args: [false, 553, 135, 500, 10, 270, 0, 3000] },
 			{ type: "spawn", func: "circle", args: [false, 553, 315, 500, 10, 270, 0, 3250] },
 			{ type: "spawn", func: "circle", args: [false, 553, 45, 500, 10, 270, 0, 3500] },
@@ -323,23 +306,23 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "spawn", func: "circle", args: [false, 553, 180, 500, 10, 270, 0, 4750] }
 		],
 		// AOE лед (малый)
-		"154-0": [{ type: "text", sub_type: "message", message: "Ice Storm", message_RU: "Ледяной шторм", message_zh: "冰风暴" }, { type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 500, 0, 6000] }],
+		"154-0": [{ type: "text", sub_type: "message", message: t("Ice Storm") }, { type: "spawn", func: "circle", args: [false, 553, 0, 0, 8, 500, 0, 6000] }],
 		// AOE огонь (малый)
-		"155-0": [{ type: "text", sub_type: "message", message: "Fire (Knockdown)", message_RU: "Огненный столб (опрокид)", message_zh: "火柱击倒" },
-			{ type: "text", sub_type: "message", delay: 1200, message: "Dodge", message_RU: "Эвейд", message_zh: "闪避" }
+		"155-0": [{ type: "text", sub_type: "message", message: t("Fire (Knockdown)") },
+			{ type: "text", sub_type: "message", delay: 1200, message: t("Dodge") }
 		],
 
-		"206-0": [{ type: "text", sub_type: "message", message: "Jump Back", message_RU: "Прыжок назад", message_zh: "后跳" }],
+		"206-0": [{ type: "text", sub_type: "message", message: t("Jump Back") }],
 		"206-2": [{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 15, 350, 0, 3000] }],
-		"137-0": [{ type: "text", sub_type: "message", message: "Knockdown", message_RU: "Опрокидывание", message_zh: "击倒" }],
-		"138-0": [{ type: "text", sub_type: "message", message: "AOE", message_RU: "AOE", message_zh: "范围攻击" }],
+		"137-0": [{ type: "text", sub_type: "message", message: t("Knockdown") }],
+		"138-0": [{ type: "text", sub_type: "message", message: t("AOE") }],
 		"139-0": [
-			{ type: "text", sub_type: "message", message: "60 degrees (Fire to all)", message_RU: "60° (Огонь всем)", message_zh: "六十度全屏火" },
-			{ type: "text", sub_type: "message", delay: 4000, message: "Lower the temp", message_RU: "Снизить температуру", message_zh: "降温" }
+			{ type: "text", sub_type: "message", message: t("60 degrees (Fire to all)") },
+			{ type: "text", sub_type: "message", delay: 4000, message: t("Lower the temp") }
 		],
 		"140-0": [
-			{ type: "text", sub_type: "message", message: "40 degrees (Ice to all)", message_RU: "40° (Лед всем)", message_zh: "四十度全屏冰" },
-			{ type: "text", sub_type: "message", delay: 4000, message: "Raise the temp", message_RU: "Повысить температуру", message_zh: "升温" }
+			{ type: "text", sub_type: "message", message: t("40 degrees (Ice to all)") },
+			{ type: "text", sub_type: "message", delay: 4000, message: t("Raise the temp") }
 		],
 
 		"die": [{ type: "func", func: debuff_removed }],
@@ -347,10 +330,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "stop_timers" },
 			{ type: "despawn_all" }
 		],
-		"s-3126-1000-1118-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-		"s-3126-1000-2118-0": [{ type: "text", sub_type: "message", message: "Jump", message_RU: "Прыжок", message_zh: "跳跃" }],
-		"s-3126-1000-1118-1": [{ type: "text", sub_type: "message", message: "Dodge!", message_RU: "Эвейд!", message_zh: "闪避！", delay: 615 }],
-		"s-3126-1000-2118-1": [{ type: "text", sub_type: "message", message: "Dodge!", message_RU: "Эвейд!", message_zh: "闪避！", delay: 625 }],
+		"s-3126-1000-1118-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+		"s-3126-1000-2118-0": [{ type: "text", sub_type: "message", message: t("Jump") }],
+		"s-3126-1000-1118-1": [{ type: "text", sub_type: "message", message: t("Dodge!"), delay: 615 }],
+		"s-3126-1000-2118-1": [{ type: "text", sub_type: "message", message: t("Dodge!"), delay: 625 }],
 		"s-3126-1000-1212-0": [{ type: "func", func: skilld_event, args: [212] }],
 		"s-3126-1000-1215-0": [{ type: "func", func: skilld_event, args: [215] }],
 		"s-3126-1000-1213-0": [{ type: "func", func: skilld_event, args: [213] }],
@@ -364,14 +347,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"am-3126-1000-31260001": [{ type: "func", func: skilld_event, args: [31260001] }], // красный
 		"am-3126-1000-31260002": [{ type: "func", func: skilld_event, args: [31260002] }], // синий
 
-		"s-3126-1000-1107-0": [{ type: "text", sub_type: "message", message: "[Debuff] Farthest", message_RU: "[Дебафф] Дальние", message_zh: "debuff点最远的" }],
-		"s-3126-1000-2107-0": [{ type: "text", sub_type: "message", message: "[Debuff] Closest", message_RU: "[Дебафф] Ближние", message_zh: "debuff点最近的" }],
-		"am-3126-1000-31260251": [{ type: "text", sub_type: "message", message: "[Debuff] Layer 1", message_RU: "[Дебафф] 1 стак", message_zh: "debuff一层" }],
-		"am-3126-1000-31260067": [{ type: "text", sub_type: "message", message: "[Debuff] Layer 2", message_RU: "[Дебафф] 2 стак", message_zh: "debuff二层" }],
+		"s-3126-1000-1107-0": [{ type: "text", sub_type: "message", message: t("[Debuff] Farthest") }],
+		"s-3126-1000-2107-0": [{ type: "text", sub_type: "message", message: t("[Debuff] Closest") }],
+		"am-3126-1000-31260251": [{ type: "text", sub_type: "message", message: t("[Debuff] Layer 1") }],
+		"am-3126-1000-31260067": [{ type: "text", sub_type: "message", message: t("[Debuff] Layer 2") }],
 		"am-3126-1000-31260068": [
-			{ type: "text", sub_type: "message", message: "[Debuff] Layer 3", message_RU: "[Дебафф] 3 стак", message_zh: "debuff三层" },
-			{ type: "text", sub_type: "message", delay: 120000, message: "[Debuff] 2 minutes passed", message_RU: "[Дебафф] Прошло 2 минуты (стаки удалены)", message_zh: "debuff两分钟结束", check_func: () => dispatch._mod.majorPatchVersion >= 99 },
-			{ type: "text", sub_type: "message", delay: 145000, message: "[Debuff] 2.5 minutes passed", message_RU: "[Дебафф] Прошло 2.5 минуты (стаки удалены)", message_zh: "debuff两分半结束", check_func: () => dispatch._mod.majorPatchVersion < 99 }
+			{ type: "text", sub_type: "message", message: t("[Debuff] Layer 3") },
+			{ type: "text", sub_type: "message", delay: 120000, message: t("[Debuff] 2 minutes passed"), check_func: () => dispatch._mod.majorPatchVersion >= 99 },
+			{ type: "text", sub_type: "message", delay: 145000, message: t("[Debuff] 2.5 minutes passed"), check_func: () => dispatch._mod.majorPatchVersion < 99 }
 		]
 	};
 

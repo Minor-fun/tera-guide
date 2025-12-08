@@ -1,5 +1,3 @@
-manifest-generator.bat
-manifest-generator.js
-.eslintrc.json
-package.json
-.idea/
+/manifest-generator.bat
+/manifest-generator.js
+scripts/

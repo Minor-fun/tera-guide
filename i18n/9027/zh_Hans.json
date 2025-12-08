@@ -1,0 +1,10 @@
+{
+  "Debuff": "debuff",
+  "Debuff 1": "debuff一",
+  "Debuff 2": "debuff二",
+  "Debuff 3": "debuff三",
+  "Stomp": "跺脚",
+  "Plague of Exhaustion": "驱散",
+  "Regression": "驱散",
+  "next debuff: {next_debuff}": "下一个debuff: {next_debuff}"
+}
