@@ -1,14 +1,15 @@
 {
-  "Spin": "翻滚",
-  "Floor": "地面攻击",
-  "Knockdown": "击倒",
-  "Discarding": "三重击退",
-  "Flying Attack": "飞天攻击",
-  "A swarm of bees": "蜂群",
-  "Rise (Kaia)": "上升开套盾",
-  "Plague of Exhaustion": "驱散",
-  "Regression": "驱散",
-  "Column": "石柱",
-  "Dodge": "闪避",
-  "Break Shield": "破盾"
+  "@dungeon": "Rift\"s Edge (10-Person)",
+  "Spin": "Spin",
+  "Floor": "Floor",
+  "Knockdown": "Knockdown",
+  "Discarding": "Discarding",
+  "Flying Attack": "Flying Attack",
+  "A swarm of bees": "A swarm of bees",
+  "Rise (Kaia)": "Rise (Kaia)",
+  "Plague of Exhaustion": "Plague of Exhaustion",
+  "Regression": "Regression",
+  "Column": "Column",
+  "Dodge": "Dodge",
+  "Break Shield": "Break Shield"
 }
