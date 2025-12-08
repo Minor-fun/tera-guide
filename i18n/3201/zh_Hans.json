@@ -1,4 +1,5 @@
 {
+  "@dungeon": "Gossamer Vault (Hard)",
   "Dodge": "闪避",
   "Stun attack": "快速眩晕攻击",
   "Back": "背后攻击",
@@ -23,6 +24,7 @@
   "Circles (Slow)": "慢速圆圈",
   "Circles (Fast)": "快速圆圈",
   "True Debuff in 5 seconds": "五秒后真debuff",
+  "Debuff reload": "Debuff 重置",
   "False Debuff in 5 seconds": "五秒后假debuff",
   "Spike in 5 seconds": "五秒后地刺",
   "80%": "百分之八十",
