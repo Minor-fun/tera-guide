@@ -292,7 +292,6 @@
         "i18n/general/en.json": "532e24387666542e9d8000c58160af913f42296caa85d06697af9718ce4d63b6",
         "i18n/general/ru.json": "c959240a5850eb698c7569baf9df1b45b9d45cdfa907cf751a29af6849aa4782",
         "i18n/general/zh_Hans.json": "78b81d6d2f0ecc7a6acf4e6235bd3577c2e702560b51a0c3fd225989205647ad",
-        "i18n/general/zh_Hant.json": "51f0c402b83c9370ca18c3303f4ad02805d50e1968d5fc62b913998649fcae8a",
         "index.js": "e7e8c89addefbd24b443cf5129fba7e0d697869dceb20ee6e32146536f0c3867",
         "lib/i18n-manager.js": "bba17158e0c6fee256bca93a6b395246a610c6fb1e275dc0b143ec25e6af387e",
         "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
