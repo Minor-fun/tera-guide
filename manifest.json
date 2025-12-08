@@ -1,5 +1,7 @@
 {
     "files": {
+        "README.md": "d967740bea4d37d0597b6a62dc46db20d17f3077dd0a64fd77b9cd7138c2cbc5",
+        "README.zh-CN.md": "69d96c263ab37c2786822c7acc1060823743b93dc08653cd63a09c3a6db2ca5d",
         "crowdin.yml": "c6ec291fbc93d9008139651d16f55167a15044b245dad7274cbfc95b818288bc",
         "guides/2800.js": "f356c165624df3c20fce5e2c501a74821fdf2d113e2fe684792599cd89b398b0",
         "guides/2802.js": "728382fa888afbb295a4b8b2cf98518747dd131be79d2df441614b3cdf017f67",
@@ -58,7 +60,7 @@
         "guides/9757.js": "15a85767101392650416d0aeb01a4aa7cca28d87d02248fea9329a124ebdd6e7",
         "guides/9759.js": "d7e088abff4a8cd027e9e9c991104409fd1357ca5c503f122536cbb99139d0aa",
         "guides/9768.js": "1aeb560c4082fb3809e46636745cccd6f7a9f31d6b1e6a17ad7411c7057373d4",
-        "guides/9770.js": "b2076f9d7b994157bb5e8ad3825105fef7d382fb3916acffa6b32817e7398d9d",
+        "guides/9770.js": "7e62c496b9f4eeb4dc78140c25b152b378b980aa2b4098a37876423ce18fcb17",
         "guides/9780.js": "87745a573f064be6b0d7b4a82acc6d35c3dd0a81daccfa137457e9583409c89b",
         "guides/9781.js": "2711b6fa50b4b3c8284be7492961e988c676d85e9bd4b76ef8dc31641072202b",
         "guides/9782.js": "6046a936acb8ce83ba2dea6c243dbf236981967b7ec03883b774276abfdf9482",
@@ -68,7 +70,7 @@
         "guides/9920.js": "4ab49383ffa31c37637e70108a91c6f1143c7f3729cc2f0212d9bd107a9fc197",
         "guides/9935.js": "58eb707f5d5b094041600f77106bbef700c519a6813cf4de350442a15436dc48",
         "guides/9939.js": "6fad53be0236ebf3ac2be2afd2f4a5aee3b3c8130e6d5870d48eb695951a866b",
-        "guides/9970.js": "779b95af0230e723cdef76562686f4d7017e8041955a104ff514da4f28c1698f",
+        "guides/9970.js": "9764ceb0fb756f2adb0b93bbdf83a3fa90907401a2bbde4c702fef7c8b009eaa",
         "guides/9980.js": "a19ae9fea20b6ac5d46a55031457c1bea4155a4612f51b41afa07d42f4cbc350",
         "guides/9981.js": "b0560969e4197fb620975e0c132d6a9c1fc4c74ea4b382cca410f669a0714429",
         "guides/9982.js": "fe6e84229fd49a98b9ff606a66bd949d3918a68dd67bed8e48330535985ea3c5",
@@ -295,7 +297,7 @@
         "index.js": "e7e8c89addefbd24b443cf5129fba7e0d697869dceb20ee6e32146536f0c3867",
         "lib/i18n-manager.js": "bba17158e0c6fee256bca93a6b395246a610c6fb1e275dc0b143ec25e6af387e",
         "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
-        "module.json": "884f66a3e68cff452723e00752a98459897f358c5b21614effee4f3322f9697a",
+        "module.json": "94e0a79e381b8fbab6ff1e6236eab20fcb3862305cd8d6a11393f29d8b11fa0c",
         "settings_migrator.js": "c23b1effd2cb1cacd742870b913c6b8c165dead112d7f0fe140fe160cb9d722d"
     }
 }
