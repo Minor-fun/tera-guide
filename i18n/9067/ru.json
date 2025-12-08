@@ -1,11 +1,12 @@
 {
-  "Back attack": "Задняя",
-  "Pushback": "Откид",
-  "Laser": "Лазер",
-  "Attack to tank": "Удар в танка",
-  "Outward Wave": "Волна от босса",
-  "Dodge": "Эвейд!",
-  "Inward Wave": "Волна к боссу",
-  "Circles": "Круги!",
-  "Two waves": "Две волны"
+  "@dungeon": "Demokron Factory (Hard)",
+  "Back attack": "Back attack",
+  "Pushback": "Pushback",
+  "Laser": "Laser",
+  "Attack to tank": "Attack to tank",
+  "Outward Wave": "Outward Wave",
+  "Dodge": "Dodge",
+  "Inward Wave": "Inward Wave",
+  "Circles": "Circles",
+  "Two waves": "Two waves"
 }
