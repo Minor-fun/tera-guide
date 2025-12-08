@@ -1,34 +1,45 @@
-name: Update Manifest
+name: Crowdin Workflow (Manifest & Merge)
 
 on:
-  push:
-    branches: [ "i18n" ]
-    paths-ignore:
-      - 'manifest.json'
+  pull_request:
+    branches: [ master ]
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  update-manifest:
+  process-crowdin-pr:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    if: startsWith(github.head_ref, 'l10n_')
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Run Manifest Generator
-      run: node .github/manifest-generator.js .
+      - name: Run Manifest Generator
+        run: node .github/manifest-generator.js .
 
-    - name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "Auto: update manifest file [skip ci]"
-        file_pattern: manifest.json
-        branch: i18n
+      - name: Commit Manifest
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: update manifest.json"
+          file_pattern: manifest.json
+
+      - name: Merge PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 稍微等待一下，确保 git 操作同步
+          sleep 15 
+          # 执行合并
+          gh pr merge --squash --auto "${{ github.event.pull_request.html_url }}"
