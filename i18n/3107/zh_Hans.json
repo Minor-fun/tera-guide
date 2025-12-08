@@ -1,4 +1,7 @@
 {
+  "@dungeon": "Corrupted RK-9 Kennel",
+  "enabled": "enabled",
+  "disabled": "disabled",
   "Out": "远离",
   "In": "靠近",
   "Wave": "冲击波",
@@ -21,5 +24,6 @@
   "LASERS": "激光",
   "": "",
   "Next: ": "下一个: ",
+  "{message} + {arg0}": "{message} + {arg0}",
   ", Code: {mech_reverse01}": ", 代码: {mech_reverse01}"
 }
