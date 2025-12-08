@@ -296,7 +296,6 @@
         "i18n/general/zh_Hans.json": "78b81d6d2f0ecc7a6acf4e6235bd3577c2e702560b51a0c3fd225989205647ad",
         "index.js": "e7e8c89addefbd24b443cf5129fba7e0d697869dceb20ee6e32146536f0c3867",
         "lib/i18n-manager.js": "bba17158e0c6fee256bca93a6b395246a610c6fb1e275dc0b143ec25e6af387e",
-        "module.config.json": "c0a16dfca2dc00eb2f4c5670a98fcc163fd4f85c34b04fe825e6c3e79de88ca1",
         "module.json": "94e0a79e381b8fbab6ff1e6236eab20fcb3862305cd8d6a11393f29d8b11fa0c",
         "settings_migrator.js": "c23b1effd2cb1cacd742870b913c6b8c165dead112d7f0fe140fe160cb9d722d"
     }
