@@ -1,12 +1,13 @@
 {
-  "Jump Back": "后跳",
-  "Jump Forward": "前跳",
-  "Right Hand": "右手",
-  "Left Hand": "左手",
-  "Stun Frontal": "前方眩晕",
-  "Circles (Horizontal)": "横向圆圈",
-  "Circles (Vertical)": "纵向圆圈",
-  "Kicks": "踢",
-  "Circles (Target)": "点名圆圈",
-  "Explosive Waves": "爆炸波"
+  "@dungeon": "Shadow of the Gutrends",
+  "Jump Back": "Jump Back",
+  "Jump Forward": "Jump Forward",
+  "Right Hand": "Right Hand",
+  "Left Hand": "Left Hand",
+  "Stun Frontal": "Stun Frontal",
+  "Circles (Horizontal)": "Circles (Horizontal)",
+  "Circles (Vertical)": "Circles (Vertical)",
+  "Kicks": "Kicks",
+  "Circles (Target)": "Circles (Target)",
+  "Explosive Waves": "Explosive Waves"
 }
