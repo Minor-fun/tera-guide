@@ -42,4 +42,4 @@ jobs:
           # 稍微等待一下，确保 git 操作同步
           sleep 15 
           # 执行合并
-          gh pr merge --squash --auto "${{ github.event.pull_request.html_url }}"
+          gh pr merge --squash "${{ github.event.pull_request.html_url }}"
