@@ -3,6 +3,9 @@
   "2": "2",
   "3": "3",
   "360": "360度攻击",
+  "@dungeon": "Sanctuary's Ruins (Hard) Agaia",
+  "last: IN": "last: IN",
+  "last: OUT": "last: OUT",
   "Soon: IN": "即将: 内",
   "Soon: OUT": "即将: 外",
   "2x360": "双360",
@@ -88,5 +91,9 @@
   "Right {double}": "右 ${double_zh}",
   "Left {double}": "左 ${double_zh}",
   "": "",
-  "(Double)": "(双)"
+  "(Double)": "(双)",
+  "Soon: OUT > IN": "Soon: OUT > IN",
+  "Soon: IN > OUT": "Soon: IN > OUT",
+  "Soon: OUT | Donuts (IN > OUT)": "Soon: OUT | Donuts (IN > OUT)",
+  "Soon: IN | Donuts (OUT > IN)": "Soon: IN | Donuts (OUT > IN)"
 }
