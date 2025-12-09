@@ -1,5 +1,6 @@
 {
   "360": "Крутилка",
+  "@dungeon": "Shadow Sanguinary (Hard)",
   "Pizza": "Пицца",
   "Stacks removed": "Стаки сняты",
   "Turn Attack": "Разворот",
@@ -20,6 +21,8 @@
   "Laser": "Лазер",
   "Donut": "Бублик",
   "Charging": "Зарядка",
+  "60%": "60%",
+  "40%": "40%",
   "Combo soon": "Скоро комба",
   "Back/Left": "Задний/Откид влево",
   "Back": "Задний",
@@ -42,6 +45,7 @@
   "AoE": "АоЕ",
   "Target Lockon": "Захват цели",
   "Mobs Summon": "Призыв мобов",
+  "Buff": "Buff",
   "Ready to Shield": "Готовность ломать щит",
   "Give Bait": "Дать байт",
   "{count} stacks": "Стаков: {count}"
