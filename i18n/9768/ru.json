@@ -1,5 +1,6 @@
 {
   "360": "Крутилка",
+  "@dungeon": "Shadow Sanguinary",
   "Pizza": "Пицца",
   "Turn Attack": "Разворот",
   "Three Combo": "Тройная комба",
@@ -40,6 +41,7 @@
   "AoE": "АоЕ",
   "Target Lockon": "Захват цели",
   "Mobs Summon": "Призыв мобов",
+  "Buff": "Buff",
   "Ready to Shield": "Готовность ломать щит",
   "Give Bait": "Дать байт"
 }
