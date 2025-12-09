@@ -1,6 +1,14 @@
 {
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "360": "360",
+  "@dungeon": "Sanctuary's Ruins (Hard) Agaia",
+  "last: IN": "last: IN",
+  "last: OUT": "last: OUT",
   "Soon: IN": "Скоро: К нему",
   "Soon: OUT": "Скоро: От него",
+  "2x360": "2x360",
   "Triples Soon!": "Тройки Скоро!",
   "Donuts": "Бублики",
   "Pizza + Enraged": "Пицца + В раге",
@@ -20,6 +28,7 @@
   "Bombs > Circles > Debuffs": "БКД",
   "Stun | Push Back": "Стан | Откид назад",
   "Rotate": "Разворот",
+  "49%": "49%",
   "Spin": "Крутилка",
   "Donuts | Pizza": "Бублики | Пицца",
   "Out": "Наружу",
@@ -82,5 +91,9 @@
   "Right {double}": "Правый ${double_ru}",
   "Left {double}": "Левый ${double_ru} ",
   "": "",
-  "(Double)": "(Двойной)"
+  "(Double)": "(Двойной)",
+  "Soon: OUT > IN": "Soon: OUT > IN",
+  "Soon: IN > OUT": "Soon: IN > OUT",
+  "Soon: OUT | Donuts (IN > OUT)": "Soon: OUT | Donuts (IN > OUT)",
+  "Soon: IN | Donuts (OUT > IN)": "Soon: IN | Donuts (OUT > IN)"
 }
