@@ -1,0 +1,112 @@
+name: Check Upstream & Prepare PR
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 每天凌晨2点运行 (UTC时间，北京时间上午10点)
+  workflow_dispatch: # 手动触发
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-and-migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Current Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch Upstream & Detect Changes
+        id: detect_changes
+        run: |
+          git remote add upstream https://github.com/hsdn/tera-guide.git || true
+          git fetch upstream master
+          
+          # 使用 git log 获取上游最近的提交中修改过的文件列表
+          # HEAD..upstream/master 表示：在 upstream/master 中但不在 HEAD 中的提交
+          CHANGED_FILES=$(git log HEAD..upstream/master --name-only --pretty=format: -- guides/ | sort -u | grep '\.js$' | grep -v '\.backup$' || true)
+          
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "No guide files changed in upstream"
+            echo "has_upstream_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          
+          # 保存变更的文件列表
+          echo "$CHANGED_FILES" > /tmp/changed_files.txt
+          echo "has_upstream_changes=true" >> $GITHUB_OUTPUT
+          
+          # 只覆盖这些变更的文件
+          while IFS= read -r file; do
+            if [[ -n "$file" ]]; then
+              echo "Updating: $file"
+              git checkout upstream/master -- "$file"
+            fi
+          done < /tmp/changed_files.txt
+
+      - name: Run Migration Script on Changed Files
+        if: steps.detect_changes.outputs.has_upstream_changes == 'true'
+        run: |
+          # 读取变更的文件列表并提取副本ID
+          DUNGEON_IDS=$(cat /tmp/changed_files.txt | sed 's|guides/||' | sed 's|\.js$||' | tr '\n' ' ')
+          echo "Processing dungeon IDs: $DUNGEON_IDS"
+          
+          # 对每个副本ID运行迁移
+          for id in $DUNGEON_IDS; do
+            if [[ -n "$id" ]]; then
+              echo "Migrating: $id"
+              node .github/scripts/migrate-to-i18n.js migrate-one "$id"
+            fi
+          done
+
+      - name: Run Manifest Generator
+        run: node .github/manifest-generator.js .
+
+      - name: Check for Changes
+        id: check_changes
+        if: steps.detect_changes.outputs.has_upstream_changes == 'true'
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync with upstream and migrate to i18n"
+          title: "🚨 Upstream Update Detected"
+          body: |
+            上游 `hsdn/tera-guide` 有更新！
+            
+            机器猫已经自动完成了以下工作：
+            1. 检测并拉取了上游变更的副本文件（只覆盖变更的文件）。
+            2. 对变更的文件执行了 `migrate-to-i18n.js` 格式转换。
+            3. 更新了 `manifest.json`。
+            
+            **更新的文件列表：**
+            查看本 PR 的文件变更列表即可看到具体更新了哪些副本。
+            
+            **请审查变更并手动合并。**
+          branch: auto-sync-upstream
+          delete-branch: true
+          base: master
+          reviewers: Minor-fun
