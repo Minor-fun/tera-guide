@@ -1,0 +1,20 @@
+{
+  "@dungeon": "忘れられた島（ハード）",
+  "Jump (Stun)": "ジャンプ (スタン)",
+  "Spin": "回転攻撃",
+  "Front (Dodge)": "前方攻撃（回避）",
+  "Out -> In": "外側へ → 内側へ",
+  "In -> Out": "内側へ → 外側へ",
+  "Push (Dodge)": "押し（回避）",
+  "Circles x5 (Dodge)": "円範囲×5（回避）",
+  "Circle (Dodge)": "円範囲（回避）",
+  "AOE (Go to ghost)": "全体攻撃（ゴーストに向かう）",
+  "Puddle (Dodge)": "床範囲（回避）",
+  "Clover": "クローバー",
+  "Debuff x2": "デバフ×2",
+  "Carpet": "カーペット",
+  "Circles (Dodge)": "円範囲（回避）",
+  "Pull": "引き寄せ",
+  "Out": "立刻远离",
+  "In": "内側へ"
+}
