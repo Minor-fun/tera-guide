@@ -33,13 +33,16 @@ const DefaultSettings = {
 		"rb": false,
 		"re": false,
 		"dm": false,
-		"qb": false
+		"qb": false,
+		"ap": false,
+		"af": false,
+		"at": false
 	},
 	"onlineTTS": {
 		"enabled": false,
 		"apiKey": "",
-		"voices": {},
-		"defaultVoice": "",
+		"voices": {},  // Auto-detected from tts_cache directory
+		"defaultVoice": "",  // Auto-set from detected voices
 		"rate": 1
 	}
 };
@@ -101,10 +104,14 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 					settings.onlineTTS = DefaultSettings.onlineTTS;
 				} else {
 					const oldOnlineTTS = oldsettings.onlineTTS;
+					// Keep user voices if configured, otherwise use empty (auto-detected at runtime)
+					const userVoices = oldOnlineTTS.voices && Object.keys(oldOnlineTTS.voices).length > 0 
+						? oldOnlineTTS.voices 
+						: {};
 					settings.onlineTTS = {
 						"enabled": oldOnlineTTS.enabled || false,
 						"apiKey": oldOnlineTTS.apiKey || "",
-						"voices": oldOnlineTTS.voices || {},
+						"voices": userVoices,
 						"defaultVoice": oldOnlineTTS.defaultVoice || "",
 						"rate": oldOnlineTTS.rate || 1
 					};
@@ -112,6 +119,7 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 				break;
 
 			case 1.17:
+				// Convert voice string format to object format with lang property
 				if (oldsettings.onlineTTS && oldsettings.onlineTTS.voices) {
 					for (const voice in oldsettings.onlineTTS.voices) {
 						const val = oldsettings.onlineTTS.voices[voice];

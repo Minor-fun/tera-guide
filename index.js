@@ -1,6 +1,5 @@
 "use strict";
 
-const path = require("path");
 const I18nManager = require("./lib/i18n-manager");
 
 module.exports.NetworkMod = function (mod) {
@@ -14,7 +13,12 @@ module.exports.NetworkMod = function (mod) {
 			languages: supportedLanguages, 
 			colors: { gui: {}, general: {} }, 
 			command: ["guide"], 
-			chat_name: "Guide", 
+			chat_name: "Guide",
+			// Configure TTS cache to be in the guide plugin folder
+			ttsConfig: {
+				basePath: __dirname,
+				cacheDir: "tts_cache"
+			}
 		});
 	} catch (e) {
 		mod.error("Warning!\nDepended module \"tera-guide-core\" needed for TERA-Guide is not installed!\nPlease download and install: https://github.com/hsdn/tera-guide-core\n");
