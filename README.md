@@ -165,6 +165,7 @@ ID | Dungeon name (English)
 9782 | Grotto of Lost Souls
 9783 | Dark Reach Citadel
 9794 | Thaumetal Refinery
+9850 | Withering Dreadspire (Agaia Online)
 9916 | Sky Cruiser Endeavor (Hard)
 9920 | Antaroth's Abyss (Hard)
 9935 | RK-9 Kennel (Hard)

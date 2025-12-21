@@ -75,7 +75,7 @@ jobs:
           done
 
       - name: Run Manifest Generator
-        run: node .github/manifest-generator.js .
+        run: node .github/scripts/manifest-generator.js .
 
       - name: Check for Changes
         id: check_changes
@@ -95,7 +95,7 @@ jobs:
           commit-message: "chore: sync with upstream and migrate to i18n"
           title: "🚨 Upstream Update Detected"
           body: |
-            上游 `hsdn/tera-guide` 有更新！
+            @Minor-fun 上游 `hsdn/tera-guide` 有更新！
             
             机器猫已经自动完成了以下工作：
             1. 检测并拉取了上游变更的副本文件（只覆盖变更的文件）。
@@ -110,3 +110,4 @@ jobs:
           delete-branch: true
           base: master
           reviewers: Minor-fun
+          assignees: Minor-fun
