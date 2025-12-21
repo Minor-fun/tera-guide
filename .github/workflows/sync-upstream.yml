@@ -83,6 +83,9 @@ jobs:
           # 对每个副本ID运行迁移（重新转换为 i18n 格式）
           for id in $DUNGEON_IDS; do
             if [[ -n "$id" ]]; then
+              echo "Processing: $id"
+              # 确保文件是上游原始版本（防止合并残留）
+              git checkout upstream/master -- "guides/$id.js"
               echo "Migrating: $id"
               node .github/scripts/migrate-to-i18n.js migrate-one "$id"
             fi
