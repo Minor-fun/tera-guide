@@ -1,13 +1,13 @@
 {
-  "@dungeon": "ガットレンドの影",
-  "Jump Back": "ジャンプバック",
+  "@dungeon": "ガトランドの影",
+  "Jump Back": "後方ジャンプ（誘導）",
   "Jump Forward": "前方ジャンプ",
-  "Right Hand": "右手",
-  "Left Hand": "左手",
-  "Stun Frontal": "前方スタン",
-  "Circles (Horizontal)": "円形（水平）",
-  "Circles (Vertical)": "円形（垂直）",
-  "Kicks": "蹴り",
-  "Circles (Target)": "円形（ターゲット）",
-  "Explosive Waves": "爆発波動"
+  "Right Hand": "右手攻撃",
+  "Left Hand": "左手攻撃",
+  "Stun Frontal": "前方スタン攻撃",
+  "Circles (Horizontal)": "横円形攻撃",
+  "Circles (Vertical)": "縦円形攻撃",
+  "Kicks": "蹴り攻撃",
+  "Circles (Target)": "標的円形攻撃",
+  "Explosive Waves": "爆発衝撃波"
 }
