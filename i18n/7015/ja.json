@@ -1,13 +1,13 @@
 {
-  "@dungeon": "バルダーの避難所から脱出せよ",
+  "@dungeon": "バルドルの安息所から脱出",
   "Attack (Back)": "後方攻撃",
-  "Fireballs": "火球",
-  "Jump Back": "ジャンプバック",
-  "Fire Wave": "火炎波",
-  "Repel (Dodge)": "弾き（回避）",
-  "Explosion | In": "爆発｜内側へ",
-  "Stun Frontal": "前方スタン",
-  "Back to Middle + Fireballs": "中央に戻る＋火球",
-  "AOE": "範囲攻撃",
+  "Fireballs": "火球攻撃",
+  "Jump Back": "後方ジャンプ（誘導）",
+  "Fire Wave": "火炎の波動",
+  "Repel (Dodge)": "弾き回避",
+  "Explosion | In": "爆発、内側へ",
+  "Stun Frontal": "前方スタン攻撃",
+  "Back to Middle + Fireballs": "中央に戻れ、火球攻撃",
+  "AOE": "範囲攻撃注意",
   "Random Jump": "ランダムジャンプ"
 }

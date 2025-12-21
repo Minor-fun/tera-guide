@@ -1,13 +1,13 @@
 {
-  "@dungeon": "ケゼル峡谷",
+  "@dungeon": "ケマテルの砦",
   "Smash (Left)": "左スマッシュ",
   "Smash (Right)": "右スマッシュ",
-  "Rock Smash": "岩のスマッシュ",
+  "Rock Smash": "岩石スマッシュ",
   "Blast": "ブラスト",
-  "Dodge!": "回避！",
-  "Whip": "鞭",
-  "Shield": "开启护盾",
+  "Dodge!": "回避しろ！",
+  "Whip": "ウィップ攻撃",
+  "Shield": "シールド発生",
   "Kaia's Shield": "カイアの盾",
-  "Thrall of Protection": "守護のスラル",
-  "AoE Waves": "範囲衝撃波"
+  "Thrall of Protection": "プロテクションスピリット",
+  "AoE Waves": "範囲ウェーブ"
 }
