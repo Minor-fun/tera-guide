@@ -161,6 +161,7 @@ ID | Dungeon name (English) | 副本名称 (中文)
 9782 | Grotto of Lost Souls | 里安的地下殿堂
 9783 | Dark Reach Citadel | 泰内布利斯城堡
 9794 | Thaumetal Refinery | 赛伊洛斯研究基地
+9850 | Withering Dreadspire (Agaia Online)
 9916 | Sky Cruiser Endeavor (Hard) | 暴风的艾尔凯拉斯号
 9920 | Antaroth's Abyss (Hard) | 空洞的安塔洛斯深渊
 9935 | RK-9 Kennel (Hard) | 终极RK-9 机库

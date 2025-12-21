@@ -317,7 +317,8 @@ class MigrationTool {
     }
 
     processParallelAssignments(content, translations) {
-        // 匹配 message += "..." 或 varName = "..."
+        // 匹配 varName = "..." 形式的赋值（用于处理带有 _ru/_RU 后缀的翻译变量）
+        // 注意：这里只处理有对应翻译变量的情况
         const regex = /(\w+)\s*(\+?=)\s*([`"'])([\s\S]*?)\3\s*([,;]?)/g;
         let match;
         const edits = [];
@@ -326,7 +327,12 @@ class MigrationTool {
             const [fullMatch, varName, op, quote, enText, separator] = match;
             const matchEnd = match.index + fullMatch.length;
 
-            // 构建动态正则来匹配 varName_RU += ...
+            // 跳过已经是 _ru/_RU/_zh 后缀的变量（这些会被作为翻译源处理）
+            if (/_ru$|_RU$|_zh$|_ZH$|_zh_Hans$/i.test(varName)) {
+                continue;
+            }
+
+            // 构建动态正则来匹配 varName_RU = ...
             const opEscaped = op.replace('+', '\\+');
             const neighbors = this.findNeighboringTranslations(
                 content,
@@ -335,16 +341,7 @@ class MigrationTool {
                 new RegExp(`${varName}(?:_zh|_ZH|_zh_Hans)\\s*${opEscaped}\\s*([${quote}])([\\s\\S]*?)\\1\\s*[,;]?`)
             );
 
-            // 只有当找到了至少一个对应的翻译，或者它是模板字符串时，才尝试迁移，避免误伤普通变量赋值
-            if (!neighbors.ruText && !neighbors.zhText && !enText.includes("${")) {
-                // 如果只是单纯的变量赋值且没有翻译，这里选择跳过，还是强制转换？
-                // 原脚本逻辑是只要找到 message += 且 context 内有 message_RU 就会处理。
-                // 这里的逻辑稍微保守一点：如果没有 RU/ZH 且不是模板，可能是普通逻辑代码。
-                // 但为了保持原脚本行为，我们只检查是否匹配到了结构。
-                // 这里我们假设只要匹配到 pattern 就处理（通常这些文件很规范）。
-            }
-
-            // 但通常只有找到翻译对时才认为是需要提取的消息
+            // 只有当找到了对应的翻译变量，或者变量名是 message 时才处理
             if (!neighbors.ruText && !neighbors.zhText && varName !== 'message') {
                 continue; 
             }
