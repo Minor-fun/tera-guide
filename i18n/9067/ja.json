@@ -1,12 +1,12 @@
 {
-  "@dungeon": "デモクロン工場（ハード）",
-  "Back attack": "背面攻撃",
-  "Pushback": "后推",
-  "Laser": "レーザー",
-  "Attack to tank": "タンクへの攻撃",
-  "Outward Wave": "外向き波動",
-  "Dodge": "回避",
-  "Inward Wave": "内向き波動",
-  "Circles": "円形範囲",
-  "Two waves": "二重波動"
+  "@dungeon": "ベルノの実験室 (上級)",
+  "Back attack": "後方攻撃に注意",
+  "Pushback": "ノックバック",
+  "Laser": "レーザー攻撃！",
+  "Attack to tank": "タンクへ攻撃",
+  "Outward Wave": "外側への衝撃波",
+  "Dodge": "回避しろ",
+  "Inward Wave": "内側への衝撃波",
+  "Circles": "赤い円に注意",
+  "Two waves": "二連衝撃波"
 }
