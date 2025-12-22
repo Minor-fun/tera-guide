@@ -184,10 +184,8 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	function first_swipe_event(skillid, ent) {
 		let double = "";
-		let double_ru = "";
 		if ((first_fifty || attack_360) && triple_swipe_remaining === 0) {
 			double = t("(Double)");
-			
 			if (attack_360) {
 				attack_360 = false;
 			}
@@ -249,7 +247,6 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	}
 
 	let last_donut_msg = null;
-	let last_donut_msg_ru = null;
 
 	function first_fly_mech(skillid) {
 		const safe_enraged_markers = [
@@ -293,8 +290,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			}
 
 			if ((skillid === 1308 || skillid === 1309) && last_donut_msg == null) {
-				last_donut_msg = skillid === 1308  ? t("last: IN") : t("last: OUT");
-				last_donut_msg_ru = skillid === 1308 ? "последний: К нему" : "последний: От него";
+				last_donut_msg = skillid === 1308 ? t("last: IN") : t("last: OUT");
 				handlers.event([{ type: "text", sub_type: "notification", message: last_donut_msg, delay: 1000 }]);
 				dispatch.setTimeout(() => last_donut_msg = null, 7500);
 			}
