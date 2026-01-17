@@ -105,6 +105,8 @@ ID | Dungeon name (English) | 副本名称 (中文)
 2809 | The Observatory (Arborea Reborn) | 观星神殿 (Arborea Reborn服)
 2811 | Sea of Honor (Arborea Reborn) | 金麟號 (Arborea Reborn 服)
 2813 | Beach River Outpost (Arborea Reborn) | Beach River Outpost (Arborea Reborn)
+2814 | Abyssal Prison (Arborea Reborn) | Abyssal Prison (Arborea Reborn)
+2816 | Kelsaik Hall (Arborea Reborn) | Kelsaik Hall (Arborea Reborn)
 3023 | Akalath Quarantine | 贝尔亚克城堡秘密地区
 3026 | Corrupted Skynest | 凯尔赛克隐藏地
 3027 | Forbidden Arena [Hagufna] | 狂气竞技场 [不灭的斗士]

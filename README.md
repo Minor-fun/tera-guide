@@ -109,6 +109,8 @@ ID | Dungeon name (English)
 2809 | The Observatory (Arborea Reborn)
 2811 | Sea of Honor (Arborea Reborn)
 2813 | Beach River Outpost (Arborea Reborn)
+2814 | Abyssal Prison (Arborea Reborn)
+2816 | Kelsaik Hall (Arborea Reborn)
 3023 | Akalath Quarantine
 3026 | Corrupted Skynest
 3027 | Forbidden Arena [Hagufna]
