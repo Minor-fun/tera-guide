@@ -15,6 +15,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	let thirdboss_timer2 = null;
 	let boss_enraged = false;
 	let boss_below_thirty_five = false;
+	let boss_ent = null;
 
 	function right_safe_handler_below(ent) { //s-2814-1000-1111-0//s-2814-1000-2111-0
 		// Only below 35%
@@ -193,48 +194,54 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	}
 
 	function spawn_enrage_dependent_throne() {
+		if (!boss_ent) return;
+
 		if (boss_enraged) {
 			// Enraged Right Side
 			handlers.event([
 				{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 10000, pos: { x: 41082, y: -98303, z: 217, w: 2 }, tag: "light" },
 				//{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 350, 200, 5000] },
 				{ type: "text", sub_type: "message", message: t("Right Side") }
-			]);
+			], boss_ent);
 		} else {
 			// Not enraged  Left Side
 			handlers.event([
 				//{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 350, 200, 5000] },
 				{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 10000, pos: { x: 41602, y: -98309, z: 217, w: 1.69 }, tag: "light" },
 				{ type: "text", sub_type: "message", message: t("Left Side") }
-			]);
+			], boss_ent);
 		}
 	}
 
 	function spawn_enrage_dependent_entrance() {
+		if (!boss_ent) return;
+
 		if (boss_enraged) {
 			// Enraged Right Side
 			handlers.event([
 				{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 10000, pos: { x: 41602, y: -98309, z: 217, w: 1.69 }, tag: "light" },
 				//{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 350, 200, 5000] },
 				{ type: "text", sub_type: "message", message: t("Right Side") }
-			]);
+			], boss_ent);
 		} else {
 			// Not enraged  Left Side
 			handlers.event([
 				//{ type: "spawn", func: "circle", args: [true, 445, 0, 0, 10, 350, 200, 5000] },
 				{ type: "spawn", sub_type: "item", id: 88704, sub_delay: 10000, pos: { x: 41082, y: -98303, z: 217, w: 2 }, tag: "light" },
 				{ type: "text", sub_type: "message", message: t("Left Side") }
-			]);
+			], boss_ent);
 		}
 	}
 
 	return {
 		"ns-2814-1000": [
+			{ type: "func", func: ent => boss_ent = ent },
 			{ type: "func", func: () => boss_enraged = false },
 			{ type: "func", func: () => boss_below_thirty_five = false }
 
 		],
 		"nd-2814-1000": [
+			{ type: "func", func: () => boss_ent = null },
 			{ type: "stop_timers" },
 			{ type: "despawn_all" }
 		],
