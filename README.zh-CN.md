@@ -131,6 +131,7 @@ ID | Dungeon name (English) | 副本名称 (中文)
 3204 | Catalepticon (Hard) | 残酷的路克米亚幻梦(困难)
 3205 | Cursed Fusion Laboratory | 核心融合所 (高阶)
 3206 | Crimson Killing Grounds | 深红杀戮场
+3920 | Cursed Antaroth's Abyss (Asura) | 扭曲的安塔洛斯深渊 (Asura)
 7011 | Shadow of the Gutrends (Guardian) | 剥皮者与黑影（守护者）
 7015 | Escape from Balder's Refuge (Guardian) | 解救巴尔德庇护所（守护者）
 9027 | Manaya's Core (Hard) | 珊德拉马奈伊亚(高阶)
@@ -170,7 +171,7 @@ ID | Dungeon name (English) | 副本名称 (中文)
 9939 | Red Refuge (Hard) | 森严的革命团总部
 9970 | Ruinous Manor (Hard) | 超越的拉坎里斯的废墟
 9980 | Velik's Hold (Hard) | 倒塌的贝利卡地下关口
-9981 | Velik's Sanctuary (Hard) | 塌陷的贝里克神殿
+9981 | Velik's Sanctuary (Hard) | 塌陷的贝里克神殿（支持Asura服）
 9982 | Grotto of Lost Souls (Hard) | 扭曲的里安地下殿堂
 9983 | Dark Reach Citadel (Hard) | 漆黑的泰内布利斯城堡
 9985 | Sanctuary's Ruins (Hard) | 塌陷的贝里克神殿

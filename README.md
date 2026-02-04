@@ -37,35 +37,6 @@ Click the badge or link above to start contributing translations!
 
 ---
 
-## Online TTS
-
-### Online TTS Demo
-
-#### Barbara (English)
-https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
-
-#### Kamisato Ayaka (English)
-https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
-
-#### Barbara (Chinese)
-https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
-
-### How to use Online TTS
-
-#### 1. Online TTS
-1.  **Register and get API Key**: Visit [https://dev.espai.fun](https://dev.espai.fun?invite_code=4c5bf7b78649494689dbc446e43db7f1), complete registration, and copy your API Key.
-2.  **Configure API Key**: Enter the following in the in-game Proxy/Toolbox command window: `guide onlinetts apikey YOUR_API_KEY`
-3.  **Add and set voice**: Examples:
-    *   **Kamisato (English)**: `guide onlinetts addvoice Kamisato cosyvoice-v2-espai-353f83ac94d8461a954b86cbd67fc6d8`
-    *   **Barbara (English)**: `guide onlinetts addvoice Barbara cosyvoice-v2-espai-2e9378e1d85144a295d9c6998a4bb28a`
-    *   **Barbara (Chinese)**: `guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f88822049e86d6`
-
-> **Warning**: When adding English voices, the custom `<VoiceName>` must contain only English characters; otherwise, number pronunciation will be incorrect.
->
-> **Tip**: The `addvoice` command format is `guide onlinetts addvoice <VoiceName> <VoiceID>`. You can customize the `<VoiceName>` for easier memory and usage.
-
----
-
 ## Dependencies
 
 This module depends on specific versions of core libraries.
@@ -100,85 +71,86 @@ Here is the updated **Supported Dungeons** table with the Chinese column removed
 
 ## Supported Dungeons
 
-ID | Dungeon name (English)
---- | ---
-2800 | Dreadspire VALKYTEQ
-2802 | Aesir's End (Hard) (Arborea Reborn)
-2803 | Aesir's End (Arborea Reborn)
-2804 | Phantom hideout (Arborea Reborn)
-2809 | The Observatory (Arborea Reborn)
-2811 | Sea of Honor (Arborea Reborn)
-2813 | Beach River Outpost (Arborea Reborn)
-2814 | Abyssal Prison (Arborea Reborn)
-2816 | Kelsaik Hall (Arborea Reborn)
-3023 | Akalath Quarantine
-3026 | Corrupted Skynest
-3027 | Forbidden Arena [Hagufna]
-3030 | Commander's Residence
-3032 | Akalath Quarantine (Guide)
-3034 | Rampaging RK-9 Kennel
-3036 | Sky Cruiser (Hard)
-3037 | Bahaar's Sanctum (Guide)
-3101 | Gossamer Vault
-3102 | Draakon Arena
-3103 | Forbidden Arena [Undying Warlord]
-3104 | Catalepticon
-3105 | Fusion Laboratory
-3106 | Killing Grounds
-3107 | Corrupted RK-9 Kennel
-3111 | The Veil (Darkan)
-3123 | Akalath Quarantine (Hard)
-3126 | Corrupted Skynest (Hard)
-3201 | Gossamer Vault (Hard)
-3202 | Draakon Arena (Hard)
-3203 | Forbidden Arena [Nightmare Undying Warlord]
-3204 | Catalepticon (Hard)
-3205 | Cursed Fusion Laboratory
-3206 | Crimson Killing Grounds
-7011 | Shadow of the Gutrends (Guardian)
-7015 | Escape from Balder's Refuge (Guardian)
-9027 | Manaya's Core (Hard)
-9034 | Dreadspire
-9044 | Bahaar's Sanctum
-9048 | Sanctum of the Fire God (Agaia Online)
-9050 | Rift's Edge (Hard)
-9053 | Kezzel's Gorge
-9054 | Bathysmal Rise (Hard)
-9056 | Timescape (Hard)
-9057 | Akeron's Inferno (Hard)
-9066 | Demon's Wheel
-9067 | Demokron Factory (Hard)
-9068 | Shadow Sanguinary (Hard)
-9070 | Manglemire
-9710 | Broken Prison
-9716 | Sky Cruiser Endeavor
-9720 | Antaroth's Abyss
-9735 | RK-9 Kennel
-9739 | Red Refuge
-9750 | Rift's Edge
-9754 | Bathysmal Rise
-9756 | Timescape
-9757 | Akeron's Inferno
-9759 | Forsaken Island (Hard)
-9768 | Shadow Sanguinary
-9770 | Ruinous Manor
-9780 | Velik's Hold (5-Person)
-9781 | Velik's Sanctuary
-9782 | Grotto of Lost Souls
-9783 | Dark Reach Citadel
-9794 | Thaumetal Refinery
-9850 | Withering Dreadspire (Agaia Online)
-9916 | Sky Cruiser Endeavor (Hard)
-9920 | Antaroth's Abyss (Hard)
-9935 | RK-9 Kennel (Hard)
-9939 | Red Refuge (Hard)
-9970 | Ruinous Manor (Hard)
-9980 | Velik's Hold (Hard)
-9981 | Velik's Sanctuary (Hard)
-9982 | Grotto of Lost Souls (Hard)
-9983 | Dark Reach Citadel (Hard)
-9985 | Sanctuary's Ruins (Hard)
-9994 | Thaumetal Refinery (Hard)
+id | Dungeon name | Название данжа
+--- | --- | ---
+2800 | Dreadspire VALKYTEQ | Dreadspire VALKYTEQ
+2802 | Aesir's End (Hard) (Arborea Reborn) | Aesir's End (Hard) (Arborea Reborn)
+2803 | Aesir's End (Arborea Reborn) | Aesir's End (Arborea Reborn)
+2804 | Phantom hideout (Arborea Reborn) | Phantom hideout (Arborea Reborn)
+2809 | The Observatory (Arborea Reborn) | The Observatory (Arborea Reborn)
+2811 | Sea of Honor (Arborea Reborn) | Sea of Honor (Arborea Reborn)
+2813 | Beach River Outpost (Arborea Reborn) | Beach River Outpost (Arborea Reborn)
+2814 | Abyssal Prison (Arborea Reborn) | Abyssal Prison (Arborea Reborn)
+2816 | Kelsaik Hall (Arborea Reborn) | Kelsaik Hall (Arborea Reborn)
+3023 | Akalath Quarantine | Секретное подземелье крепости Берарк
+3026 | Corrupted Skynest | Логово Келсаика
+3027 | Forbidden Arena [Hagufna] | [Бессмертный воин] Арена безумия
+3030 | Commander's Residence | Старая резиденция
+3032 | Akalath Quarantine (Guide) | [Тренировка] Секретное подземелье крепости Берарк
+3034 | Rampaging RK-9 Kennel | Ангар RK-9 (сложно)
+3036 | Sky Cruiser (Hard) | Небесный крейсер (сложно)
+3037 | Bahaar's Sanctum (Guide) | [Тренировка] Святилище Бахаара
+3101 | Gossamer Vault | Гнездо Паркин
+3102 | Draakon Arena | Командный центр
+3103 | Forbidden Arena [Undying Warlord] | [Этерния] Арена безумия
+3104 | Catalepticon | Сонный паралич Лукмии
+3105 | Fusion Laboratory | Лаборатория Слияния
+3106 | Killing Grounds | Место казни
+3107 | Corrupted RK-9 Kennel | Разрушенный Ангар РК-9
+3111 | The Veil (Darkan) | The Veil (Darkan)
+3123 | Akalath Quarantine (Hard) | Akalath Quarantine (Hard)
+3126 | Corrupted Skynest (Hard) | Логово Бессмертного Келсаика
+3201 | Gossamer Vault (Hard) | Гнездо сверкающей Паркин
+3202 | Draakon Arena (Hard) | Командный центр (сложно)
+3203 | Forbidden Arena [Nightmare Undying Warlord] | [Бессмертный] Арена безумия
+3204 | Catalepticon (Hard) | Сонный паралич Лукмии (сложно)
+3205 | Cursed Fusion Laboratory | Заколдованная лаборатория слияния
+3206 | Crimson Killing Grounds | Окровавленное место казни
+3920 | Cursed Antaroth's Abyss (Asura) | Искаженный Омут (Asura)
+7011 | Shadow of the Gutrends (Guardian) | Живодеры и черная тень (хранитель)
+7015 | Escape from Balder's Refuge (Guardian) | Операция "Спасти Убежище Балдера" (хранитель)
+9027 | Manaya's Core (Hard) | Обитель Манайи (сложно)
+9034 | Dreadspire | Жуткий шпиль страха
+9044 | Bahaar's Sanctum | Святилище Бахаара
+9048 | Sanctum of the Fire God (Agaia Online) | Sanctum of the Fire God (Agaia Online)
+9050 | Rift's Edge (Hard) | Край Разлома (сложно)
+9053 | Kezzel's Gorge | Ущелье Кеззела
+9054 | Bathysmal Rise (Hard) | Глубинный Храм (сложно)
+9056 | Timescape (Hard) | Хроноплоскость (сложно)
+9057 | Akeron's Inferno (Hard) | Акероново пекло (сложно)
+9066 | Demon's Wheel | Рулетка Демороса
+9067 | Demokron Factory (Hard) | Лаборатория Берна (сложно)
+9068 | Shadow Sanguinary (Hard) | Убежище Дуриона (сложно)
+9070 | Manglemire | Замок Парадоксов
+9710 | Broken Prison | Разрушенный алтарь Лакана
+9716 | Sky Cruiser Endeavor | Крейсер "Стремление"
+9720 | Antaroth's Abyss | Омут Антароса
+9735 | RK-9 Kennel | Ангар RK-9
+9739 | Red Refuge | Лагерь повстанцев
+9750 | Rift's Edge | Край Разлома
+9754 | Bathysmal Rise | Глубинный Храм
+9756 | Timescape | Хроноплоскость
+9757 | Akeron's Inferno | Акероново пекло
+9759 | Forsaken Island (Hard) | Остров Мертвых (сложно)
+9768 | Shadow Sanguinary | Убежище Дуриона
+9770 | Ruinous Manor | Руины Абнукты
+9780 | Velik's Hold (5-Person) | Вход в катакомбы Велики
+9781 | Velik's Sanctuary | Святилище Велики
+9782 | Grotto of Lost Souls | Мастерская Леандра
+9783 | Dark Reach Citadel | Крепость Тенебриса
+9794 | Thaumetal Refinery | Лаборатория Сайрекса
+9850 | Withering Dreadspire (Agaia Online) | Withering Dreadspire (Agaia Online)
+9916 | Sky Cruiser Endeavor (Hard) | Крейсер "Стремление" (Сложно)
+9920 | Antaroth's Abyss (Hard) | Омут Бездушного Антароса
+9935 | RK-9 Kennel (Hard) | Ангар совершенного RK-9
+9939 | Red Refuge (Hard) | Секретный лагерь повстанцев
+9970 | Ruinous Manor (Hard) | Руины Кошмарной Абнукты
+9980 | Velik's Hold (Hard) | Вход в разрушенные катакомбы Велики
+9981 | Velik's Sanctuary (Hard) | Разрушенное Святилище Велики
+9985 | Sanctuary's Ruins (Hard) | Sanctuary's Ruins (Hard)
+9982 | Grotto of Lost Souls (Hard) | Мастерская Леандра (сложно)
+9983 | Dark Reach Citadel (Hard) | Крепость Темного Тенебриса
+9994 | Thaumetal Refinery (Hard) | Лаборатория Альфа-сайрекса
 
 ## Notification Settings
 
