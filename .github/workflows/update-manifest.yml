@@ -2,7 +2,7 @@ name: Crowdin Workflow (Manifest & Merge)
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master, dev ]
     types: [opened, synchronize]
 
 permissions:
@@ -39,7 +39,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 稍微等待一下，确保 git 操作同步
           sleep 15 
-          # 执行合并
           gh pr merge --squash --delete-branch "${{ github.event.pull_request.html_url }}"

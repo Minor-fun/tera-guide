@@ -39,11 +39,15 @@ const DefaultSettings = {
 		"at": false
 	},
 	"onlineTTS": {
-		"enabled": false,
-		"apiKey": "",
-		"voices": {},  // Auto-detected from tts_cache directory
-		"defaultVoice": "",  // Auto-set from detected voices
-		"rate": 1
+		"enabled": true,
+		"autoUpdateInstalled": false,
+		"cacheDir": "tts_cache",
+		"repo": {
+			"owner": "Minor-fun",
+			"name": "tera-guide-tts-cache",
+			"branch": "main"
+		},
+		"selectedPack": null
 	}
 };
 
@@ -100,39 +104,12 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 				return settings;
 				
 			case 1.16:
-				if (!oldsettings.onlineTTS) {
-					settings.onlineTTS = DefaultSettings.onlineTTS;
-				} else {
-					const oldOnlineTTS = oldsettings.onlineTTS;
-					// Keep user voices if configured, otherwise use empty (auto-detected at runtime)
-					const userVoices = oldOnlineTTS.voices && Object.keys(oldOnlineTTS.voices).length > 0 
-						? oldOnlineTTS.voices 
-						: {};
-					settings.onlineTTS = {
-						"enabled": oldOnlineTTS.enabled || false,
-						"apiKey": oldOnlineTTS.apiKey || "",
-						"voices": userVoices,
-						"defaultVoice": oldOnlineTTS.defaultVoice || "",
-						"rate": oldOnlineTTS.rate || 1
-					};
-				}
+				settings.onlineTTS = DefaultSettings.onlineTTS;
 				break;
 
 			case 1.17:
-				// Convert voice string format to object format with lang property
-				if (oldsettings.onlineTTS && oldsettings.onlineTTS.voices) {
-					for (const voice in oldsettings.onlineTTS.voices) {
-						const val = oldsettings.onlineTTS.voices[voice];
-						if (typeof val === 'string') {
-							const isEnglish = /^[a-zA-Z\s0-9]+$/.test(voice);
-							oldsettings.onlineTTS.voices[voice] = {
-								id: val,
-								lang: isEnglish ? "en" : "zh_hans"
-							};
-						}
-					}
-				}
 				break;
+
 		}
 
 		for (const option in oldsettings) {

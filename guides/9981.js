@@ -23,7 +23,12 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	// Switch translator to specific version if available
 	if (dispatch._mod.i18nManager) {
-		t = dispatch._mod.i18nManager.createTranslator(translationId, lang);
+		const langKey = lang && lang.language ? lang.language : "en";
+		t = dispatch._mod.i18nManager.createTranslator(translationId, langKey);
+
+		const dungeonName = dispatch._mod.i18nManager.getTranslation(translationId, "@dungeon", langKey) ||
+			dispatch._mod.i18nManager.getTranslation(translationId, "@dungeon", "en");
+		if (dungeonName && guide && guide.settings) guide.settings.name = dungeonName;
 	}
 
 	return requireNoCache(guideFile)(dispatch, handlers, guide, lang, t);

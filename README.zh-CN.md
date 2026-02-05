@@ -37,32 +37,23 @@
 
 ---
 
-## 在线 TTS (Online TTS)
+## TTS 缓存（GitHub）
 
-### 在线 TTS 语音演示
+本版本使用公开 GitHub 缓存仓库的预生成语音包，无需 API Key。
 
-#### Barbara (英语)
-https://github.com/user-attachments/assets/6bad194a-6230-400c-9ae2-368a3afd11ae
+### 使用方法
+1. 打开 GUI：`guide gui`
+2. 进入 **TTS 缓存**，点击 **刷新** 获取远程语音包列表
+3. 下载一个语音包（语言 + 音色），然后 **选择**
+4. 仅播放已下载语音包，缺失会跳过
 
-#### Kamisato Ayaka (英语)
-https://github.com/user-attachments/assets/093d4199-6812-4c0f-ab64-b1d4bf4cfed1
-
-#### 芭芭拉 (中文)
-https://github.com/user-attachments/assets/f8be6b3e-d856-42f1-8659-f17832ebc47b
-
-### 如何使用在线 TTS
-
-#### 1. 在线 TTS
-1.  **注册并获取 API Key**：访问 [https://dev.espai.fun](https://dev.espai.fun?invite_code=4c5bf7b78649494689dbc446e43db7f1)，完成注册并复制您的 API Key。
-2.  **配置 API Key**：在游戏内的代理（Proxy/Toolbox）命令窗口中输入：`guide onlinetts apikey 您的API_KEY`
-3.  **添加并设置音色**：示例：
-    *   **Kamisato (英语)**: `guide onlinetts addvoice Kamisato cosyvoice-v2-espai-353f83ac94d8461a954b86cbd67fc6d8`
-    *   **Barbara (英语)**: `guide onlinetts addvoice Barbara cosyvoice-v2-espai-2e9378e1d85144a295d9c6998a4bb28a`
-    *   **芭芭拉 (中文)**: `guide onlinetts addvoice 芭芭拉 cosyvoice-v2-espai-0c241e723b104792a3f88822049e86d6`
-
-> **警告**：添加英语语音时，自定义的 `<VoiceName>` (语音名称) 必须仅包含英文字符，否则会导致数字发音错误。
->
-> **提示**：`addvoice` 命令的格式为 `guide onlinetts addvoice <语音名称> <语音ID>`。您可以自定义 `<语音名称>` 以便记忆和使用。
+### 常用命令
+- `guide onlinetts`（开/关）
+- `guide onlinetts refresh`
+- `guide onlinetts download <lang> <voice>`
+- `guide onlinetts select <lang> <voice>`
+- `guide onlinetts delete <lang> <voice>`
+- `guide onlinetts test`
 
 ---
 
@@ -105,8 +96,6 @@ ID | Dungeon name (English) | 副本名称 (中文)
 2809 | The Observatory (Arborea Reborn) | 观星神殿 (Arborea Reborn服)
 2811 | Sea of Honor (Arborea Reborn) | 金麟號 (Arborea Reborn 服)
 2813 | Beach River Outpost (Arborea Reborn) | Beach River Outpost (Arborea Reborn)
-2814 | Abyssal Prison (Arborea Reborn) | Abyssal Prison (Arborea Reborn)
-2816 | Kelsaik Hall (Arborea Reborn) | Kelsaik Hall (Arborea Reborn)
 3023 | Akalath Quarantine | 贝尔亚克城堡秘密地区
 3026 | Corrupted Skynest | 凯尔赛克隐藏地
 3027 | Forbidden Arena [Hagufna] | 狂气竞技场 [不灭的斗士]
@@ -131,7 +120,6 @@ ID | Dungeon name (English) | 副本名称 (中文)
 3204 | Catalepticon (Hard) | 残酷的路克米亚幻梦(困难)
 3205 | Cursed Fusion Laboratory | 核心融合所 (高阶)
 3206 | Crimson Killing Grounds | 深红杀戮场
-3920 | Cursed Antaroth's Abyss (Asura) | 扭曲的安塔洛斯深渊 (Asura)
 7011 | Shadow of the Gutrends (Guardian) | 剥皮者与黑影（守护者）
 7015 | Escape from Balder's Refuge (Guardian) | 解救巴尔德庇护所（守护者）
 9027 | Manaya's Core (Hard) | 珊德拉马奈伊亚(高阶)
@@ -171,7 +159,7 @@ ID | Dungeon name (English) | 副本名称 (中文)
 9939 | Red Refuge (Hard) | 森严的革命团总部
 9970 | Ruinous Manor (Hard) | 超越的拉坎里斯的废墟
 9980 | Velik's Hold (Hard) | 倒塌的贝利卡地下关口
-9981 | Velik's Sanctuary (Hard) | 塌陷的贝里克神殿（支持Asura服）
+9981 | Velik's Sanctuary (Hard) | 塌陷的贝里克神殿
 9982 | Grotto of Lost Souls (Hard) | 扭曲的里安地下殿堂
 9983 | Dark Reach Citadel (Hard) | 漆黑的泰内布利斯城堡
 9985 | Sanctuary's Ruins (Hard) | 塌陷的贝里克神殿

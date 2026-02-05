@@ -14,8 +14,8 @@ module.exports.NetworkMod = function (mod) {
 			colors: { gui: {}, general: {} }, 
 			command: ["guide"], 
 			chat_name: "Guide",
-			// Configure TTS cache to be in the guide plugin folder
-			ttsConfig: {
+			// Configure OnlineTTS to be in the guide plugin folder
+			onlineTTSConfig: {
 				basePath: __dirname,
 				cacheDir: "tts_cache"
 			}
