@@ -5,21 +5,23 @@
 const util = require("util");
 
 module.exports = (dispatch, handlers, guide, lang, t) => {
-	let two_slash_time = 0;
+	let thirdboss_counter = 0;
+	let thirdboss_timer = null;
 	// let blue_sword = false;
 	let stack_red = 0;
 	let stack_blue = 0;
 	let stack_yellow = 0;
 	let buff_merciless = false;
 
-	function two_slash_event() {
-		const now_time = new Date();
+	function thirdboss_backattack_event() {
+		dispatch.clearTimeout(thirdboss_timer);
+		thirdboss_counter++;
 
-		if ((now_time - two_slash_time) > 1800 && (now_time - two_slash_time) < 2250) {
-			handlers.text({ sub_type: "message", message: t("Back Stun") });
+		if (thirdboss_counter >= 2) {
+			handlers.text({ sub_type: "message", message: t("Back Stun/Front Stun") });
 		}
 
-		two_slash_time = now_time;
+		thirdboss_timer = dispatch.setTimeout(() => thirdboss_counter = 0, 2500);
 	}
 
 	function cage_colour_event() {
@@ -76,11 +78,13 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"s-3920-3000-313-0": "s-3920-3000-310-0",
 		"s-3920-3000-314-0": "s-3920-3000-310-0",
 		"s-3920-3000-315-0": [{ type: "text", sub_type: "message", message: t("Pushback (Kaia)") }],
+		"am-3920-3013-31083058": [{ type: "text", sub_type: "message", message: t("Red") }],
+		"am-3920-3012-31083057": [{ type: "text", sub_type: "message", message: t("Blue") }],
 		"s-3920-3000-400-0": [{ type: "text", sub_type: "message", message: t("Clones: Beam") }],
 		"s-3920-3000-401-0": [{ type: "text", sub_type: "message", message: t("Clones: Spin") }],
 
 		// Back stun mech
-		"s-3920-3000-104-0": [{ type: "func", func: two_slash_event }],
+		"s-3920-3000-104-0": [{ type: "func", func: thirdboss_backattack_event }],
 		"s-3920-3000-119-0": [
 			{ type: "spawn", func: "circle", args: [true, 553, 0, -325, 12, 325, 0, 2000] },
 			{ type: "text", sub_type: "message", message: t("Spin soon"), check_func: () => buff_merciless, delay: 500 }
@@ -151,7 +155,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"ab-3920-3000-31083063-3": [{ type: "text", sub_type: "notification", message: t("Stack 3") }],
 		"ab-3920-3000-31083064": [
 			{ type: "text", sub_type: "notification", message: t("Charged"), speech: false },
-			{ type: "text", sub_type: "alert", message: t("Pushback soon") }
+			{ type: "text", sub_type: "alert", message: t("Pushback") }
 		],
 
 		// Cage mech

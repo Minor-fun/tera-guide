@@ -15,8 +15,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	let enrage = 0;
 	let enrage_time = 0;
 	let counter = 0;
-	// let is_hp_79 = false;
-	let is_hp_49 = false;
+	let is_hp_79 = false;
 	let mech_total = 0;
 	let mech_counter = 0;
 
@@ -49,7 +48,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 
 			handlers.text({
 				sub_type: "message",
-				message: is_one_back ? "Back!" : "!!!"
+				message: is_one_back ? t("Back!") : t("Triple Strikes | Split Strikes")
 			});
 		}
 
@@ -93,7 +92,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 
 	function boss_mech_eventP2(skillid) {
 		enrage = new Date() - enrage_time >= 35100 ? 0 : 1;
-		mech_total = triple_attack ? (is_hp_49 ? 4 : 3) : 2; // is_hp_79
+		mech_total = triple_attack ? (is_hp_79 ? 4 : 3) : 2;
 
 		if (mech_counter == 0) {
 			handlers.text({ sub_type: "message",
@@ -179,9 +178,9 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"re-3036-1000": [
 			{ type: "func", func: () => enrage = 0 }
 		],
-		"h-3036-1000-100": [{ type: "func", func: () => is_hp_49 = false }],
+		"h-3036-1000-100": [{ type: "func", func: () => is_hp_79 = false }],
 		"h-3036-1000-94": [{ type: "text", sub_type: "message", message: t("94%") }],
-		"h-3036-1000-49": [{ type: "text", sub_type: "message", message: t("49%") }, { type: "func", func: () => is_hp_49 = true }],
+		"h-3036-1000-79": [{ type: "text", sub_type: "message", message: t("79%") }, { type: "func", func: () => is_hp_79 = true }],
 		"h-3036-1000-35": [{ type: "text", sub_type: "message", message: t("Watch the countdown") }],
 		"h-3036-1000-34": [{ type: "text", sub_type: "message", message: t("Third layer of shrinking ring preparation") }],
 		"h-3036-1000-65": [{ type: "text", sub_type: "message", message: t("Second layer of shrinking ring preparation") }],
@@ -199,7 +198,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "vector", args: [553, 270, 150, 0, 1300, 0, 5830] }
 		],
 		"s-3036-1000-1115-0": [
-			{ type: "text", sub_type: "message", message: t("3") },
+			{ type: "text", sub_type: "message", message: t("Take puddles away | 3") },
 			{ type: "text", sub_type: "message", delay: 1000, message: t("2") },
 			{ type: "text", sub_type: "message", delay: 2000, message: t("1") },
 			{ type: "text", sub_type: "message", delay: 3200, message: t("Dodge") }
@@ -252,8 +251,12 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"s-3036-1000-2117-0": "s-3036-1000-1117-0",
 		"s-3036-1000-2118-0": "s-3036-1000-1118-0",
 		"qb-3036-1000-3036039": [
-			{ type: "text", sub_type: "message", delay: 75000, message: t("Triple Soon") },
-			{ type: "text", sub_type: "notification", delay: 75000, message: t("Triple Soon"), speech: false },
+			{ type: "text", sub_type: "message", message: t("Triple"), check_func: () => !is_hp_79 },
+			{ type: "text", sub_type: "message", message: t("Quadruple"), check_func: () => is_hp_79 },
+			{ type: "text", sub_type: "message", delay: 75000, message: t("Triple Soon"), check_func: () => !is_hp_79 },
+			{ type: "text", sub_type: "message", delay: 75000, message: t("Quadruple Soon"), check_func: () => is_hp_79 },
+			{ type: "text", sub_type: "notification", delay: 75000, message: t("Triple Soon"), speech: false, check_func: () => !is_hp_79 },
+			{ type: "text", sub_type: "notification", delay: 75000, message: t("Quadruple Soon"), speech: false, check_func: () => is_hp_79 },
 			{ type: "func", func: boss_tripleattack_event }
 		],
 		"qb-3036-1000-3036040": [{ type: "func", func: boss_tripleattack_event }],

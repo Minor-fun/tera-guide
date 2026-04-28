@@ -104,13 +104,15 @@ ID | Dungeon name (English) | 副本名称 (中文)
 3034 | Rampaging RK-9 Kennel | 暴走的RK-9机库
 3036 | Sky Cruiser (Hard) | 炽热艾尔凯拉斯号
 3037 | Bahaar's Sanctum (Guide) | 巴哈勒神殿(导览)
+3047 | Hall of the Argon Queen (Hard) | 不朽的阿勒坤女王
 3101 | Gossamer Vault | 费尔奎娜巢穴
 3102 | Draakon Arena | 司令官修练场
 3103 | Forbidden Arena [Undying Warlord] | 狂气竞技场 [永恒的斗神]
 3104 | Catalepticon | 路克米亚的幻梦
 3105 | Fusion Laboratory | 核心融合所 (初阶)
-3106 | Killing Grounds | 杀戮场
+3106 | Killing Grounds | 暴君斷頭台
 3107 | Corrupted RK-9 Kennel | 腐化的RK-9机库
+3109 | Ice Throne | 冰封王座
 3111 | The Veil (Darkan) | 面纱（黑暗）menma服
 3123 | Akalath Quarantine (Hard) | 贝尔亚克城堡秘密地区(困难)
 3126 | Corrupted Skynest (Hard) | 不灭凯尔赛克隐藏地(困难)
@@ -119,7 +121,8 @@ ID | Dungeon name (English) | 副本名称 (中文)
 3203 | Forbidden Arena [Nightmare Undying Warlord] | 狂气竞技场 [不灭的斗神]
 3204 | Catalepticon (Hard) | 残酷的路克米亚幻梦(困难)
 3205 | Cursed Fusion Laboratory | 核心融合所 (高阶)
-3206 | Crimson Killing Grounds | 深红杀戮场
+3206 | Crimson Killing Grounds | 憤怒的暴君斷頭台
+3209 | Chaos Ice Throne | 混沌冰封王座
 7011 | Shadow of the Gutrends (Guardian) | 剥皮者与黑影（守护者）
 7015 | Escape from Balder's Refuge (Guardian) | 解救巴尔德庇护所（守护者）
 9027 | Manaya's Core (Hard) | 珊德拉马奈伊亚(高阶)

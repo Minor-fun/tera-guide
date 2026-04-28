@@ -517,8 +517,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"s-981-3000-2130-0": "s-981-3000-1130-0",
 		//
 		"s-981-3000-1116-0": [
-			{ type: "text", sub_type: "message", message: t("Donut (Out > In > Out)"), check_func: () => !thirdboss_soul_world },
-			{ type: "text", sub_type: "message", message: t("Donut (In > Out > In)"), check_func: () => thirdboss_soul_world },
+			{ type: "text", sub_type: "message", message: t("Donut (Out > In > Out)") },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 41, 10, 195, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 41, 10, 345, 0, 6000] },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 41, 10, 515, 0, 6000] },
@@ -580,7 +579,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		],
 		"s-981-3000-1401-0": [
 			{ type: "text", sub_type: "message", message: t("Wave (Dodge) | Plague/Regress") },
-			{ type: "text", sub_type: "message", message: t("Puddles! (Spread)"), delay: 1900 },
+			{ type: "text", sub_type: "message", message: t("Puddles! (Spread)"), delay: 1500 },
 			{ type: "spawn", func: "circle", args: [false, 912, 0, 0, 15, 175, 1000, 7000] },
 			{ type: "func", func: () => thirdboss_soul_world = true }
 		],

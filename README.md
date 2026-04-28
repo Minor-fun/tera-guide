@@ -108,6 +108,7 @@ ID | Dungeon name (English)
 3034 | Rampaging RK-9 Kennel
 3036 | Sky Cruiser (Hard)
 3037 | Bahaar's Sanctum (Guide)
+3047 | Hall of the Argon Queen (Hard)
 3101 | Gossamer Vault
 3102 | Draakon Arena
 3103 | Forbidden Arena [Undying Warlord]
@@ -115,6 +116,7 @@ ID | Dungeon name (English)
 3105 | Fusion Laboratory
 3106 | Killing Grounds
 3107 | Corrupted RK-9 Kennel
+3109 | Ice Throne
 3111 | The Veil (Darkan)
 3123 | Akalath Quarantine (Hard)
 3126 | Corrupted Skynest (Hard)
@@ -124,6 +126,7 @@ ID | Dungeon name (English)
 3204 | Catalepticon (Hard)
 3205 | Cursed Fusion Laboratory
 3206 | Crimson Killing Grounds
+3209 | Chaos Ice Throne
 7011 | Shadow of the Gutrends (Guardian)
 7015 | Escape from Balder's Refuge (Guardian)
 9027 | Manaya's Core (Hard)

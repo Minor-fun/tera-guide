@@ -73,8 +73,6 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "func", func: stack_remove_event }
 		],
 
-		"die": [{ type: "func", func: stack_remove_event }],
-
 		"am-3106-1000-32060007": [{ type: "func", func: stack_add_event }],
 		"ar-3106-1000-32060007": [{ type: "func", func: stack_remove_event }],
 
