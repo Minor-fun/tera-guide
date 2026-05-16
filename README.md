@@ -24,39 +24,6 @@
 
 ---
 
-## Internationalization (i18n) & Community Translation Support
-
-This project has introduced an automated translation workflow, supporting the loading of multi-language configuration files by dungeon ID.
-
-This means you can directly participate in translating the guides!
-*   **No programming knowledge required**: You don't need to modify code or JSON files; simply enter translations on the webpage.
-*   **Automatic synchronization**: Translations submitted on Crowdin are automatically synced and pushed to the repository.
-*   **Real-time updates**: Help us translate dungeon guides into more languages to benefit players worldwide.
-
-Click the badge or link above to start contributing translations!
-
----
-
-## OnlineTTS (GitHub)
-
-This build uses pre-generated voice packs hosted in a public GitHub cache repo. No API key is needed.
-
-### How to use
-1. Open the GUI: `guide gui`.
-2. Go to **OnlineTTS**, click **Refresh** to load remote packs.
-3. Download a pack (language + voice), then **Select** it.
-4. Only downloaded packs will play. Missing packs/files are skipped.
-
-### Commands (OnlineTTS)
-- `guide onlinetts` (toggle on/off)
-- `guide onlinetts refresh`
-- `guide onlinetts download <lang> <voice>`
-- `guide onlinetts select <lang> <voice>`
-- `guide onlinetts delete <lang> <voice>`
-- `guide onlinetts test`
-
----
-
 ## Dependencies
 
 This module depends on specific versions of core libraries.
@@ -186,13 +153,6 @@ ID | Dungeon name (English)
 * When **Streamer Mode** is on (**stream** argument), all text notifications are sent ONLY to the Toolbox(/8) chat channel. They will not appear on screen, but TTS voice will still play.
 
 * To disable or enable TTS voice notifications, use the **guide voice** command.
-
-## Module GUI
-
-*   When entering the **guide gui** command, the module's graphical settings interface will appear, allowing you to change basic settings.
-
-    ![](https://i.imgur.com/nUKjQHn.png)
-    ![](https://i.imgur.com/7dHs1g0.png)
 
 
 ## Credits

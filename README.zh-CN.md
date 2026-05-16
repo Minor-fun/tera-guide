@@ -24,39 +24,6 @@
 
 ---
 
-## 国际化 (i18n) 与社区翻译支持
-
-本项目现已引入了自动化的翻译流程，支持按副本 ID 加载多语言配置文件。
-
-这意味着您可以直接参与到指南的翻译工作中！
-*   **无需编程知识**：您不需要修改代码或 JSON 文件，只需在网页上输入翻译即可。
-*   **自动同步**：您在 Crowdin 上提交的翻译会自动同步并推送到仓库中。
-*   **实时更新**：帮助我们将副本攻略翻译成更多语言，造福全球玩家。
-
-点击上方的徽章或链接即可开始贡献翻译！
-
----
-
-## TTS 缓存（GitHub）
-
-本版本使用公开 GitHub 缓存仓库的预生成语音包，无需 API Key。
-
-### 使用方法
-1. 打开 GUI：`guide gui`
-2. 进入 **TTS 缓存**，点击 **刷新** 获取远程语音包列表
-3. 下载一个语音包（语言 + 音色），然后 **选择**
-4. 仅播放已下载语音包，缺失会跳过
-
-### 常用命令
-- `guide onlinetts`（开/关）
-- `guide onlinetts refresh`
-- `guide onlinetts download <lang> <voice>`
-- `guide onlinetts select <lang> <voice>`
-- `guide onlinetts delete <lang> <voice>`
-- `guide onlinetts test`
-
----
-
 ## 依赖项
 
 本模块依赖于特定版本的核心库。
@@ -181,13 +148,6 @@ ID | Dungeon name (English) | 副本名称 (中文)
 
 * 当 **主播模式 (Streamer Mode)** 开启时（**stream** 参数），所有文本通知仅发送到 Toolbox(/8) 聊天频道，屏幕上不会显示，但 TTS 语音仍会播放。
 
-* 要禁用或启用 TTS 语音通知，请使用 **guide voice** 命令。
-
-## 模块 GUI 界面
-
-*   输入 **guide gui** 命令时，会显示模块的图形设置界面，允许您更改基本设置。
-    ![](https://i.imgur.com/nUKjQHn.png)
-    ![](https://i.imgur.com/7dHs1g0.png)
 
 
 ## 鸣谢 / Credits

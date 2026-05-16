@@ -1,7 +1,7 @@
 {
     "files": {
-        "README.md": "6ed1aa3e273b9eb72adb516983704011dd34997d8016b3048594e139d7a89a5d",
-        "README.zh-CN.md": "815e70c6a9206c022d32b8967f37726edc8371c9a7865fc35c1d7818450a13c8",
+        "README.md": "75e7ff1a6847dc138c43b2c75a0e1254ba92448915c0861d6c1cbf17d1b1dacc",
+        "README.zh-CN.md": "eb76cfb4bb5b8d4f64f602040da74600d12d2856b730f80f6df399cdcd647c1f",
         "guides/2800.js": "f356c165624df3c20fce5e2c501a74821fdf2d113e2fe684792599cd89b398b0",
         "guides/2802.js": "728382fa888afbb295a4b8b2cf98518747dd131be79d2df441614b3cdf017f67",
         "guides/2803.js": "98fc78191cd03d4472050e43dc698cdbfc16423353e34107caea4456566a0d95",
@@ -176,7 +176,7 @@
         "i18n/3106/en.json": "0b05fb15130305245ca2d3fe96b517a8f7c08203becc9f1e5ea88bb9a7589cc0",
         "i18n/3106/ja.json": "626c0ace631620a340bc499f034f2f78d507145e4a1fa0ed6cec60f5437ce7e1",
         "i18n/3106/ru.json": "37952a6990b3f3b2d6319f43b4f21957e3ae060e8d398d52b1bb252c44930b7e",
-        "i18n/3106/zh_Hans.json": "70aba017dae0089b78dee0e190587b791fe4444aed4bdea0a05339a3fa43e759",
+        "i18n/3106/zh_Hans.json": "92b50cf52d12186c3d37f23024dbc34c8265c351142ccce47a7bfd6beba5a65f",
         "i18n/3107/en.json": "8293f5de610f3e40fd9ed6dfdec5d9f2965f1f0abf962f2e60ae31905db46df8",
         "i18n/3107/ja.json": "d5bcb103df91577cc2ea7c976ecb9587fa61cd874a45c87a477f069313ba08ef",
         "i18n/3107/ru.json": "034d0d49fbd33287ed2e7cdebe6c7e8bd891c5308c6f181886d0a398ab0b3770",
@@ -220,7 +220,7 @@
         "i18n/3206/en.json": "877e45782a0592afb5372f85f0fccf62b7edbcac2a343a64414f61680cd42d20",
         "i18n/3206/ja.json": "0dc767330d9468ee34f7874ee1e44eca02f5e273a0a7008edec38c9adbf29a50",
         "i18n/3206/ru.json": "4b56aec229b65cb319c86a4ecdd79c3da3301a9f7ac2deb5db208edb71e30830",
-        "i18n/3206/zh_Hans.json": "0fce8667f34962f62050506e55a57450101041ae4596bf73712d790c53b844c6",
+        "i18n/3206/zh_Hans.json": "3b9bc97f0d4380c0db48217370095aba7be5ab92c4a05babfa4b1049e8766e9a",
         "i18n/3209/en.json": "df8abb4a948c64813cfdd4c2f6eb75fc97eccb7d1be887c0a3a9fbc7b0d223bd",
         "i18n/3209/ja.json": "df8abb4a948c64813cfdd4c2f6eb75fc97eccb7d1be887c0a3a9fbc7b0d223bd",
         "i18n/3209/ru.json": "0962296697194f991f03e9344b3bc0505872670703dc133b1809bfffcfb46c56",
