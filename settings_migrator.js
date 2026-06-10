@@ -42,17 +42,17 @@ const DefaultSettings = {
 		"enabled": true,
 		"autoUpdateInstalled": false,
 		"cacheDir": "tts_cache",
-		"repo": {
-			"owner": "Minor-fun",
-			"name": "tera-guide-tts-cache",
-			"branch": "main"
+		"source": "hf",
+		"dataset": {
+			"repoId": "qingqinglove/tera-guide-tts-cache",
+			"revision": "main"
 		},
 		"selectedPack": null
 	}
 };
 
 module.exports = function MigrateSettings(from_ver, to_ver, settings) {
-	if (from_ver === undefined) return { ...DefaultSettings, ...settings };
+	if (from_ver === undefined) return normalizeSettings({ ...DefaultSettings, ...settings });
 	else if (from_ver === null) return DefaultSettings;
 	else {
 		from_ver = Number(from_ver);
@@ -82,7 +82,7 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 					} else
 						settings[option] = oldsettings[option];
 				}
-				return settings;
+				return normalizeSettings(settings);
 
 			case 1.13:
 				remove(["dbg.json", "lib.js", "dispatch.js", "voice/index.js", "voice"]);
@@ -101,7 +101,7 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 					else
 						settings[option] = oldsettings[option];
 				}
-				return settings;
+				return normalizeSettings(settings);
 				
 			case 1.16:
 				settings.onlineTTS = DefaultSettings.onlineTTS;
@@ -117,7 +117,16 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 				settings[option] = oldsettings[option];
 		}
 
-		return settings;
+		return normalizeSettings(settings);
+	}
+
+	function normalizeSettings(next) {
+		next = next || {};
+		next.onlineTTS = { ...DefaultSettings.onlineTTS, ...(next.onlineTTS || {}) };
+		next.onlineTTS.source = "hf";
+		next.onlineTTS.dataset = { ...DefaultSettings.onlineTTS.dataset, ...(next.onlineTTS.dataset || {}) };
+		delete next.onlineTTS.repo;
+		return next;
 	}
 
 	function remove(files) {

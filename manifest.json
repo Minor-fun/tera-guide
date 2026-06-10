@@ -413,6 +413,6 @@
         "index.js": "b0e903b335fe40746bfd1c0a4690f1d64028921a42fdd221b9b583b7abbb0ab1",
         "lib/i18n-manager.js": "bc3ff8317c28e67945ecfd8baf083a2c736876f05a427a7c351898212416c1d1",
         "module.json": "0739b489887b7e415c78eaf8a911227e20680c563ef63ba954cb1c4b3800413a",
-        "settings_migrator.js": "45c55df3d058779496295bfd1e256d7c988a43aebf14504134f615bce96a94a7"
+        "settings_migrator.js": "687c7c842041feff11788e8ef818e915d286066228e53a307a588f0123215d4f"
     }
 }
