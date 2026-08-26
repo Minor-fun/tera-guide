@@ -206,8 +206,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 						handlers.spawn({
 							"id": 89141,
 							"sub_type": "item",
-							"delay": mechanic.delays[i] / ent.speed,
-							"sub_delay": 1466 / ent.speed,
+							"delay": mechanic.delays[i] / entClone.speed,
+							"sub_delay": 1466 / entClone.speed,
 							"distance": pattern.distance,
 							"offset": offset
 						}, entClone);
@@ -218,8 +218,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 								false,
 								offset * 180 / Math.PI,
 								pattern.distance,
-								mechanic.delays[i] / ent.speed,
-								1466 / ent.speed,
+								mechanic.delays[i] / entClone.speed,
+								1466 / entClone.speed,
 								true,
 								["Safe", "Spot"]
 							]
@@ -227,8 +227,8 @@ module.exports = (dispatch, handlers, guide, lang) => {
 					} else {
 						handlers.spawn({
 							"id": objId,
-							"delay": mechanic.delays[i] / ent.speed,
-							"sub_delay": 1466 / ent.speed,
+							"delay": mechanic.delays[i] / entClone.speed,
+							"sub_delay": 1466 / entClone.speed,
 							"distance": pattern.distance,
 							"offset": offset
 						}, entClone);
@@ -312,13 +312,25 @@ module.exports = (dispatch, handlers, guide, lang) => {
 	});
 
 	dispatch.hook("S_BOSS_GAGE_INFO", 3, event => {
-		if (event.huntingZoneId !== 434 || event.templateId !== 7000) return;
+		if (event.huntingZoneId !== 434 || ![7000, 9000].includes(event.templateId)) return;
 
 		const hpPercent = Number(event.maxHp) !== 0 ? (Number(event.curHp) / Number(event.maxHp)) * 100 : 0;
 
-		if (hpPercent < 50 && !seventh_fifty) {
+		if (event.templateId === 7000 && hpPercent < 50 && !seventh_fifty) {
 			handlers.text({ type: "text", sub_type: "message", message: "50%" });
 			seventh_fifty = true;
+		}
+
+		if (event.templateId === 9000) {
+			if (hpPercent < 50 && !ninth_floor_fifty) {
+				handlers.text({ type: "text", sub_type: "message", message: "50%" });
+				handlers.text({ type: "text", sub_type: "notification", message: "Triple Soon", message_RU: "Скоро тройная", delay: 1000 });
+				ninth_floor_fifty = true;
+			}
+
+			if (hpPercent < 80 && !ninth_floor_eighty) {
+				ninth_floor_eighty = true;
+			}
 		}
 	});
 
@@ -464,19 +476,12 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 	function curse_mob_spawned(ent) {
 		const angle = ent.loc.angleTo(boss_data.loc);
-		const is_left = ((angle > 2.1 && angle < 2.6) || (angle > -2.6 && angle < -2.1));
+
+		// left: 0.79, 2.37
+		// right: -2.36, -0.78
+		const is_left = ((angle > 1.9 && angle < 2.7) || (angle > 0.3 && angle < 1.1));
 		const curse_msg = is_left ? "Curse Left" : "Curse Right";
 		const curse_msg_ru = is_left ? "Дебафф слева" : "Дебафф справа";
-
-		// -2.3 - Слева-спереди
-		// 2.3 - Слева-сзади
-		// 0.7 - Справа-сзади
-		// -0.7 - Справа-спереди
-		// handlers.text({
-		// 	sub_type: "message",
-		// 	message: `angle to boss: ${angle}`,
-		// 	speech: false
-		// });
 
 		handlers.text({
 			sub_type: "message",
@@ -508,16 +513,18 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		let pattern = null;
 
 		if ((e.w <= -0.065 && e.w >= -0.095) || (e.w <= 0.095 && e.w >= 0.065)) {
-			pattern = RightCarpetMarkers;
-		} else if (e.w <= -1.45 && e.w >= -1.85) {
-			pattern = FrontCarpetMarkers;
-		} else if ((e.w <= 3.075 && e.w >= 3.045) || e.w <= -3.115 && e.w >= -3.145) {
-			pattern = LeftCarpetMarkers;
-		} else if (e.w <= 1.85 && e.w >= 1.45) {
 			pattern = BackCarpetMarkers;
+		} else if (e.w <= -1.45 && e.w >= -1.85) {
+			pattern = RightCarpetMarkers;
+		} else if ((e.w <= 3.075 && e.w >= 3.010) || e.w <= -3.010 && e.w >= -3.075) {
+			pattern = FrontCarpetMarkers;
+		} else if (e.w <= 1.85 && e.w >= 1.45) {
+			pattern = LeftCarpetMarkers;
 		}
 
-		handlers.event(CarpetMarkers[pattern]);
+		if (pattern !== null) {
+			handlers.event(CarpetMarkers[pattern]);
+		}
 	});
 
 	// 9th floor darkan
@@ -1245,16 +1252,16 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "text", sub_type: "message", message: "Spread", message_RU: "Круги (отдельно!)" },
 			{ type: "text", sub_type: "notification", message: "Spread", message_RU: "Круги (отдельно!)" },
 			{ type: "func", func: seventh_spawn_tables, args: [true] },
-			{ type: "text", sub_type: "message", message: "Gather", message_RU: "Круги (вместе!)", delay: 7000 },
-			{ type: "text", sub_type: "notification", message: "Gather", message_RU: "Круги (вместе!)", delay: 7000 }
+			{ type: "text", sub_type: "message", message: "Gather", message_RU: "Круги (вместе!)", delay: 5800 },
+			{ type: "text", sub_type: "notification", message: "Gather", message_RU: "Круги (вместе!)", delay: 5800 }
 		],
 		"s-434-7000-7906-0": [ // soul world
 			{ type: "text", sub_type: "message", message: "Gather", message_RU: "Круги (вместе!)" },
 			{ type: "text", sub_type: "alert", message: "Gather", message_RU: "Круги (вместе!)" },
 			{ type: "text", sub_type: "notification", message: "Gather", message_RU: "Круги (вместе!)" },
 			{ type: "func", func: seventh_spawn_tables, args: [false] },
-			{ type: "text", sub_type: "message", message: "Spread", message_RU: "Круги (отдельно!)", delay: 7000 },
-			{ type: "text", sub_type: "notification", message: "Spread", message_RU: "Круги (отдельно!)", delay: 7000 }
+			{ type: "text", sub_type: "message", message: "Spread", message_RU: "Круги (отдельно!)", delay: 5800 },
+			{ type: "text", sub_type: "notification", message: "Spread", message_RU: "Круги (отдельно!)", delay: 5800 }
 		],
 		"s-434-7000-1144-0": [{ type: "spawn", func: "circle", args: [false, 553, 0, 10, 0, 250, 0, 3000] }],
 		"s-434-7000-2144-0": "s-434-7000-1144-0",
@@ -1318,12 +1325,6 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "func", func: () => boss_data = null }
 		],
 		"h-434-9000-99": [{ type: "func", func: () => is_ninth_floor = true }],
-		"h-434-9000-79": [{ type: "func", func: () => ninth_floor_eighty = true }],
-		"h-434-9000-49": [
-			{ type: "text", sub_type: "message", message: "49%" },
-			{ type: "func", func: () => ninth_floor_fifty = true },
-			{ type: "text", sub_type: "notification", message: "Triple Soon", message_RU: "Скоро тройная", delay: 1000 }
-		],
 		"dm-0-0-9034901": [
 			{ type: "text", sub_type: "message", message: "Triple", message_RU: "Тройная" },
 			{ type: "func", func: () => ninth_triple_swipe_remaining = 3 },
@@ -1356,10 +1357,10 @@ module.exports = (dispatch, handlers, guide, lang) => {
 		"s-434-9000-2114-0": "s-434-9000-1114-0",
 		"s-434-9000-1115-0": [
 			{ type: "text", sub_type: "message", message: "Gather on secondary aggro", message_RU: "Собраться на вторичном агро" },
-			{ type: "text", sub_type: "message", delay: 1067, message: "3" },
-			{ type: "text", sub_type: "message", delay: 2134, message: "2" },
-			{ type: "text", sub_type: "message", delay: 3201, message: "1" },
-			{ type: "text", sub_type: "message", delay: 4271, message_RU: "Выйти из луж", message: "Get out of the puddles" }
+			{ type: "text", sub_type: "message", delay: 1317, message: "3" },
+			{ type: "text", sub_type: "message", delay: 2634, message: "2" },
+			{ type: "text", sub_type: "message", delay: 3951, message: "1" },
+			{ type: "text", sub_type: "message", delay: 5271, message_RU: "Выйти из луж", message: "Get out of the puddles" }
 		],
 		"s-434-9000-2115-0": "s-434-9000-1115-0",
 		"s-434-9000-1117-0": [
