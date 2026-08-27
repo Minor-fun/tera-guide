@@ -512,7 +512,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		let pattern = null;
 
-		if ((e.w <= -0.065 && e.w >= -0.095) || (e.w <= 0.095 && e.w >= 0.065)) {
+		if ((e.w <= -0.065 && e.w >= -1.195) || (e.w <= 1.195 && e.w >= 0.065)) {
 			pattern = BackCarpetMarkers;
 		} else if (e.w <= -1.45 && e.w >= -1.85) {
 			pattern = RightCarpetMarkers;
@@ -524,7 +524,14 @@ module.exports = (dispatch, handlers, guide, lang) => {
 
 		if (pattern !== null) {
 			handlers.event(CarpetMarkers[pattern]);
-		}
+		}/*  else {
+			handlers.text({
+				sub_type: "message",
+				message: `S_CREATURE_ROTATE: ${e.w}`,
+				speech: false
+			});
+			console.log(`S_CREATURE_ROTATE: ${e.w}`);
+		} */
 	});
 
 	// 9th floor darkan
@@ -1360,7 +1367,7 @@ module.exports = (dispatch, handlers, guide, lang) => {
 			{ type: "text", sub_type: "message", delay: 1317, message: "3" },
 			{ type: "text", sub_type: "message", delay: 2634, message: "2" },
 			{ type: "text", sub_type: "message", delay: 3951, message: "1" },
-			{ type: "text", sub_type: "message", delay: 5271, message_RU: "Выйти из луж", message: "Get out of the puddles" }
+			{ type: "text", sub_type: "message", delay: 4871, message_RU: "Выйти из луж", message: "Get out of the puddles" }
 		],
 		"s-434-9000-2115-0": "s-434-9000-1115-0",
 		"s-434-9000-1117-0": [
