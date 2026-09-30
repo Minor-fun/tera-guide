@@ -3,8 +3,8 @@
   "Jump (Stun)": "Jump (Stun)",
   "Spin": "Spin",
   "Front (Dodge)": "Front (Dodge)",
-  "Out -> In": "Out -> In",
-  "In -> Out": "In -> Out",
+  "Out -> In": "OUT -> IN",
+  "In -> Out": "IN -> OUT",
   "Push (Dodge)": "Push (Dodge)",
   "Circles x5 (Dodge)": "Circles x5 (Dodge)",
   "Circle (Dodge)": "Circle (Dodge)",
@@ -15,6 +15,6 @@
   "Carpet": "Carpet",
   "Circles (Dodge)": "Circles (Dodge)",
   "Pull": "Pull",
-  "Out": "Out",
-  "In": "In"
+  "Out": "OUT",
+  "In": "IN"
 }

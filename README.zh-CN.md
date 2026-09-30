@@ -83,6 +83,7 @@ ID | Dungeon name (English) | 副本名称 (中文)
 3111 | The Veil (Darkan) | 面纱（黑暗）menma服
 3123 | Akalath Quarantine (Hard) | 贝尔亚克城堡秘密地区(困难)
 3126 | Corrupted Skynest (Hard) | 不灭凯尔赛克隐藏地(困难)
+3147 | Hall of the Argon Queen (Hard) (Asura) | 不朽的阿勒坤女王（Asura）
 3201 | Gossamer Vault (Hard) | 灿烂的费尔奎娜巢穴(困难)
 3202 | Draakon Arena (Hard) | 愤怒的司令官修练场(困难)
 3203 | Forbidden Arena [Nightmare Undying Warlord] | 狂气竞技场 [不灭的斗神]
@@ -105,6 +106,8 @@ ID | Dungeon name (English) | 副本名称 (中文)
 9067 | Demokron Factory (Hard) | 残暴费勒诺的实验室
 9068 | Shadow Sanguinary (Hard) | 暴君杜利温的安息地
 9070 | Manglemire | 吹牛王塔勒斯基的游乐场
+9156 | Timescape (Hard) (Classic+) | 扭曲的法罗纳时空（Classic+）
+9168 | Shadow Sanguinary (Hard) (Classic+) | 暴君杜利温的安息地（Classic+）
 9710 | Broken Prison | 扭曲的拉坎祭坛
 9716 | Sky Cruiser Endeavor | 艾尔凯拉斯号
 9720 | Antaroth's Abyss | 安塔洛斯深渊
@@ -123,6 +126,8 @@ ID | Dungeon name (English) | 副本名称 (中文)
 9783 | Dark Reach Citadel | 泰内布利斯城堡
 9794 | Thaumetal Refinery | 赛伊洛斯研究基地
 9850 | Withering Dreadspire (Agaia Online) | Withering Dreadspire (Agaia Online)
+9856 | Timescape (Classic+) | 法罗纳时空（Classic+）
+9868 | Shadow Sanguinary (Classic+) | 杜利温的安息地（Classic+）
 9916 | Sky Cruiser Endeavor (Hard) | 暴风的艾尔凯拉斯号
 9920 | Antaroth's Abyss (Hard) | 空洞的安塔洛斯深渊
 9935 | RK-9 Kennel (Hard) | 终极RK-9 机库

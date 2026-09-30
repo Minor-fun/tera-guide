@@ -12,7 +12,7 @@
   "Gather!": "Gather!",
   "Pushback": "Pushback",
   "Shield!": "Shield!",
-  "In": "In",
+  "In": "IN",
   "Eye (boss to banana)": "Eye (boss to banana)",
   "Push (Kaia)": "Push (Kaia)",
   "Bait (2 stones)": "Bait (2 stones)",
@@ -24,7 +24,7 @@
   "Inward Wave": "Inward Wave",
   "Outward Wave": "Outward Wave",
   "Together": "Together",
-  "Donut (In > Out)": "Donut (In > Out)",
+  "Donut (In > Out)": "Donut (IN > OUT)",
   "Out / Dodge": "Out / Dodge",
   "Hit in dd": "Hit in dd",
   "Front (Dodge)": "Front (Dodge)",
@@ -44,5 +44,5 @@
   "Line up the puddles to blue": "Line up the puddles to blue",
   "Line up the puddles to red": "Line up the puddles to red",
   "Pull": "Pull",
-  "Give stun!": "Give stun!"
+  "Give stun!": "Give Stun!"
 }

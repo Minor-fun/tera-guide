@@ -1,4 +1,4 @@
-﻿// Sanctum of the Fire God
+// Sanctum of the Fire God 2.0
 //
 // made by michengs / Emilia-s2 / HSDN / Vampic / NoobLevelUP
 
@@ -8,6 +8,28 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	const { player } = dispatch.require.library;
 	let print_loading = true;
 	let print_lasers = true;
+	let is_enraged = false;
+	let enrage_timer = null;
+
+	dispatch.hook("S_NPC_STATUS", 2, event => {
+		if (event.gameId === handlers.npcId) {
+			if (enrage_timer) {
+				clearTimeout(enrage_timer);
+				enrage_timer = null;
+			}
+
+			if (event.enraged) {
+				is_enraged = true;
+
+				enrage_timer = setTimeout(() => {
+					is_enraged = false;
+				}, 34450);
+
+			} else {
+				is_enraged = false;
+			}
+		}
+	});
 
 	function waves_event() {
 		handlers.event([
@@ -36,7 +58,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		}
 	});
 
-	// New Laser
+	// เลเซอร์ 2 (1.0)
 	dispatch.hook("S_ABNORMALITY_BEGIN", dispatch._mod.majorPatchVersion >= 107 ? 5 : 4, event => {
 		if (event.id === 90442503) {
 			if (dispatch._mod.game.me.is(event.target)) {
@@ -53,14 +75,56 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		}
 	});
 
+	let next_debuff = 0; //ดีบัฟ 2.0
+	function debuff_event(send_msg, debuff, ent) {
+		if (next_debuff === 0) {
+			next_debuff = debuff;
+		}
+
+		if (send_msg) {
+			const debuff_messages = {
+				0: { message: t("Debuff") },
+				1: { message: t("Debuff 1") },
+				2: { message: t("Debuff 2") },
+				3: { message: t("Debuff 3") }
+			};
+
+			handlers.text({
+				sub_type: "notification",
+				message: debuff_messages[next_debuff].message,
+				speech: true
+			});
+
+			if (next_debuff !== 0) {
+				next_debuff++;
+			}
+
+			if (next_debuff > 3) {
+				next_debuff = 1;
+			}
+		}
+	}
+
+	function debuff_removed() {
+		if (next_debuff != 0) {
+			handlers.text({
+				sub_type: "notification",
+				message: t("Next Debuff: {next_debuff}", { next_debuff: next_debuff }),
+				speech: false
+			});
+		}
+
+		next_debuff = 0;
+	}
+
 	return {
-		// PHASE 2
 		"nd-448-2000": [
 			{ type: "stop_timers" },
 			{ type: "despawn_all" }
 		],
+		"h-448-2000-10": [{ type: "text", sub_type: "notification", message: t("10% Last Wrath [c=#00EAFF]Kaia Save[/c]") }],
 		"ns-448-2000": [
-			{ type: "spawn", func: "marker", args: [false, 0, -700, 100, 60000000, false, ["Throne", "Throne Direction", "王座", "王座方向"]] },
+			{ type: "spawn", func: "marker", args: [false, 0, -700, 100, 60000000, false, [t("Throne"), t("Throne Direction")]] },
 			{ type: "spawn", func: "point", args: [513, 0, 800, 100, 60000000] },
 			{ type: "func", func: () => print_loading = true },
 			{ type: "func", func: () => print_lasers = true }
@@ -77,17 +141,55 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		],
 		"s-448-2000-1107-0": [{ type: "text", sub_type: "message", message: t("4 Hit (3)") }],
 
-		"s-448-2000-3202-0": [ // After 4 Hit Donuts Enraged
-			{ type: "text", sub_type: "message", message: t("IN - OUT ") },
-			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 300, 0, 4000] },
-			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 575, 0, 4000] }
+		// บอสโกรธ (โดนัท)
+		"s-448-2000-3202-0": [
+
+			{
+				type: "text",
+				sub_type: "message",
+				message: t("IN > OUT"),
+				check_func: () => is_enraged === true
+			},
+			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 300, 0, 4000], check_func: () => is_enraged === true },
+			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 575, 0, 4000], check_func: () => is_enraged === true },
+
+			//  ป้าย 4 ด้าน
+			{ type: "spawn", func: "marker", args: [false, 0, 430, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === true },
+			{ type: "spawn", func: "marker", args: [false, 90, 430, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === true },
+			{ type: "spawn", func: "marker", args: [false, 180, 430, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === true },
+			{ type: "spawn", func: "marker", args: [false, 270, 430, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === true },
+
+			{
+				type: "text",
+				sub_type: "message",
+				message: t("OUT > IN"),
+				check_func: () => is_enraged === false
+			},
+			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 300, 0, 4000], check_func: () => is_enraged === false },
+			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 575, 0, 4000], check_func: () => is_enraged === false },
+
+			// ป้าย 4 ด้าน
+			{ type: "spawn", func: "marker", args: [false, 0, 200, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === false },
+			{ type: "spawn", func: "marker", args: [false, 90, 200, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === false },
+			{ type: "spawn", func: "marker", args: [false, 180, 200, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === false },
+			{ type: "spawn", func: "marker", args: [false, 270, 200, 0, 4000, true, [t("Safe"), t("Safe")]], check_func: () => is_enraged === false }
 		],
 
-		"s-448-2000-3102-0": [ // After 4 Hit Donuts Non-Rnraged
-			{ type: "text", sub_type: "message", message: t("IN - OUT ") },
+		// บอสไม่โกรธ (โดนัทปกติ)
+		"s-448-2000-3102-0": [
+			{ type: "text", sub_type: "message", message: t("OUT > IN") },
 			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 300, 0, 4000] },
-			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 575, 0, 4000] }
+			{ type: "spawn", func: "circle", args: [false, 445, 0, 0, 12, 575, 0, 4000] },
+
+			// ป้าย 4 ด้าน
+			{ type: "spawn", func: "marker", args: [false, 0, 430, 0, 4000, true, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 90, 430, 0, 4000, true, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 180, 430, 0, 4000, true, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 270, 430, 0, 4000, true, [t("Safe"), t("Safe")]] }
 		],
+
+		"s-448-2000-3402-0": [{ type: "func", func: debuff_event, args: [true, 0] }], //new manaya mech
+		"s-448-2000-3401-0": "s-448-2000-3402-0",
 
 		"s-448-2000-1108-0": [
 			{ type: "text", sub_type: "message", message: t("Back Throw") },
@@ -127,6 +229,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 8, 360, 0, 2000] },
 			{ type: "spawn", func: "marker", args: [false, 270, 300, 100, 2000, true, null] }
 		],
+
 		"s-448-2000-1120-0": [
 			{ type: "text", sub_type: "message", message: t("Right Swipe") },
 			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 2000] },
@@ -135,23 +238,37 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 360, 0, 2000] },
 			{ type: "spawn", func: "marker", args: [false, 90, 300, 100, 2000, true, null] }
 		],
+		// 2.0
+		"s-448-2000-3313-0": "s-448-2000-1119-0",
+		"s-448-2000-3314-0": "s-448-2000-1120-0",
+		"s-448-2000-3303-0": "s-448-2000-1119-0",
+		"s-448-2000-3304-0": "s-448-2000-1120-0",
+
+		"s-448-2000-3301-0": [ // 2.0
+			{ type: "text", sub_type: "message", message: t("Wrath (Double Swipe)")/*, message_RU: "Облепиха (кайа)"*/ },
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 500, 0, 6000] },
+			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 500, 0, 6000] }
+		],
+
+		"s-448-2000-3302-0": "s-448-2000-3301-0",
+
 		"s-448-2000-1121-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Left)") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2533, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2533, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2533, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2533, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1122-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Left) 3nd fast") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2533, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2533, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2533, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2533, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1123-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Left) 2nd fast") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2500, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2500, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 37, 125, 0, 2500, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 143, 125, 0, 2500, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1125-0": [
 			{ type: "text", sub_type: "message", message: t("Front | Right Scratch") },
@@ -181,24 +298,24 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "circle", args: [false, 553, 185, 500, 8, 490, 100, 2000] }
 		],
 		"s-448-2000-1138-0": [{ type: "text", sub_type: "message", delay: 900, message: t("Dodge") }], // Knockup (Bait)
-		"s-448-2000-1139-0": [{ type: "text", sub_type: "message", delay: 200, message: t("Dodge!") }],
+		"s-448-2000-1139-0": [{ type: "text", sub_type: "notification", delay: 0, message: t("Stun Boss") }],
 		"s-448-2000-1140-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Right)") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2533, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2533, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2533, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2533, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1141-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Right) 3nd fast") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2533, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2533, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2533, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2533, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1142-0": [
 			{ type: "text", sub_type: "message", message: t("Waves (Right) 2nd fast") },
 			{ type: "func", func: waves_event },
-			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2500, false, ["safe", "safe", "安全"]] },
-			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2500, false, ["safe", "safe", "安全"]] }
+			{ type: "spawn", func: "marker", args: [false, 323, 125, 0, 2500, false, [t("Safe"), t("Safe")]] },
+			{ type: "spawn", func: "marker", args: [false, 217, 125, 0, 2500, false, [t("Safe"), t("Safe")]] }
 		],
 		"s-448-2000-1307-0": [
 			{ type: "text", sub_type: "message", message: t("!") },
@@ -217,6 +334,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 0, 500, 0, 6000] },
 			{ type: "spawn", func: "vector", args: [553, 0, 0, 180, 500, 0, 6000] }
 		],
+
 		// Enraged
 		"s-448-2000-2101-0": "s-448-2000-1101-0",
 		"s-448-2000-2103-0": "s-448-2000-1103-0",
@@ -249,7 +367,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "spawn", func: "circle", args: [false, 553, 356, 220, 12, 210, 100, 4000] }
 		],
 		"s-448-2000-2137-0": "s-448-2000-1137-0",
-		"s-448-2000-2138-0": [{ type: "text", sub_type: "message", message: t("Dodge") }], // Knockup (Bait)
+		"s-448-2000-2138-0": [{ type: "text", sub_type: "message", message: t("Stun")/*, message_RU: "Эвейд"*/ }], // Knockup (Bait)
 		"s-448-2000-2139-0": "s-448-2000-1139-0",
 		"s-448-2000-2140-0": "s-448-2000-1140-0",
 		"s-448-2000-2141-0": "s-448-2000-1141-0",
@@ -288,7 +406,19 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"ab-448-2000-90442303": [{ type: "text", sub_type: "message", message: t("Plague/Regress") }],
 		"ab-448-2000-90442304": [
 			{ type: "text", sub_type: "notification", message: t("Stun"), speech: false },
-			{ type: "text", sub_type: "message", message: t("Stun") }
-		]
+			{ type: "text", sub_type: "notification", message: t("Stun") }
+		],
+
+		//new 2.0
+		"ab-448-2000-4480009": [{ type: "text", sub_type: "notification", message: t("[c=#D95FD2]Plague/Regress[/c]") }],
+		"ab-448-2000-4480003": [
+			{ type: "text", sub_type: "notification", message: t("[c=#1EE3DF]Break Shield[/c]") }
+		],
+
+		"die": [{ type: "func", func: debuff_removed }],
+		"h-448-2000-99": [{ type: "func", func: () => next_debuff = 0 }],
+		"am-448-2000-47702900": [{ type: "func", func: debuff_event, args: [false, 2] }], // 1
+		"am-448-2000-47703000": [{ type: "func", func: debuff_event, args: [false, 3] }], // 2
+		"am-448-2000-47703100": [{ type: "func", func: debuff_event, args: [false, 1] }] // 3
 	};
 };

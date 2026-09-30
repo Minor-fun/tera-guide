@@ -1,4 +1,7 @@
 {
+  "guiContentTooLong": "The GUI content is too long to display. Please reduce the content on this page.",
+  "guiPrevPage": "Previous page",
+  "guiNextPage": "Next page",
   "unknowncommand": "Unknown command, type \"guide help\"",
   "helpheader": "Enter \"guide help\" for more information",
   "red": "Red",

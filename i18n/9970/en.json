@@ -19,10 +19,10 @@
   "Tail AOE (jump in front)": "Tail AOE (jump in front)",
   "Get Ready!": "Get Ready!",
   "IN": "IN",
-  "Out": "Out",
+  "Out": "OUT",
   "OUT": "OUT",
-  "In": "In",
-  "In | Tail Slam": "In | Tail Slam",
+  "In": "IN",
+  "In | Tail Slam": "IN | Tail Slam",
   "Tail": "Tail",
   "Get Red Skull!": "Get Red Skull!",
   "Get Yellow Skull!": "Get Yellow Skull!",
@@ -33,5 +33,8 @@
   "Gather soon...": "Gather soon...",
   "Shooting Skulls (Triple)": "Shooting Skulls (Triple)",
   "Shooting Skulls (Doble)": "Shooting Skulls (Doble)",
-  "Shooting Skulls (Multiple)": "Shooting Skulls (Multiple)"
+  "Shooting Skulls (Multiple)": "Shooting Skulls (Multiple)",
+  "Lead the spider to the cocoon": "Lead the spider to the cocoon",
+  "Spider on {name}": "Spider on {name}",
+  "Spider": "Spider"
 }

@@ -1,4 +1,7 @@
 {
+  "guiContentTooLong": "界面内容过长，无法显示，请减少当前页面的内容。",
+  "guiPrevPage": "上一页",
+  "guiNextPage": "下一页",
   "unknowncommand": "未知命令，请输入guide help",
   "helpheader": "输入\"guide help\"获取帮助",
   "red": "红色",

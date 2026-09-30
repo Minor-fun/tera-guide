@@ -12,6 +12,15 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	dispatch.hook("S_ACTION_STAGE", 9, event => {
 		if (event.templateId !== 1000 || event.skill.huntingZoneId !== 3047) return;
 
+		if ([3204, 4204].includes(event.skill.id)) {
+			dispatch.setTimeout(() => {
+				handlers.text({
+					sub_type: "message",
+					message: t("Evades")
+				});
+			}, (event.skill.id === 3204 ? 3000 : 2350) / event.speed);
+		}
+
 		if ([3118, 4118, 3123, 4123].includes(event.skill.id)) {
 			dispatch.setTimeout(() => {
 				handlers.text({
@@ -94,7 +103,9 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		],
 		"s-3047-1000-3104-0": [
 			{ type: "text", sub_type: "message", message: t("Jump (Stun)") },
-			{ type: "spawn", func: "circle", args: [true, 553, 0, 0, 20, 200, 0, 1500] }
+			{ type: "spawn", func: "circle", args: [true, 553, 0, 10, 25, 200, 0, 1500] },
+			{ type: "spawn", func: "circle", args: [true, 553, 45, 220, 25, 90, 0, 1500] },
+			{ type: "spawn", func: "circle", args: [true, 553, -45, 220, 25, 90, 0, 1500] }
 		],
 		"s-3047-1000-3108-0": [{ type: "text", sub_type: "message", message: t("Fly (Puddle)") }],
 		"s-3047-1000-3108-2": [{ type: "spawn", func: "circle", args: [false, 553, 0, 0, 20, 200, 0, 1250] }],

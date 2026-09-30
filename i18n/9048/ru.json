@@ -43,5 +43,20 @@
   "Laser": "Лазер",
   "Plague/Regress": "Регресс",
   "Stun": "Стан!",
-  "Laser on {name}": "Лазер на {name}"
+  "Laser on {name}": "Лазер на {name}",
+  "Debuff": "Дебаф (бублик)",
+  "Debuff 1": "Дебаф (бублик) 1",
+  "Debuff 2": "Дебаф (бублик) 2",
+  "Debuff 3": "Дебаф (бублик) 3",
+  "Next Debuff: {next_debuff}": "Следующий Дебаф (бублик): {next_debuff}",
+  "10% Last Wrath [c=#00EAFF]Kaia Save[/c]": "10% Последний гнев [c=#00EAFF]Спасение Кайей[/c]",
+  "Throne": "Трон",
+  "Throne Direction": "Направление трона",
+  "IN > OUT": "К нему > От него",
+  "Safe": "Безопасно",
+  "OUT > IN": "От него > К нему",
+  "Wrath (Double Swipe)": "Гнев (двойной взмах)",
+  "Stun Boss": "Застанить босса",
+  "[c=#D95FD2]Plague/Regress[/c]": "[c=#D95FD2]Чума/Регресс[/c]",
+  "[c=#1EE3DF]Break Shield[/c]": "[c=#1EE3DF]Разбить щит[/c]"
 }

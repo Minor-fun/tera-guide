@@ -1,4 +1,7 @@
 {
+  "guiContentTooLong": "画面の内容が長すぎるため表示できません。このページの内容を減らしてください。",
+  "guiPrevPage": "前のページ",
+  "guiNextPage": "次のページ",
   "unknowncommand": "不明なコマンドです、\"guide help\"と入力してください",
   "helpheader": "詳細は\"guide help\"を入力してください",
   "red": "赤色",

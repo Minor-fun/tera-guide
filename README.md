@@ -87,6 +87,7 @@ ID | Dungeon name (English)
 3111 | The Veil (Darkan)
 3123 | Akalath Quarantine (Hard)
 3126 | Corrupted Skynest (Hard)
+3147 | Hall of the Argon Queen (Hard) (Asura)
 3201 | Gossamer Vault (Hard)
 3202 | Draakon Arena (Hard)
 3203 | Forbidden Arena [Nightmare Undying Warlord]
@@ -109,6 +110,8 @@ ID | Dungeon name (English)
 9067 | Demokron Factory (Hard)
 9068 | Shadow Sanguinary (Hard)
 9070 | Manglemire
+9156 | Timescape (Hard) (Classic+)
+9168 | Shadow Sanguinary (Hard) (Classic+)
 9710 | Broken Prison
 9716 | Sky Cruiser Endeavor
 9720 | Antaroth's Abyss
@@ -127,6 +130,8 @@ ID | Dungeon name (English)
 9783 | Dark Reach Citadel
 9794 | Thaumetal Refinery
 9850 | Withering Dreadspire (Agaia Online)
+9856 | Timescape (Classic+)
+9868 | Shadow Sanguinary (Classic+)
 9916 | Sky Cruiser Endeavor (Hard)
 9920 | Antaroth's Abyss (Hard)
 9935 | RK-9 Kennel (Hard)

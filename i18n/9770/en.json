@@ -16,9 +16,14 @@
   "Front Swipe": "Front Swipe",
   "Tail AOE (jump in front)": "Tail AOE (jump in front)",
   "Get Ready!": "Get Ready!",
-  "Out": "Out",
-  "In": "In",
+  "Out": "OUT",
+  "In": "IN",
   "Tail": "Tail",
   "Shooting Skulls (Triple)": "Shooting Skulls (Triple)",
-  "Shooting Skulls (Doble)": "Shooting Skulls (Doble)"
+  "Shooting Skulls (Doble)": "Shooting Skulls (Doble)",
+  "Lead the spider to the cocoon": "Lead the spider to the cocoon",
+  "Spider on {name}": "Spider on {name}",
+  "Spider": "Spider",
+  "OUT": "OUT",
+  "IN": "IN"
 }

@@ -12,12 +12,41 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	let is_one_back = false;
 	let timer1 = null;
 	let timer2 = null;
-	let enrage = 0;
-	let enrage_time = 0;
+	let enrage = false;
 	let counter = 0;
-	let is_hp_79 = false;
+	let is_hp_94 = false;
+	let is_hp_80 = false;
 	let mech_total = 0;
 	let mech_counter = 0;
+
+	let start_wings_id = 0;
+
+	dispatch.hook("S_ACTION_STAGE", 9, event => {
+		if (event.skill.huntingZoneId !== 3036 || event.templateId !== 1000) return;
+
+		if (![1401, 1402].includes(event.skill.id)) {
+			start_wings_id = 0;
+		}
+	});
+
+	dispatch.hook("S_BOSS_GAGE_INFO", 3, event => {
+		if (event.huntingZoneId !== 3036 || event.templateId !== 1000) return;
+
+		const hpPercent = Number(event.maxHp) !== 0 ? (Number(event.curHp) / Number(event.maxHp)) * 100 : 0;
+
+		if (hpPercent <= 94 && !is_hp_94) {
+			handlers.text({ type: "text", sub_type: "message", message: t("94%") });
+			is_hp_94 = true;
+		}
+
+		if (hpPercent < 80 && !is_hp_80) {
+			handlers.text({ type: "text", sub_type: "message", message: t("79%") });
+			is_hp_80 = true;
+			if (start_wings_id) {
+				mech_counter++;
+			}
+		}
+	});
 
 	const mech_messages = {
 		2: { message: t("Two Split Strikes") },
@@ -91,8 +120,12 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 	}
 
 	function boss_mech_eventP2(skillid) {
-		enrage = new Date() - enrage_time >= 35100 ? 0 : 1;
-		mech_total = triple_attack ? (is_hp_79 ? 4 : 3) : 2;
+		if ([1401, 1402].includes(skillid)) {
+			handlers.event([{ type: "despawn_all", tag: "wings" }]);
+			start_wings_id = skillid;
+		}
+
+		mech_total = triple_attack ? (is_hp_80 ? 4 : 3) : 2; // is_hp_80
 
 		if (mech_counter == 0) {
 			handlers.text({ sub_type: "message",
@@ -105,8 +138,8 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		mech_counter--;
 
 		handlers.event([
-			{ type: "spawn", func: "vector", args: [553, 358, 0, 180, 1100, 100, 1500] },
-			{ type: "spawn", func: "vector", args: [553, 358, 0, 0, 1100, 100, 1500] }
+			{ type: "spawn", func: "vector", args: [553, 358, 0, 180, 1100, 100, 1500], tag: "wings" },
+			{ type: "spawn", func: "vector", args: [553, 358, 0, 0, 1100, 100, 1500], tag: "wings" }
 		]);
 
 		let effective_skillid = skillid;
@@ -119,20 +152,20 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 				{ type: "text", sub_type: "alert", speech: false,
 					message: t("({mech_totalmech_counter}) Left", { mech_totalmech_counter: mech_total - mech_counter })
 				},
-				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 12, 220, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 10, 300, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 360, 0, 1500] }
+				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 20, 160, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 12, 220, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 10, 300, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [180, 360, 912, 0, 0, 8, 360, 0, 1500], tag: "wings" }
 			]);
 		} else {
 			handlers.event([ // right
 				{ type: "text", sub_type: "alert", speech: false,
 					message: t("({mech_totalmech_counter}) Right", { mech_totalmech_counter: mech_total - mech_counter })
 				},
-				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 20, 160, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 12, 220, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 10, 300, 0, 1500] },
-				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 8, 360, 0, 1500] }
+				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 20, 160, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 12, 220, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 10, 300, 0, 1500], tag: "wings" },
+				{ type: "spawn", func: "semicircle", args: [0, 180, 912, 0, 0, 8, 360, 0, 1500], tag: "wings" }
 			]);
 		}
 	}
@@ -162,7 +195,7 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"s-3036-1001-2112-0": "s-3036-1001-1112-0",
 		// Phase 2
 		"ns-3036-1000": [
-			{ type: "func", func: () => enrage = 0 },
+			{ type: "func", func: () => enrage = false },
 			{ type: "func", func: () => mech_counter = 0 },
 			{ type: "spawn", func: "marker", args: [false, 281, -500, 100, 60000000, false] },
 			{ type: "spawn", func: "point", args: [513, 261, 500, 100, 60000000] }
@@ -172,15 +205,19 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 			{ type: "despawn_all" }
 		],
 		"rb-3036-1000": [
-			{ type: "func", func: () => enrage = 1 },
-			{ type: "func", func: () => enrage_time = new Date() }
+			{ type: "func", func: () => enrage = true },
+			{ type: "func", func: () => mech_counter++, check_func: () => start_wings_id !== 0 },
+			{ type: "func", func: () => boss_mech_eventP2(start_wings_id), check_func: () => start_wings_id !== 0 }
 		],
 		"re-3036-1000": [
-			{ type: "func", func: () => enrage = 0 }
+			{ type: "func", func: () => enrage = false },
+			{ type: "func", func: () => mech_counter++, check_func: () => start_wings_id !== 0 },
+			{ type: "func", func: () => boss_mech_eventP2(start_wings_id), check_func: () => start_wings_id !== 0 }
 		],
-		"h-3036-1000-100": [{ type: "func", func: () => is_hp_79 = false }],
-		"h-3036-1000-94": [{ type: "text", sub_type: "message", message: t("94%") }],
-		"h-3036-1000-79": [{ type: "text", sub_type: "message", message: t("79%") }, { type: "func", func: () => is_hp_79 = true }],
+		"h-3036-1000-100": [
+			{ type: "func", func: () => is_hp_94 = false },
+			{ type: "func", func: () => is_hp_80 = false }
+		],
 		"h-3036-1000-35": [{ type: "text", sub_type: "message", message: t("Watch the countdown") }],
 		"h-3036-1000-34": [{ type: "text", sub_type: "message", message: t("Third layer of shrinking ring preparation") }],
 		"h-3036-1000-65": [{ type: "text", sub_type: "message", message: t("Second layer of shrinking ring preparation") }],
@@ -251,12 +288,12 @@ module.exports = (dispatch, handlers, guide, lang, t) => {
 		"s-3036-1000-2117-0": "s-3036-1000-1117-0",
 		"s-3036-1000-2118-0": "s-3036-1000-1118-0",
 		"qb-3036-1000-3036039": [
-			{ type: "text", sub_type: "message", message: t("Triple"), check_func: () => !is_hp_79 },
-			{ type: "text", sub_type: "message", message: t("Quadruple"), check_func: () => is_hp_79 },
-			{ type: "text", sub_type: "message", delay: 75000, message: t("Triple Soon"), check_func: () => !is_hp_79 },
-			{ type: "text", sub_type: "message", delay: 75000, message: t("Quadruple Soon"), check_func: () => is_hp_79 },
-			{ type: "text", sub_type: "notification", delay: 75000, message: t("Triple Soon"), speech: false, check_func: () => !is_hp_79 },
-			{ type: "text", sub_type: "notification", delay: 75000, message: t("Quadruple Soon"), speech: false, check_func: () => is_hp_79 },
+			{ type: "text", sub_type: "message", message: t("Triple"), check_func: () => !is_hp_80 },
+			{ type: "text", sub_type: "message", message: t("Quadruple"), check_func: () => is_hp_80 },
+			{ type: "text", sub_type: "message", delay: 75000, message: t("Triple Soon"), check_func: () => !is_hp_80 },
+			{ type: "text", sub_type: "message", delay: 75000, message: t("Quadruple Soon"), check_func: () => is_hp_80 },
+			{ type: "text", sub_type: "notification", delay: 75000, message: t("Triple Soon"), speech: false, check_func: () => !is_hp_80 },
+			{ type: "text", sub_type: "notification", delay: 75000, message: t("Quadruple Soon"), speech: false, check_func: () => is_hp_80 },
 			{ type: "func", func: boss_tripleattack_event }
 		],
 		"qb-3036-1000-3036040": [{ type: "func", func: boss_tripleattack_event }],

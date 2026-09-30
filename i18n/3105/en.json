@@ -17,9 +17,9 @@
   "Spin | Back Laser": "Spin | Back Laser",
   "Kick": "Kick",
   "Kick (Dodge)": "Kick (Dodge)",
-  "Outward Donuts (Out > In)": "Outward Donuts (Out > In)",
+  "Outward Donuts (Out > In)": "Outward Donuts (OUT > IN)",
   "Kaia": "Kaia",
-  "Inward Donuts (In > Out)": "Inward Donuts (In > Out)",
+  "Inward Donuts (In > Out)": "Inward Donuts (IN > OUT)",
   "Shield!": "Shield!",
   "Break Failure": "Break Failure",
   "Bait (Lasers)": "Bait (Lasers)",
@@ -28,7 +28,7 @@
   "LASERS + WAVE": "LASERS + WAVE",
   "Wave (Dodge)": "Wave (Dodge)",
   "Give Stun!": "Give Stun!",
-  "AoE": "AoE",
+  "AoE": "AOE",
   "Lasers!": "Lasers!",
   "Lasers on {name}": "Lasers on {name}"
 }

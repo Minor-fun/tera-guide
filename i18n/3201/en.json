@@ -1,7 +1,7 @@
 {
   "@dungeon": "Gossamer Vault (Hard)",
   "Dodge": "Dodge",
-  "Stun attack": "Stun attack",
+  "Stun attack": "Stun Attack",
   "Back": "Back",
   "Pull": "Pull",
   "Back Wave": "Back Wave",
@@ -36,6 +36,6 @@
   "Out Safe": "Out Safe",
   "In Safe": "In Safe",
   "Counter Attack (Bait)": "Counter Attack (Bait)",
-  "Out > In": "Out > In",
-  "In > Out": "In > Out"
+  "Out > In": "OUT > IN",
+  "In > Out": "IN > OUT"
 }

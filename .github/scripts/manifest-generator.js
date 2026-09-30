@@ -29,6 +29,7 @@ const addSupportUrl = "" // add ("supportURL": <addSupportURL>) to module.json i
 // ignore these files for making manifest
 const IGNORED_FILES = [
     'crowdin.yml',
+    'docs',
     'manifest.json',
     'manifest-generator.js',
     'manifest-generator.bat',
